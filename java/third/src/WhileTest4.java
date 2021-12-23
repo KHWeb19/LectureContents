@@ -4,7 +4,7 @@ public class WhileTest4 {
 
         // 1 ~ 30까지의 숫자중 5의 배수를 모두 출력하세요
         // 와 같은 역할을 수행하게 됨
-        while (i < 31) {
+        while (i < 30) {
             i++;
 
             if (i % 5 == 0) {
