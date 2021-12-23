@@ -13,7 +13,7 @@ public class QnA6 {
         // 위의 코드와 동의어
         if (rand >= 65) {
             if (rand <= 90) {
-                System.out.printf("대문자 범주: %c\n", rand);
+                System.out.printf("대문자 범주: %c(%d)\n", rand, rand);
             }
         }
 
@@ -21,7 +21,7 @@ public class QnA6 {
         // 위의 코드와 동의어
         if (rand >= 97) {
             if (rand <= 122) {
-                System.out.printf("소문자 범주: %c\n", rand);
+                System.out.printf("소문자 범주: %c(%d)\n", rand, rand);
             }
         }
     }
