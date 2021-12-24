@@ -16,8 +16,14 @@ public class Answer10 {
         int sum = 0;
 
         //final int DEATH = 44;
+        
+        /* decision = (int) (Math.random() * range + MIN);
+           이 코드가 for 밖으로 나오면
+           한 번 할당된 난수를 기반으로 코드가 동작함
+         */
 
         for (int i = START; i <= END; i += decision) {
+            // 내부에 배치되면 매 반복마다 더하는 값이 바뀜
             decision = (int) (Math.random() * range + MIN);
 
             System.out.printf("뽑은 난수 = %d, 현재 이동한 위치 = %d\n", decision, i);
