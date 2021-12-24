@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="1 + 4, 2 + 8, 3 + 12, 4 + 16, 5 + 20 ... 구현">
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)">
+      <change afterPath="$PROJECT_DIR$/src/QnA2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/QnA1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/QnA1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,16 +36,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.QnA1">
+  <component name="RunManager" selected="Application.QnA2">
     <configuration name="Answer10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Answer10" />
-      <module name="fourth" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Answer7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Answer7" />
       <module name="fourth" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,13 +65,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QnA2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QnA2" />
+      <module name="fourth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QnA2" />
         <item itemvalue="Application.QnA1" />
         <item itemvalue="Application.Answer10" />
         <item itemvalue="Application.Answer9" />
         <item itemvalue="Application.Answer8" />
-        <item itemvalue="Application.Answer7" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640345229950</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)">
+      <created>1640345329994</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1640345329994</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -257,6 +264,7 @@
     <MESSAGE value="2번 부연설명 추가 + final로 개선" />
     <MESSAGE value="3번 2번째 방식 부연설명 추가" />
     <MESSAGE value="1 + 4, 2 + 8, 3 + 12, 4 + 16, 5 + 20 ... 구현" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 + 4, 2 + 8, 3 + 12, 4 + 16, 5 + 20 ... 구현" />
+    <MESSAGE value="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)" />
+    <option name="LAST_COMMIT_MESSAGE" value="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)" />
   </component>
 </project>
