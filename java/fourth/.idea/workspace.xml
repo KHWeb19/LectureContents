@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)">
-      <change afterPath="$PROJECT_DIR$/src/QnA2.java" afterDir="false" />
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="ASCII 코드(대소문자 맵핑 증명)">
+      <change afterPath="$PROJECT_DIR$/src/QnA3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,16 +36,9 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.QnA2">
+  <component name="RunManager" selected="Application.QnA3">
     <configuration name="Answer10" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Answer10" />
-      <module name="fourth" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Answer8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Answer8" />
       <module name="fourth" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,13 +65,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="QnA3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="QnA3" />
+      <module name="fourth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.QnA3" />
         <item itemvalue="Application.QnA2" />
         <item itemvalue="Application.QnA1" />
         <item itemvalue="Application.Answer10" />
         <item itemvalue="Application.Answer9" />
-        <item itemvalue="Application.Answer8" />
       </list>
     </recent_temporary>
   </component>
@@ -231,7 +231,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640345329994</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ASCII 코드(대소문자 맵핑 증명)">
+      <created>1640345924039</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1640345924039</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -265,6 +272,7 @@
     <MESSAGE value="3번 2번째 방식 부연설명 추가" />
     <MESSAGE value="1 + 4, 2 + 8, 3 + 12, 4 + 16, 5 + 20 ... 구현" />
     <MESSAGE value="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)" />
-    <option name="LAST_COMMIT_MESSAGE" value="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)" />
+    <MESSAGE value="ASCII 코드(대소문자 맵핑 증명)" />
+    <option name="LAST_COMMIT_MESSAGE" value="ASCII 코드(대소문자 맵핑 증명)" />
   </component>
 </project>
