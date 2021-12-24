@@ -22,3 +22,8 @@ public class Answer2 {
         System.out.printf("%d번째 항 %d\n", i, result);
     }
 }
+
+//   1      1      2      3    5  8  13  21  34  55  89
+// first second                                   첫 번째 루프
+//        first second                            두 번째 루프
+//               first second                     세 번째 루프
