@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="2번 문제 final로 개선시킴">
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="2번 부연설명 추가 + final로 개선">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Answer2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Answer2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Answer3_2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Answer3_2.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -203,7 +203,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640337577205</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="2번 부연설명 추가 + final로 개선">
+      <created>1640341128602</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1640341128602</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +240,7 @@
     <MESSAGE value="문제은행2 - 10번 질문에 대한 추가 답변(주석)" />
     <MESSAGE value="8번 문제 및 문제 풀때 어떤식으로 접근해야하는지" />
     <MESSAGE value="2번 문제 final로 개선시킴" />
-    <option name="LAST_COMMIT_MESSAGE" value="2번 문제 final로 개선시킴" />
+    <MESSAGE value="2번 부연설명 추가 + final로 개선" />
+    <option name="LAST_COMMIT_MESSAGE" value="2번 부연설명 추가 + final로 개선" />
   </component>
 </project>

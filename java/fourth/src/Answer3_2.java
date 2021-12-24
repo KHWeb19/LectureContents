@@ -26,3 +26,8 @@ public class Answer3_2 {
         System.out.printf("%d번째 항 %d\n", i, result);
     }
 }
+
+//   1      1      1      2      3      4     6     9    13
+// first second  third fourth                                  첫 번째 루프
+//        first second  third fourth                           두 번째 루프
+//               first second  third fourth                    세 번째 루프
