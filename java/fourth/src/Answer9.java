@@ -20,6 +20,7 @@ public class Answer9 {
         // 실제 난수의 할당(생성) 했는지 안했는지 판정 여부
         boolean isRandomAllocCheck = false;
         int decision = 0;
+        int sum = 0;
 
         for (int i = START; i <= END; i++) {
             while (!isRandomAllocCheck) {
@@ -30,7 +31,11 @@ public class Answer9 {
             if (i % decision == REMAIN) {
                 System.out.printf("%d의 배수 i = %d\n", decision, i);
                 isRandomAllocCheck = false;
+
+                sum += i;
             }
         }
+
+        System.out.println("현재까지 나타난 숫자들의 합 = " + sum);
     }
 }
