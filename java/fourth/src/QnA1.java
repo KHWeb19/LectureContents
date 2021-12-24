@@ -6,10 +6,15 @@ public class QnA1 {
         // 4 + 16
         // 5 + 20
         // ....
-        int cnt = 1, sum = 0;
+        final int START = 1;
+        final int END = 100;
+        final int DECISION = 4;
+        final int REMAIN = 0;
 
-        for (int i = 1; i <= 100; i++) {
-            if (i % 4 == 0) {
+        int cnt = START, sum = 0;
+
+        for (int i = START; i <= END; i++) {
+            if (i % DECISION == REMAIN) {
                 System.out.printf("sum = %d++ + %d\n", cnt, i);
                 sum = cnt++ + i;
                 System.out.printf("sum = %d\n", sum);
