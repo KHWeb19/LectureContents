@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 3번 문제 답(새로운 규칙 - 소오름)">
-      <change afterPath="$PROJECT_DIR$/src/Answer4.java" afterDir="false" />
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 4번 문제 답">
+      <change afterPath="$PROJECT_DIR$/src/Answer5.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,14 +36,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Answer4">
-    <configuration name="Answer1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Answer1" />
-      <module name="fourth" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Answer5">
     <configuration name="Answer2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Answer2" />
       <module name="fourth" />
@@ -72,13 +65,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Answer5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Answer5" />
+      <module name="fourth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Answer5" />
         <item itemvalue="Application.Answer4" />
         <item itemvalue="Application.Answer3_2" />
         <item itemvalue="Application.Answer3" />
         <item itemvalue="Application.Answer2" />
-        <item itemvalue="Application.Answer1" />
       </list>
     </recent_temporary>
   </component>
@@ -126,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640331064238</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="문제은행2 - 4번 문제 답">
+      <created>1640331255502</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1640331255502</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -145,6 +152,7 @@
     <MESSAGE value="문제은행2 - 2번 문제 답" />
     <MESSAGE value="문제은행2 - 3번 문제 답(원래 의도한 상황)" />
     <MESSAGE value="문제은행2 - 3번 문제 답(새로운 규칙 - 소오름)" />
-    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 3번 문제 답(새로운 규칙 - 소오름)" />
+    <MESSAGE value="문제은행2 - 4번 문제 답" />
+    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 4번 문제 답" />
   </component>
 </project>
