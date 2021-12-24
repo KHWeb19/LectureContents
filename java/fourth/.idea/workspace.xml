@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 9번 문제 답(합산 누락)">
-      <change afterPath="$PROJECT_DIR$/src/Answer10.java" afterDir="false" />
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 10번 문제 답">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Answer10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Answer10.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640333810370</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="문제은행2 - 10번 문제 답">
+      <created>1640335225587</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1640335225587</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,6 +208,7 @@
     <MESSAGE value="문제은행2 - 8번 문제 답" />
     <MESSAGE value="문제은행2 - 9번 문제 답" />
     <MESSAGE value="문제은행2 - 9번 문제 답(합산 누락)" />
-    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 9번 문제 답(합산 누락)" />
+    <MESSAGE value="문제은행2 - 10번 문제 답" />
+    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 10번 문제 답" />
   </component>
 </project>
