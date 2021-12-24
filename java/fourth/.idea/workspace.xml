@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 6번 문제 답">
-      <change afterPath="$PROJECT_DIR$/src/Answer7.java" afterDir="false" />
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="문제은행2 - 8번 문제 답">
+      <change afterPath="$PROJECT_DIR$/src/Answer9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -36,21 +36,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Answer7">
-    <configuration name="Answer3_2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Answer3_2" />
-      <module name="fourth" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Answer4" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Answer4" />
-      <module name="fourth" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Answer9">
     <configuration name="Answer5" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Answer5" />
       <module name="fourth" />
@@ -72,13 +58,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Answer8" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Answer8" />
+      <module name="fourth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Answer9" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Answer9" />
+      <module name="fourth" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Answer9" />
+        <item itemvalue="Application.Answer8" />
         <item itemvalue="Application.Answer7" />
         <item itemvalue="Application.Answer6" />
         <item itemvalue="Application.Answer5" />
-        <item itemvalue="Application.Answer4" />
-        <item itemvalue="Application.Answer3_2" />
       </list>
     </recent_temporary>
   </component>
@@ -147,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1640332440205</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="문제은행2 - 7번 문제 답">
+      <created>1640332695596</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1640332695596</updated>
+    </task>
+    <task id="LOCAL-00010" summary="문제은행2 - 8번 문제 답">
+      <created>1640332916618</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1640332916618</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -169,6 +183,8 @@
     <MESSAGE value="문제은행2 - 4번 문제 답" />
     <MESSAGE value="문제은행2 - 5번 문제 답" />
     <MESSAGE value="문제은행2 - 6번 문제 답" />
-    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 6번 문제 답" />
+    <MESSAGE value="문제은행2 - 7번 문제 답" />
+    <MESSAGE value="문제은행2 - 8번 문제 답" />
+    <option name="LAST_COMMIT_MESSAGE" value="문제은행2 - 8번 문제 답" />
   </component>
 </project>
