@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="ASCII 코드(대소문자 맵핑 증명)">
-      <change afterPath="$PROJECT_DIR$/src/QnA3.java" afterDir="false" />
+    <list default="true" id="cf24a795-58cf-46d3-8165-39f03d1e2d75" name="Default Changelist" comment="무조건 &lt;&lt;&lt; 숫자값을 증가시키는 예제">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -238,7 +237,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640345924039</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="무조건 &lt;&lt;&lt; 숫자값을 증가시키는 예제">
+      <created>1640346327036</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1640346327036</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,6 +257,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1번 문제 답" />
@@ -273,6 +280,7 @@
     <MESSAGE value="1 + 4, 2 + 8, 3 + 12, 4 + 16, 5 + 20 ... 구현" />
     <MESSAGE value="1 + 4, 2 + 8, 3 + 12, ... 구현(final 개선)" />
     <MESSAGE value="ASCII 코드(대소문자 맵핑 증명)" />
-    <option name="LAST_COMMIT_MESSAGE" value="ASCII 코드(대소문자 맵핑 증명)" />
+    <MESSAGE value="무조건 &lt;&lt;&lt; 숫자값을 증가시키는 예제" />
+    <option name="LAST_COMMIT_MESSAGE" value="무조건 &lt;&lt;&lt; 숫자값을 증가시키는 예제" />
   </component>
 </project>
