@@ -13,9 +13,18 @@ public class Ans7 {
 
         final int EMP_NUM = 7;
         final float INIT_PAY = 3500;
-        final int MAX = 10;
-        final int MIN = 1;
+
+        // Math.random() - 0.0 ~ 1.0 미만 (0.99999)
+        // rand * range - 0.0 ~ range 미만
+        // (Math.random() * range + MIN)
+        // MIN ~ (range - 1).xxxx 까지 나온다는 의미
+        // Math.random() * 10 + 1 ---> 1 ~ 10.999999
+        // 소수점 셋 째까지 활용한다 가정하고
+        // Math.random() - 1000 ~ 10000 ---> 양변에 1000을 나누면 1 ~ 10
+        final int MAX = 10000;
+        final int MIN = 1000;
         final int END_YEAR = 5;
+        final float BIAS = 1000;
         final float PERCENT = 1 / 100.f;
 
         int range = MAX - MIN + 1;
@@ -29,7 +38,10 @@ public class Ans7 {
 
         for (int i = 1; i < END_YEAR; i++) {
             for (int j = 0; j < EMP_NUM; j++) {
-                percent = (float) (Math.random() * range + MIN) * PERCENT;
+                // (int) (Math.random() * range + MIN) - 1000 ~ 10000: A
+                // A / BIAS = 1 ~ 10: B
+                // B * PERCENT = 0.01 ~ 0.1
+                percent = (float) ((int) (Math.random() * range + MIN) / BIAS) * PERCENT;
                 // 1%의 인상률이라면
                 // 최종 연봉 = 현재 연봉 + 현재 연봉 * 인상률
                 //          = 현재 연봉 * (1 + 인상률)
