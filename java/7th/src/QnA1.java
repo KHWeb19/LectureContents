@@ -1,4 +1,4 @@
-public class Ans3 {
+public class QnA1 {
     public static void main(String[] args) {
         /*  배열로 로또 문제를 만들어보기!
             실제 로또 확률은 0.00000023으로 1억명중 23명이 당첨됨
