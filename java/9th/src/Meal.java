@@ -23,6 +23,8 @@ public class Meal {
     private Menu menu;
 
     public void initMeal () {
+        // Date 타입의 배열을 3개(MEAL_TIME_COUNT) 생성 (조식, 중식, 석식)
+        // Date는 시간을 관리하기 위한 클래스임(아직 활용은 안하고 셋팅만 해놓음)
         meal = new Date[MEAL_TIME_COUNT];
         menu = new Menu();
 
