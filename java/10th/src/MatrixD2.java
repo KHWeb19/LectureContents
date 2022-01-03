@@ -17,9 +17,12 @@ public class MatrixD2 {
     }
 
     public void printMatrix () {
+        // 처음 루프 i = 0 -> 1
         for (int i = 0; i < DIM; i++) {
+            // 루프 j = 0
             for (int j = 0; j < DIM; j++) {
-                System.out.printf("%3d", mat[i][j]);
+                System.out.printf("%3d", mat[i][j]);    //  [0][0], [0][1]
+                // x   y                                    [1][0], [1][1]
             }
             System.out.println();
         }
