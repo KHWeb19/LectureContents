@@ -17,6 +17,8 @@ public class Score {
     String[] scoreName;
     Scanner scan;
 
+    float mean;
+
     int cnt;
 
     public void initScore () {
@@ -26,6 +28,8 @@ public class Score {
         addSubject();
         // 편의상 랜덤값을 활용하도록 함
         inputScore();
+        // 평균 계산
+        calcMean();
     }
 
     public void setRange () {
@@ -86,12 +90,23 @@ public class Score {
         }
     }
 
+    public void calcMean () {
+        mean = 0;
+
+        for (int i = 0; i < cnt; i++) {
+            mean += score[i];
+        }
+
+        mean /= cnt;
+    }
+
     @Override
     public String toString() {
         return "Score{" +
                 ", range=" + range +
-                ", score=" + Arrays.toString(score) +
+                ", score=" + Arrays.toString(score) + "\n" +
                 ", scoreName=" + Arrays.toString(scoreName) +
+                ", mean=" + mean +
                 '}';
     }
 }
