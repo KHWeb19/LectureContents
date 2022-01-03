@@ -18,6 +18,8 @@ public class Score {
     Scanner scan;
 
     float mean;
+    float var;
+    float stdDev;
 
     int cnt;
 
@@ -30,6 +32,10 @@ public class Score {
         inputScore();
         // 평균 계산
         calcMean();
+        // 분산 계산
+        calcVariance();
+        // 표준편차 계산
+        calcStdDev();
     }
 
     public void setRange () {
@@ -100,6 +106,20 @@ public class Score {
         mean /= cnt;
     }
 
+    public void calcVariance () {
+        var = 0;
+
+        for (int i = 0; i < cnt; i++) {
+            var += Math.pow(score[i] - mean, 2);
+        }
+
+        var /= cnt;
+    }
+
+    public void calcStdDev () {
+        stdDev = (float) Math.sqrt(var);
+    }
+
     @Override
     public String toString() {
         return "Score{" +
@@ -107,6 +127,8 @@ public class Score {
                 ", score=" + Arrays.toString(score) + "\n" +
                 ", scoreName=" + Arrays.toString(scoreName) +
                 ", mean=" + mean +
+                ", var=" + var +
+                ", stdDev=" + stdDev +
                 '}';
     }
 }
