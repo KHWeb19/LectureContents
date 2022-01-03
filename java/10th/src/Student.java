@@ -20,6 +20,7 @@ public class Student {
                 "name='" + name + '\'' +
                 ", age=" + age +
                 ", major='" + major + '\'' +
+                ", score=" + score +
                 '}';
     }
 }

@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Score {
@@ -6,15 +7,39 @@ public class Score {
     // 실제로 점수라는 클래스는 보다 범용적으로 확장이 가능한 녀석이므로
     // 확장성을 고려한 설계를 진행하도록 한다.
 
-    final int MAX = 10;
+    final int ARR_MAX = 10;
+    final int SCORE_MAX = 100;
+    final int SCORE_MIN = 30;
 
+    int range;
+
+    int[] score;
     String[] scoreName;
     Scanner scan;
 
+    int cnt;
+
     public void initScore () {
         scan = new Scanner(System.in);
+        cnt = 0;
 
         addSubject();
+        // 편의상 랜덤값을 활용하도록 함
+        inputScore();
+    }
+
+    public void setRange () {
+        range = SCORE_MAX - SCORE_MIN + 1;
+    }
+
+    public void inputScore () {
+        score = new int[cnt];
+
+        setRange();
+
+        for (int i = 0; i < cnt; i++) {
+            score[i] = (int) (Math.random() * range + SCORE_MIN);
+        }
     }
 
     public boolean checkInput () {
@@ -39,8 +64,7 @@ public class Score {
         // 여기서 직접 자료구조를 구현하는것도 에바고
         // 그렇다고 문제를 안 풀수도 없으니 일종의 꼼수로서
         // 백업 배열을 하나 만들어서 Java의 Collection 역할을 하게 만든다.
-        String[] backup = new String[MAX];
-        int cnt = 0;
+        String[] backup = new String[ARR_MAX];
 
         System.out.print("다루고 싶은 과목을 입력하세요: ");
 
@@ -55,8 +79,19 @@ public class Score {
             // 기본적인 로직 작성후 매서드화 시키는 부분이 좋다 판단하여 삭제 처리
         } while (checkInput());
 
+        scoreName = new String[cnt];
+
         for (int i = 0; i < cnt; i++) {
-            System.out.printf("backup[%d] = %s\n", i, backup[i]);
+            scoreName[i] = backup[i];
         }
+    }
+
+    @Override
+    public String toString() {
+        return "Score{" +
+                ", range=" + range +
+                ", score=" + Arrays.toString(score) +
+                ", scoreName=" + Arrays.toString(scoreName) +
+                '}';
     }
 }
