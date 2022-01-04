@@ -17,5 +17,12 @@ public class RandomGeneratorTest {
         } else {
             System.out.println("복합 난수 생성: " + rg2.complicatedRandom());
         }
+
+        RandomGenerator rg3 = new RandomGenerator(
+                65, 122,
+                65, 90, 97, 122
+        );
+
+        System.out.println("조건부 난수 생성: " + rg3.conditionRandom());
     }
 }
