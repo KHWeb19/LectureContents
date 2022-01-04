@@ -63,6 +63,11 @@ public class MyCustomDataType {
         }
     }
 
+    // 이 녀석은 왜 필요하지 ?
+    // main에서
+    // MyCustomDataType(2); 정수형
+    // MyCustomDataType(2); float 형
+    // MyCustomDataType(2); double 형
     public MyCustomDataType (int intNum, final int DECISION) {
         System.out.println("나는 (int, int) 생성자!");
 
