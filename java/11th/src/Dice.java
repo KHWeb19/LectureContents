@@ -5,6 +5,7 @@ public class Dice {
     int range;
 
     public Dice () {
+        System.out.println("나는 Dice 클래스의 기본 생성자!");
         range = MAX - MIN + 1;
     }
 
