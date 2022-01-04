@@ -13,6 +13,14 @@ public class DiceManager {
         diceArr = new Dice[diceNum];
     }
 
+    public void checkWin (int sum) {
+        if (sum % 2 == 0) {
+            System.out.println("당첨입니다!!!");
+        } else {
+            System.out.println("올땐 쉬웠지 갈땐 손모가지닷!");
+        }
+    }
+
     public void playDiceGame () {
         int tmp;
 
@@ -25,6 +33,8 @@ public class DiceManager {
             System.out.printf("tmp = %d\n", tmp);
             sum += tmp;
         }
+
+        checkWin(sum);
     }
 
     @Override
