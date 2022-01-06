@@ -1,4 +1,4 @@
-public class PrivateExample {
+public class NonPrivateClassExample {
     public static void main(String[] args) {
         NonPrivateClass npc = new NonPrivateClass();
 
