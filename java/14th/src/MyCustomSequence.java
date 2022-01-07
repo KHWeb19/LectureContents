@@ -1,3 +1,5 @@
+import java.math.BigInteger;
+
 public class MyCustomSequence {
     InitialSet is;
     NonInitialSet nis;
@@ -17,7 +19,7 @@ public class MyCustomSequence {
         return is.getNthOrderData(count);
     }
 
-    public int getGeoSeqNthOrderData (int count) {
+    public BigInteger getGeoSeqNthOrderData (int count) {
         return nis.getGeoSeqNthOrderData(count);
     }
 }
