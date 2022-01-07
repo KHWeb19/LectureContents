@@ -15,5 +15,10 @@ public class Bank3Ans3ClassTest {
         //myLotto.printPeopleArr();
 
         myLotto.raffle();
+        System.out.println("=================== 경계선 ===================");
+
+        MyLottoRefactor mlr = new MyLottoRefactor(100, 5);
+
+        mlr.raffle2();
     }
 }
