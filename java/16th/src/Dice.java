@@ -10,6 +10,10 @@ public class Dice {
         range = MAX - MIN + 1;
     }
 
+    public void setDiceNum (int num) {
+        diceNum = num;
+    }
+
     public void rollDice () {
         diceNum = (int) (Math.random() * range + MIN);
     }
