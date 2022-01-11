@@ -9,8 +9,6 @@ public class GameManager extends Player implements Comparable {
         this.playerId = playerId;
     }
 
-
-
     @Override
     public int compareTo(Object otherObject) {
         GameManager other = (GameManager) otherObject;

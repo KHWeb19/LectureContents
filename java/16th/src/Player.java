@@ -33,7 +33,10 @@ public class Player {
     }
 
     public void rollSpecialDice () {
-        special.rollDice();
+        if (getSpecial) {
+            special.rollDice();
+            //special.setDiceNum(4);  // 다 같이 죽는 경우 테스트를 위해서
+        }
     }
 
     // 기능 두 가지가 결합되면
