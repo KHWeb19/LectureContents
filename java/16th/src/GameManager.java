@@ -14,6 +14,9 @@ public class GameManager extends Player implements Comparable {
         GameManager other = (GameManager) otherObject;
 
         if (this.getSum() < other.getSum()) {
+            // getPlayerId() 같은것을 만들면
+            // 사용자가 여러명이여도 아래의 루틴을 처리할 수 있게 된다.
+            // playerId <<<--- 이 사용자가 누구인지 판별할 수 있도록 id값 부여함
             System.out.println("id(0) 보다 id(1)이 크다.");
             return -1;
         } else if (this.getSum() > other.getSum()) {
