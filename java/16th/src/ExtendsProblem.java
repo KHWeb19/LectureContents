@@ -63,5 +63,11 @@ public class ExtendsProblem {
         // 더 좋은 방법은 없을까 ???
         // 여기에 오늘 학습한 compareTo를 활용해보는 방식은 어떨까 ?
         System.out.println(dg);
+
+        // 실제로 게임의 승패 판정을 어떻게 할 것인가 ?
+        // dg.getResult() 형식으로 처리하면 좋을 것이다.
+        // 여기서 주의해야할 사항은 dg 객체 내에는 GameManager 배열이 들어 있다는 것이다.
+        // 그러므로 여기서 즉각적인 비교가 가능하다!
+        dg.printResult();
     }
 }
