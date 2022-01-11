@@ -4,6 +4,10 @@ public class DiceGame {
     final int PLAYER_NUM = 2;
     final int DICE_NUM = 2;
 
+    final int DEATH_FLAG = 4000;
+
+    boolean[] deathId;
+
     private GameManager[] gmArr;
 
     public DiceGame () {
@@ -11,6 +15,7 @@ public class DiceGame {
         // 그렇기 때문에 생성자 호출이 끝난 시점에서 변수가 증발함
         // GameManager[] gmArr = new GameManager[PLAYER_NUM]; <<<--- 잘못된 코드
         gmArr = new GameManager[PLAYER_NUM];
+        deathId = new boolean[PLAYER_NUM];
 
         for (int id = 0; id < PLAYER_NUM; id++) {
             gmArr[id] = new GameManager(id, DICE_NUM);
@@ -31,6 +36,46 @@ public class DiceGame {
         // 여러가지 기능들이 결합되어 있어 아래와 같이 밑으로 빼야하는 상황이다.
         // 이 구조를 조금 더 분리하여 만들었으면 좀 더 예쁜 코드를 만들 수 있었을 것이다.
         applySkillEffect();
+    }
+
+    public void checkDeath () {
+        for (int id = 0; id < PLAYER_NUM; id++) {
+            if (gmArr[id].getSum() > DEATH_FLAG) {
+                deathId[id] = true;
+            }
+        }
+    }
+
+    public void settleResult () {
+        boolean death = false;
+
+        for (int id = 0; id < PLAYER_NUM; id++) {
+            if (deathId[id] == true) {
+                System.out.printf("플레이어 %d가 패배하였습니다!\n", id);
+                death = true;
+            }
+        }
+
+        if (!death) {
+            int res = gmArr[0].compareTo(gmArr[1]);
+
+            if (res > 0) {
+                System.out.println("플레이어 0 승리!");
+            } else if (res < 0) {
+                System.out.println("플레이어 1 승리");
+            } else {
+                System.out.println("무승부");
+            }
+        }
+    }
+
+    // 숫자(sum)값이 4000 보다 크다면 무조건 패배이므로 상대편이 승리함
+    // 숫자값이 4000인 케이스가 없다면 정상적인 처리가 진행되어야함
+    public void printResult() {
+        // deathId 부분에서 누가 죽었는지를 알고 있으므로
+        // 이를 기반으로 검사를 진행하면 된다.
+        checkDeath();
+        settleResult();
     }
 
     // 이 녀석이 왜 지저분한 코드냐 ?
