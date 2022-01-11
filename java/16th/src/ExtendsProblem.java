@@ -59,6 +59,9 @@ public class ExtendsProblem {
         DiceGame dg = new DiceGame();
 
         dg.startGame();
+        // 현재 모든 내용물을 toString()을 통해 간헐적으로 살펴보고 있음
+        // 더 좋은 방법은 없을까 ???
+        // 여기에 오늘 학습한 compareTo를 활용해보는 방식은 어떨까 ?
         System.out.println(dg);
     }
 }
