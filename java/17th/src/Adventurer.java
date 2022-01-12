@@ -30,6 +30,8 @@ public class Adventurer implements Skill {
     final int MAJOR = 1000;
     final int MINOR = 500;
 
+    final int WIZARD = 3;
+
     public Adventurer () {
         pAtk = PATK;
         mAtk = MATK;
@@ -54,7 +56,7 @@ public class Adventurer implements Skill {
 
     @Override
     public void attack() {
-        System.out.printf("평타:\t%10d\n", calcAttackDamage());
+        System.out.printf("%10d - 평타\n", calcAttackDamage());
     }
 
     public int calcQuackDamage () {
@@ -63,7 +65,7 @@ public class Adventurer implements Skill {
 
     @Override
     public void qSkill() {
-        System.out.printf("돌팔매:\t%10d\n", calcQuackDamage());
+        System.out.printf("%10d - 돌팔매(원거리)\n", calcQuackDamage());
     }
 
     public int calcEnergyStrikeDamage () {
@@ -72,7 +74,7 @@ public class Adventurer implements Skill {
 
     @Override
     public void wSkill() {
-        System.out.printf("에너지 스트라이크:\t%10d\n", calcEnergyStrikeDamage());
+        System.out.printf("%10d - 에너지 스트라이크(근거리)\n", calcEnergyStrikeDamage());
     }
 
     public void pAtkUpdate(float pAtkAdd) {
@@ -193,5 +195,49 @@ public class Adventurer implements Skill {
 
     public int getCurExp() {
         return curExp;
+    }
+
+    public void calcCharcterExp (int gettingExps, int charNum) {
+        // 1. 입력된 경험치를 현재 경험치에 적용한다.
+        // 2. 레벨업마다 요구 경험치를 증가시킨다.
+
+        // 경험치 계산 이후 다음 경험치는 ???
+        // curExp에 저장되는 부분을 고려하지 않았음
+        // * 입력된 경험치는 curExp로 들어가야함
+        // * curExp - reqExp를 빼면서 레벨업을 진행하면됨
+        // * curExp - reqExp가 양수가 나온다면 레벨업 하고 curExp -= reqExp를 수행
+        // * curExp - reqExp가 음수가 나온다면 레벨업 하지 않고 curExp에 현재 값을 유지시킴
+        // * 레벨업시 reqExp를 증가시키는 부분도 누락하면 안됨 (요구 경험치는 10%씩 증가시킴)
+        // * 스탯 증가
+        curExp += gettingExps;
+
+        while (curExp - reqExp > 0) {
+            level++;
+
+            incStat(charNum);
+
+            curExp -= reqExp;
+            reqExp *= 1.1;
+        }
+    }
+
+    public void incMagStat () {
+        hp += 100;
+        mp += 10;
+
+        str += 1;
+        con += 1;
+        dex += 1;
+        agi += 1;
+        iq += 5;
+        men += 4;
+    }
+
+    public void incStat (int charNum) {
+        switch (charNum) {
+            case WIZARD:
+                incMagStat();
+                break;
+        }
     }
 }

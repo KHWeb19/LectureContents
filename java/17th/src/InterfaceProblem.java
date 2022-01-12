@@ -1,5 +1,5 @@
 public class InterfaceProblem {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         // 앞서 이야기 했듯이 게임을 하나 만들어봅시다.
         // qSkill, wSkill 두 개 정도를 만들고
         // 캐릭터가 많으면 힘드니까 전사, 마법사 정도로 처리하면 되겠습니다.
@@ -30,6 +30,7 @@ public class InterfaceProblem {
         // 11. 몬스터 정보(이걸 또 다 만들려면 너무 많으니까 그냥 같은 몬스터만 오지게 쏟아지게)
 
         // 초기 캐릭터 생성이나 이런 부분까지는 생략하도록 한다.
+        /* 테스트 코드 동작 완료
         Adventurer adv = new Adventurer();
 
         // test code (모험가)
@@ -43,5 +44,30 @@ public class InterfaceProblem {
         war.attack();
         war.qSkill();
         war.wSkill();
+
+        // test code (법사)
+        Magician mag = new Magician();
+
+        mag.attack();
+        mag.qSkill();
+        mag.wSkill();
+
+        // test code (기사)
+        Knight kni = new Knight();
+
+        kni.attack();
+        kni.qSkill();
+        kni.wSkill();
+
+        // test code (위자드)
+        Wizard wiz = new Wizard();
+
+        wiz.attack();
+        wiz.qSkill();
+        wiz.wSkill(); */
+
+        RolePlayingGame rpg = new RolePlayingGame();
+
+        rpg.gameStart();
     }
 }
