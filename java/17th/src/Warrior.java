@@ -22,7 +22,7 @@ public class Warrior extends Adventurer {
         //        super를 통해 이전 클래스의 스킬을 계승할 수 있음
         //        super를 안쓰고 새로운 스킬로 덮어쓰는 것임
         // super.qSkill();
-        System.out.printf("7연참:\t%10d\n", calcSevenSlashDamage());
+        System.out.printf("%10d - 7연참(근거리)\n", calcSevenSlashDamage());
     }
 
     public int calcSwordSharpenDamage () {
@@ -31,6 +31,6 @@ public class Warrior extends Adventurer {
 
     @Override
     public void wSkill() {
-        System.out.printf("칼등치기:\t%10d - 스턴 2초\n", calcSwordSharpenDamage());
+        System.out.printf("%10d - 칼등치기(근거리): 스턴 2초\n", calcSwordSharpenDamage());
     }
 }
