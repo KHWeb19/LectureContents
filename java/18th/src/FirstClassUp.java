@@ -1,4 +1,4 @@
-public class FirstClassUp extends Adventurer {
+public class FirstClassUp extends OtherAdventurer {
     public FirstClassUp () {
         super();
     }
