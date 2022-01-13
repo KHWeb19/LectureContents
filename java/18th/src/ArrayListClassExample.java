@@ -4,13 +4,13 @@ public class ArrayListClassExample {
     public static void main(String[] args) {
         final int ACCOUNT_NUM = 3;
 
-        // Adventurer 객체를 저장할 수 있는 ArrayList를 생성
-        ArrayList<Adventurer> advList = new ArrayList<>();
+        // OtherAdventurer 객체를 저장할 수 있는 ArrayList를 생성
+        ArrayList<OtherAdventurer> advList = new ArrayList<>();
 
-        Adventurer[] advArr = new Adventurer[ACCOUNT_NUM];
+        OtherAdventurer[] advArr = new OtherAdventurer[ACCOUNT_NUM];
 
         for (int i = 0; i < ACCOUNT_NUM; i++) {
-            advArr[i] = new Adventurer();
+            advArr[i] = new OtherAdventurer();
             // 실제 ArrayList에 생성한 객체를 저장함
             advList.add(advArr[i]);
         }
