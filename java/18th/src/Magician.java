@@ -1,5 +1,5 @@
 public class Magician extends Adventurer {
-    final int MAGICIAN_BONUS = 80;
+    final float MAGICIAN_BONUS = 80;
 
     public Magician () {
         super();
@@ -18,6 +18,7 @@ public class Magician extends Adventurer {
         men += MAJOR;
     }
 
+    /*
     public int calcChainLightningDamage () {
         return (int) (mAtk * iq * 2.5);
     }
@@ -37,4 +38,5 @@ public class Magician extends Adventurer {
         System.out.printf("%10d - 프로스트 노바(광범위): 범위 슬로우\n",
                 calcFrostNovaDamage());
     }
+     */
 }

@@ -1,5 +1,5 @@
 public interface Skill {
-    public void attack ();
-    public void qSkill ();
-    public void wSkill ();
+    public int attack (Object obj);
+    public int qSkill (Object obj);
+    public int wSkill (Object obj);
 }

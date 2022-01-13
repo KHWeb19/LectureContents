@@ -50,34 +50,40 @@ public class Adventurer implements Skill {
         curExp = CUREXP;
     }
 
-    public int calcAttackDamage () {
+    public int calcAttackDamage (Fenryl target) {
         return (int) (pAtk * (str + 0.3 * dex));
     }
 
     @Override
-    public void attack() {
+    public int attack(Object obj) {
         System.out.printf("%10d - 평타\n",
-                calcAttackDamage());
+                calcAttackDamage((Fenryl) obj));
+
+        return 0;
     }
 
-    public int calcQuackDamage () {
+    public int calcQuackDamage (Fenryl target) {
         return (int) (pAtk * (0.6 * str + 0.3 * dex));
     }
 
     @Override
-    public void qSkill() {
+    public int qSkill(Object obj) {
         System.out.printf("%10d - 돌팔매(원거리)\n",
-                calcQuackDamage());
+                calcQuackDamage((Fenryl) obj));
+
+        return 0;
     }
 
-    public int calcEnergyStrikeDamage () {
+    public int calcEnergyStrikeDamage (Fenryl target) {
         return (int) (mAtk * (1.2 * iq) + pAtk * (0.5 * str));
     }
 
     @Override
-    public void wSkill() {
+    public int wSkill(Object obj) {
         System.out.printf("%10d - 에너지 스트라이크(근거리)\n",
-                calcEnergyStrikeDamage());
+                calcEnergyStrikeDamage((Fenryl) obj));
+
+        return 0;
     }
 
     public void calcCharcterExp (int gettingExps, int charNum) {
@@ -125,10 +131,10 @@ public class Adventurer implements Skill {
     }
 
     public void printInfo () {
-        System.out.printf("hp: %d, mp: %d, " + "\n" +
+        System.out.printf("pAtk: %d, mAtk: %d, hp: %d, mp: %d, " + "\n" +
                         "str: %d, con: %d, dex: %d, agi: %d, iq: %d, men: %d, " + "\n" +
                         "level: %d, exp: %d / %d\n",
-                (int)hp, (int)mp,
+                (int)pAtk, (int)mAtk, (int)hp, (int)mp,
                 (int)str, (int)con, (int)dex,
                 (int)agi, (int)iq, (int)men,
                 level, curExp, reqExp);

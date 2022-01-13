@@ -29,18 +29,22 @@ public class Knight extends Warrior {
     }
 
     @Override
-    public void qSkill() {
+    public int qSkill(Object obj) {
         System.out.printf("절대자의 가호(버프)\n");
         absoluteBlessing();
+
+        return 0;
     }
 
-    public int calcCutOffSlashDamage () {
+    /*
+    public int calcCutOffSlashDamage (Fenryl target) {
         return (int) (20 * mAtk * (str * 0.6 + dex * 0.2));
     }
 
     @Override
-    public void wSkill() {
+    public void wSkill(Object obj) {
         System.out.printf("%10d - 일도양단(범위기 - 분노 게이지 20 사용)\n",
-                calcCutOffSlashDamage());
+                calcCutOffSlashDamage((Fenryl) obj));
     }
+     */
 }
