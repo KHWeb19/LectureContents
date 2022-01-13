@@ -8,6 +8,7 @@ public class MacroSet {
         System.out.println("매크로 구동 준비 완료!");
     }
 
+    /*
     public void doMacroSet (final int num, Object obj) throws InterruptedException {
         // Object는 모든 데이터 타입을 받을 수 있는 가장 큰 집합임
         // 1. Object를 넘겨 받았으므로 전사 루틴을 처리할지 법사 루틴을 처리할지 결정하도록 만듬
@@ -34,4 +35,5 @@ public class MacroSet {
                 break;
         }
     }
+     */
 }
