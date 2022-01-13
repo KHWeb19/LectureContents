@@ -11,4 +11,12 @@ public class Adventurer {
         str = START_VALUE;
         con = START_VALUE;
     }
+
+    @Override
+    public String toString() {
+        return "Adventurer{" +
+                "str=" + str +
+                ", con=" + con +
+                '}';
+    }
 }
