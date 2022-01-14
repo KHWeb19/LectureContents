@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class RolePlayingGame extends MacroSet {
 
     CharacterManager cm;
-    BossManager bm;
+    MonsterManager bm;
 
     final int MAX = 10000;
     final int MIN = 100;
@@ -11,7 +11,9 @@ public class RolePlayingGame extends MacroSet {
     int range;
 
     public RolePlayingGame () {
-        bm = new BossManager();
+        // 몬스터 관리 객체
+        bm = new MonsterManager();
+        // 캐릭터 관리 객체
         cm = new CharacterManager();
 
         range = MAX - MIN + 1;

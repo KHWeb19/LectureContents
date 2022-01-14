@@ -30,7 +30,7 @@ public class Adventurer implements Skill {
     final int MAJOR = 1000;
     final int MINOR = 500;
 
-    final int WIZARD = 3;
+    protected DamageCalcRequestObject dcro;
 
     public Adventurer () {
         pAtk = PATK;
@@ -48,40 +48,47 @@ public class Adventurer implements Skill {
         level = LEVEL;
         reqExp = REQEXP;
         curExp = CUREXP;
+
+        dcro = new DamageCalcRequestObject();
     }
 
-    public int calcAttackDamage (Fenryl target) {
+    public int calcAttackDamage (DamageCalcRequestObject dcro) {
         return (int) (pAtk * (str + 0.3 * dex));
     }
 
     @Override
-    public int attack(Object obj) {
+    public int attack(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+
         System.out.printf("%10d - 평타\n",
-                calcAttackDamage((Fenryl) obj));
+                calcAttackDamage(dcro));
 
         return 0;
     }
 
-    public int calcQuackDamage (Fenryl target) {
+    public int calcQuackDamage (DamageCalcRequestObject dcro) {
         return (int) (pAtk * (0.6 * str + 0.3 * dex));
     }
 
-    @Override
-    public int qSkill(Object obj) {
+    public int qSkill(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+
         System.out.printf("%10d - 돌팔매(원거리)\n",
-                calcQuackDamage((Fenryl) obj));
+                calcQuackDamage(dcro));
 
         return 0;
     }
 
-    public int calcEnergyStrikeDamage (Fenryl target) {
+    public int calcEnergyStrikeDamage (DamageCalcRequestObject dcro) {
         return (int) (mAtk * (1.2 * iq) + pAtk * (0.5 * str));
     }
 
     @Override
-    public int wSkill(Object obj) {
+    public int wSkill(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+
         System.out.printf("%10d - 에너지 스트라이크(근거리)\n",
-                calcEnergyStrikeDamage((Fenryl) obj));
+                calcEnergyStrikeDamage(dcro));
 
         return 0;
     }

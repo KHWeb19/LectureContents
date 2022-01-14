@@ -1,4 +1,5 @@
-public class Fenryl {
+public class Fenryl extends Adventurer {
+    /*
     protected float pAtk, mAtk;
     protected float hp, mp;
     protected float pDef, mDef;
@@ -6,6 +7,7 @@ public class Fenryl {
     protected int level;
     protected int reqExp;
     protected int curExp;
+     */
 
     final float PATK = 50;
     final float MATK = 50;
@@ -50,25 +52,26 @@ public class Fenryl {
         // 앞으로 새로운 기능들을 추가할 때
         // 보다 편리하게 유지보수가 가능해질 것이다.
         SelectedCharacter sc;
+        SelectedCharacter monsterSc = new SelectedCharacter(MonsterNumber.FENRYL, this);
 
         for (int i = 0; i < cm.memberSize(); i++) {
             sc = cm.getMemberArrayList().get(i);
 
             switch (sc.getSelectedNum()) {
                 case CharacterNumber.KNIGHT:
-                    hp -= ((Knight) sc.getCharacter()).qSkill(this);
+                    hp -= ((Knight) sc.getCharacter()).qSkill(monsterSc);
                     break;
                 case CharacterNumber.WIZARD:
-                    hp -= ((Wizard) sc.getCharacter()).qSkill(this);
+                    hp -= ((Wizard) sc.getCharacter()).qSkill(monsterSc);
                     break;
                 case CharacterNumber.SNIPER:
-                    hp -= ((Sniper) sc.getCharacter()).qSkill(this);
+                    hp -= ((Sniper) sc.getCharacter()).qSkill(monsterSc);
                     break;
                 case CharacterNumber.HOLYKING:
-                    hp -= ((HolyKing) sc.getCharacter()).qSkill(this);
+                    hp -= ((HolyKing) sc.getCharacter()).qSkill(monsterSc);
                     break;
                 case CharacterNumber.ASSASSIN:
-                    hp -= ((Assassin) sc.getCharacter()).qSkill(this);
+                    hp -= ((Assassin) sc.getCharacter()).qSkill(monsterSc);
                     break;
             }
         }

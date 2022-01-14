@@ -25,7 +25,7 @@ public class Assassin extends Adventurer {
 
     // 향후 리팩토링이 필요하겠지만 우선 Object는 무조건 Fenryl로 취급하도록 하자!
     //public int calcBurstShotDamage (Object target) {
-    public int calcDisasterStepDamage (Fenryl target) {
+    public int calcDisasterStepDamage (DamageCalcRequestObject dcro) {
         float sum = 0;
 
         final int MAX = 1;
@@ -43,16 +43,18 @@ public class Assassin extends Adventurer {
                 criticalCoef = 1.0f;
             }
 
-            sum += ( criticalCoef * (12 * (pAtk - target.pDef) *
-                    ( (dex - target.con) * 2.3 + (agi - target.con) * 1.5) ) );
+            sum += ( criticalCoef * (12 * (pAtk - dcro.getpDef()) *
+                    ( (dex - dcro.getCon()) * 2.3 + (agi - dcro.getCon()) * 1.5) ) );
         }
 
         return (int) sum;
     }
 
     @Override
-    public int qSkill(Object obj) {
-        int damage = calcDisasterStepDamage((Fenryl) obj);
+    public int qSkill(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+        int damage = calcDisasterStepDamage(dcro);
+
         System.out.printf("%10d - 디제스터 스텝(10연격)\n",
                 damage);
 

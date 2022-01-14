@@ -25,14 +25,16 @@ public class Sniper extends Adventurer {
 
     // 향후 리팩토링이 필요하겠지만 우선 Object는 무조건 Fenryl로 취급하도록 하자!
     //public int calcBurstShotDamage (Object target) {
-    public int calcBurstShotDamage (Fenryl target) {
-        return (int) (5 * (pAtk - target.pDef) *
-                ( (dex - target.con) * 1.5 + (agi - target.con) * 1.2) );
+    public int calcBurstShotDamage (DamageCalcRequestObject dcro) {
+        return (int) (5 * (pAtk - dcro.getpDef()) *
+                ( (dex - dcro.getCon()) * 1.5 + (agi - dcro.getCon()) * 1.2) );
     }
 
     @Override
-    public int qSkill(Object obj) {
-        int damage = calcBurstShotDamage((Fenryl) obj);
+    public int qSkill(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+        int damage = calcBurstShotDamage(dcro);
+
         System.out.printf("%10d - 버스트 샷(원거리)\n",
                 damage);
 

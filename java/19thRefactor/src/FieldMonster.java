@@ -1,4 +1,5 @@
-public class FieldMonster {
+public class FieldMonster extends Adventurer {
+    /*
     protected float pAtk, mAtk;
     protected float hp, mp;
     protected float pDef, mDef;
@@ -6,6 +7,7 @@ public class FieldMonster {
     protected int level;
     protected int reqExp;
     protected int curExp;
+     */
 
     final float PATK = 50;
     final float MATK = 50;
