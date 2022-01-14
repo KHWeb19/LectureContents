@@ -10,30 +10,31 @@ public class MacroSet {
         ArrayList<SelectedCharacter> member = cm.getMemberArrayList();
         FieldMonster fm = new FieldMonster();
 
-        SelectedCharacter sc;
+        SelectedCharacter userSc;
+        SelectedCharacter monsterSc = new SelectedCharacter(MonsterNumber.FIELD, fm);
 
         for (int i = 0; i < member.size(); i++) {
-            sc = member.get(i);
+            userSc = member.get(i);
 
-            switch (sc.getSelectedNum()) {
+            switch (userSc.getSelectedNum()) {
                 case CharacterNumber.KNIGHT:
-                    System.out.println(((Knight) sc.getCharacter()).qSkill(fm));
+                    System.out.println(((Knight) userSc.getCharacter()).qSkill(monsterSc));
                     break;
 
                 case CharacterNumber.WIZARD:
-                    System.out.println(((Wizard) sc.getCharacter()).qSkill(fm));
+                    System.out.println(((Wizard) userSc.getCharacter()).qSkill(monsterSc));
                     break;
 
                 case CharacterNumber.SNIPER:
-                    System.out.println(((Sniper) sc.getCharacter()).qSkill(fm));
+                    System.out.println(((Sniper) userSc.getCharacter()).qSkill(monsterSc));
                     break;
 
                 case CharacterNumber.HOLYKING:
-                    System.out.println(((Sniper) sc.getCharacter()).qSkill(fm));
+                    System.out.println(((HolyKing) userSc.getCharacter()).qSkill(monsterSc));
                     break;
 
                 case CharacterNumber.ASSASSIN:
-                    System.out.println(((Sniper) sc.getCharacter()).qSkill(fm));
+                    System.out.println(((Assassin) userSc.getCharacter()).qSkill(monsterSc));
                     break;
             }
         }

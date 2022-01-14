@@ -30,7 +30,9 @@ public class HolyKing extends Adventurer {
     }
 
     @Override
-    public int qSkill(Object obj) {
+    public int qSkill(SelectedCharacter monsterSc) {
+        dcro.procDamageCalcRequestObject(monsterSc);
+
         System.out.println("얼티메이트 레이즈");
         ultimateRaze();
 

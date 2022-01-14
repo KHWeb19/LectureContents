@@ -25,13 +25,23 @@ public class Wizard extends Magician {
 
     // 음수가 나오는건 보스몹 방어력과 스탯이 높아 딜이 안들어감
     // 이 경우는 -가 아닌 데미지 0으로 표기하도록 한다.
-    public int calcSuperGravityFieldDamage (Fenryl target) {
-        return (int) (100 * (5.5 * mAtk - target.mDef) * (iq - target.men) * 1.1);
+    public int calcSuperGravityFieldDamage (DamageCalcRequestObject dcro) {
+        return (int) (100 * (5.5 * mAtk - dcro.getmDef()) * (iq - dcro.getMen()) * 1.1);
     }
 
     @Override
-    public int qSkill(Object obj) {
-        int damage = calcSuperGravityFieldDamage((Fenryl) obj);
+    public int qSkill(SelectedCharacter monsterSc) {
+        // 몬스터의 숫자를 가지고 어떤 객체로 처리해야 하는지 판정한다.
+        // 판정한 몬스터의 객체값을 가지고 데미지 계산을 수행한다.
+        // * 여기서 가장 골치 아픈 부분은 판정한 몬스터의 수치값을
+        // 현재 이 위치의 calcSuperGravityFieldDamage() 등등과 같은
+        // 데미지 계산 공식에 적용해줘야 한다는 부분이다.
+        // 그러므로 Request용 객체를 만들도록 한다.
+        dcro.procDamageCalcRequestObject(monsterSc);
+
+        //int damage = calcSuperGravityFieldDamage((Fenryl) obj);
+        int damage = calcSuperGravityFieldDamage(dcro);
+
         System.out.printf("%10d - 초중력(단일기 - boost 게이지 50 사용)\n",
                 damage);
 

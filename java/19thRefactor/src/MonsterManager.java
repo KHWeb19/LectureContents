@@ -1,19 +1,20 @@
 import java.util.Scanner;
 
-public class BossManager {
+public class MonsterManager {
     // 이 클래스는 도대체 어떤 업무를 담당하는가 ?
     // 게임상 존재하는 모든 보스 레이드를 관리해주는 클래스다!
     // 1. 우선적으로 레이드를 치룰 보스몹 자체를 관리하도록 한다.
     private SelectedCharacter sc;
 
     private final Scanner scan = new Scanner(System.in);
+    final int BIAS = 9999;
 
     public void procUserInput (int num) {
-        switch (num) {
-            case BossNumber.FENRYL:
+        switch (num + BIAS) {
+            case MonsterNumber.FENRYL:
                 Fenryl fenryl = new Fenryl();
                 sc = new SelectedCharacter(
-                        BossNumber.FENRYL, fenryl);
+                        MonsterNumber.FENRYL, fenryl);
                 break;
 
             default:
@@ -44,7 +45,7 @@ public class BossManager {
         boolean deadFlag = false;
 
         switch (sc.getSelectedNum()) {
-            case BossNumber.FENRYL:
+            case MonsterNumber.FENRYL:
                 deadFlag = ((Fenryl) sc.getCharacter()).isDead();
                 break;
         }
@@ -54,7 +55,7 @@ public class BossManager {
 
     public void raidTurnStart (CharacterManager cm) {
         switch (sc.getSelectedNum()) {
-            case BossNumber.FENRYL:
+            case MonsterNumber.FENRYL:
                 ((Fenryl) sc.getCharacter()).raidTurnStart(cm);
                 break;
         }

@@ -29,7 +29,9 @@ public class Knight extends Warrior {
     }
 
     @Override
-    public int qSkill(Object obj) {
+    public int qSkill(SelectedCharacter monsterSc) {
+        // dcro.procDamageCalcRequestObject(monsterSc);
+
         System.out.printf("절대자의 가호(버프)\n");
         absoluteBlessing();
 
