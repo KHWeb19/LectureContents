@@ -86,6 +86,19 @@ public class Adventurer implements Skill {
         return 0;
     }
 
+    public void calcCharcterExp (int gettingExps, Integer charNum) {
+        curExp += gettingExps;
+
+        while (curExp - reqExp > 0) {
+            level++;
+
+            incStat(charNum);
+
+            curExp -= reqExp;
+            reqExp *= 1.1;
+        }
+    }
+    /* 어차피 자신이 누군지 아는데 charNum이 필요한가 ?
     public void calcCharcterExp (int gettingExps, int charNum) {
         // 1. 입력된 경험치를 현재 경험치에 적용한다.
         // 2. 레벨업마다 요구 경험치를 증가시킨다.
@@ -109,6 +122,7 @@ public class Adventurer implements Skill {
             reqExp *= 1.1;
         }
     }
+     */
 
     public void incMagStat () {
         hp += 100;
@@ -122,10 +136,77 @@ public class Adventurer implements Skill {
         men += 4;
     }
 
+    public void incKniStat () {
+        hp += 100;
+        mp += 10;
+
+        str += 5;
+        con += 4;
+        dex += 1;
+        agi += 1;
+        iq += 1;
+        men += 1;
+    }
+
+    // 병과류: 도적계열, 전사계열, 궁수계열
+    //        이게 존재하면 좋은점
+    //        계열에 따라 증가수치를 통일시킬 수 있음
+    public void incSniStat () {
+        hp += 100;
+        mp += 10;
+
+        str += 5;
+        con += 4;
+        dex += 1;
+        agi += 1;
+        iq += 1;
+        men += 1;
+    }
+
+    public void incHkStat () {
+        hp += 100;
+        mp += 10;
+
+        str += 1;
+        con += 3;
+        dex += 1;
+        agi += 1;
+        iq += 3;
+        men += 4;
+    }
+
+    public void incSinStat () {
+        hp += 100;
+        mp += 10;
+
+        str += 1;
+        con += 3;
+        dex += 3;
+        agi += 4;
+        iq += 1;
+        men += 1;
+    }
+
     public void incStat (int charNum) {
         switch (charNum) {
-            case WIZARD:
+            case CharacterNumber.KNIGHT:
+                incKniStat();
+                break;
+
+            case CharacterNumber.WIZARD:
                 incMagStat();
+                break;
+
+            case CharacterNumber.SNIPER:
+                incSniStat();
+                break;
+
+            case CharacterNumber.HOLYKING:
+                incHkStat();
+                break;
+
+            case CharacterNumber.ASSASSIN:
+                incSinStat();
                 break;
         }
     }
@@ -138,5 +219,26 @@ public class Adventurer implements Skill {
                 (int)str, (int)con, (int)dex,
                 (int)agi, (int)iq, (int)men,
                 level, curExp, reqExp);
+    }
+
+    @Override
+    public String toString() {
+        return "Character Stat{" + '\n' +
+                "pAtk=" + pAtk +
+                ", mAtk=" + mAtk + '\n' +
+                ", hp=" + hp +
+                ", mp=" + mp +
+                ", pDef=" + pDef +
+                ", mDef=" + mDef + '\n' +
+                ", str=" + str +
+                ", con=" + con +
+                ", dex=" + dex +
+                ", agi=" + agi +
+                ", iq=" + iq +
+                ", men=" + men + '\n' +
+                ", level=" + level +
+                ", Exp= " + reqExp +
+                "/" + curExp + '\n' +
+                '}';
     }
 }

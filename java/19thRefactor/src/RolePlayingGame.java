@@ -1,9 +1,8 @@
 import java.util.ArrayList;
-import java.util.Scanner;
 
 public class RolePlayingGame extends MacroSet {
 
-    ChracterManager cm;
+    CharacterManager cm;
     BossManager bm;
 
     final int MAX = 10000;
@@ -13,13 +12,13 @@ public class RolePlayingGame extends MacroSet {
 
     public RolePlayingGame () {
         bm = new BossManager();
-        cm = new ChracterManager();
+        cm = new CharacterManager();
 
         range = MAX - MIN + 1;
     }
 
     public void chooseMember () {
-        System.out.println("보스전 멤버를 선별하세요!");
+        System.out.println("파티 멤버를 선별하세요!");
         cm.chooseMember();
     }
 
@@ -47,17 +46,38 @@ public class RolePlayingGame extends MacroSet {
         System.out.println("승리!!!");
     }
 
-    /*
-    public void gameStart () throws InterruptedException {
-        // 와일 루프가 매턴으로 계산됨
-        // 매크로 돌린다 가정하고 특정 패턴을 반복한다 가정
-        while (true) {
-            wiz.printInfo();
-            doMacroSet(THIRD, wiz);
-            wiz.calcCharcterExp(calcExps(), THIRD);
+    public void printPartyInfo () {
+        cm.printPartyInfo();
+    }
+
+    public void calcCharacterExps(int exps, CharacterManager cm) {
+        ArrayList<SelectedCharacter> member = cm.getMemberArrayList();
+
+        SelectedCharacter sc;
+
+        for (int i = 0; i < member.size(); i++) {
+            sc = member.get(i);
+
+            ((Adventurer) sc.getCharacter()).calcCharcterExp(exps, sc.getSelectedNum());
         }
     }
-     */
+
+    public void huntStart () throws InterruptedException {
+        // 앞서 만든 CharacterManager를 기반으로
+        // 일반 사냥의 케이스도 관리하도록 만들어주면 된다.
+        // 사냥 팀을 선별합니다!
+        chooseMember();
+        
+        while (true) {
+            printPartyInfo();
+            // wiz.printInfo();
+            doMacroSet(cm);
+            //doMacroSet(THIRD, wiz);
+            calcCharacterExps(calcExps(), cm);
+            //wiz.calcCharcterExp(calcExps(), THIRD);
+            Thread.sleep(1500);
+        }
+    }
 
     public int calcExps () {
         return (int) (Math.random() * range + MIN);

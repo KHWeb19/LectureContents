@@ -16,7 +16,7 @@ public class FantasyCollectors {
         // 7. men + mDef 값에 따라 마뎀 감소
         // 8. con + pDef 값에 따라 물뎀 감소
         // 9. 레이드 보스 클리어 판정
-        //rpg.gameStart();
-        rpg.bossRaid();
+        rpg.huntStart();
+        //rpg.bossRaid();
     }
 }
