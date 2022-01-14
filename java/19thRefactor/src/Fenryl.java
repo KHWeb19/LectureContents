@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Fenryl {
     protected float pAtk, mAtk;
     protected float hp, mp;
@@ -21,15 +19,6 @@ public class Fenryl {
     final int AGI = 1000;
     final int IQ = 10;
     final int MEN = 900;
-
-    // RolePlayingGame과 Fenryl 모두 이게 들어가 있음
-    // 공통된 객체를 하나 만들어서 관리하거나 유틸리티가 있으면 좋을 것임
-    // 내일 리팩토링시 적용토록 함!
-    final int KNIGHT = 1;
-    final int WIZARD = 2;
-    final int SNIPER = 3;
-    final int HOLYKING = 4;
-    final int ASSASSIN = 5;
 
     public Fenryl () {
         pAtk = PATK;
@@ -55,7 +44,7 @@ public class Fenryl {
         }
     }
 
-    public void raidTurnStart (ChracterManager cm) {
+    public void raidTurnStart (CharacterManager cm) {
         // cm에 있는 member(ArrayList)를 활용해서
         // 아래 루틴을 돌 수 있게 하면
         // 앞으로 새로운 기능들을 추가할 때

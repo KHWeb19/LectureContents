@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class ChracterManager {
+public class CharacterManager {
     // 이 클래스는 도대체 어떤 업무를 담당하는가 ?
     // 전체 캐릭터를 관리해주는 클래스다!
     // 1. 우선적으로 레이드 멤버를 관리하도록 한다.
@@ -18,8 +18,38 @@ public class ChracterManager {
     // 이 작업 처리 자체를 SelectedCharacter로 위임하여 추상화를 하기 위함이다.
     private ArrayList<SelectedCharacter> member;
 
-    public ChracterManager () {
+    public CharacterManager() {
         member = new ArrayList<>();
+    }
+
+    public void printPartyInfo () {
+        SelectedCharacter sc;
+
+        for (int i = 0; i < member.size(); i++) {
+            sc = member.get(i);
+
+            switch (sc.getSelectedNum()) {
+                case CharacterNumber.KNIGHT:
+                    System.out.println(((Knight) sc.getCharacter()));
+                    break;
+
+                case CharacterNumber.WIZARD:
+                    System.out.println(((Wizard) sc.getCharacter()));
+                    break;
+
+                case CharacterNumber.SNIPER:
+                    System.out.println(((Sniper) sc.getCharacter()));
+                    break;
+
+                case CharacterNumber.HOLYKING:
+                    System.out.println(((HolyKing) sc.getCharacter()));
+                    break;
+
+                case CharacterNumber.ASSASSIN:
+                    System.out.println(((Assassin) sc.getCharacter()));
+                    break;
+            }
+        }
     }
 
     public void procUserInput (int num) {

@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class BossManager {
@@ -53,7 +52,7 @@ public class BossManager {
         return deadFlag;
     }
 
-    public void raidTurnStart (ChracterManager cm) {
+    public void raidTurnStart (CharacterManager cm) {
         switch (sc.getSelectedNum()) {
             case BossNumber.FENRYL:
                 ((Fenryl) sc.getCharacter()).raidTurnStart(cm);
