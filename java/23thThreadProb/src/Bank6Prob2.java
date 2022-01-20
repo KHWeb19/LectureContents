@@ -13,7 +13,13 @@ public class Bank6Prob2 {
         // 스레드 구동
         for (int i = 0; i < ThreadQuadraticEquation.THREAD_MAX; i++)
         {
-            rect[i].run();
+            rect[i].start();
+        }
+
+        // join()은 Thread가 끝날때까지 대기하는거라
+        // 루프 돌면서 start()와 join()이 묶여 있으면
+        // 사실상 순차 구동이라 봐도 무방함
+        for (int i = 0; i < ThreadQuadraticEquation.THREAD_MAX; i++) {
             rect[i].join();
         }
 

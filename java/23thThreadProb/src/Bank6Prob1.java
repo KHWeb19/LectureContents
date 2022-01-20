@@ -24,10 +24,22 @@ public class Bank6Prob1 {
         // 스레드 구동
         for (int i = 0; i < ThreadRectangle.THREAD_MAX; i++)
         {
-            rect[i].run();
-            rect[i].join();
+            // run()으로 구동되면 Thread가 관장하는 제어권에서 제어되지 않음
+            //rect[i].run();
+            // start()로 구동하면 Thread 상에서 Context Switching을 통한 경쟁이 활성화됨
+            rect[i].start();
         }
 
+        /*
+        rect[0].start();
+        rect[1].start();
+        rect[2].start();
+        rect[3].start();
+         */
+
+        for (int i = 0; i < ThreadRectangle.THREAD_MAX; i++) {
+            rect[i].join();
+        }
         // test 구동 (컴퓨터 세계의 오차의 모순을 확인)
         //rect[0].run();
         System.out.printf("%d개의 스레드가 모든 작업을 완료하였습니다.", ThreadRectangle.THREAD_MAX);
