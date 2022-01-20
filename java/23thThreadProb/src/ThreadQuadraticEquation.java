@@ -53,6 +53,8 @@ public class ThreadQuadraticEquation extends Thread {
             // 이러한 사항이 한도를 넘어가게 되면 dx = 0.000001f과 같이
             // 납득하기 어려운 오차를 유발할 수 있다.
             sum += dx * curX * curX;
+
+            System.out.printf("Thread ID = %d, sum = %.12f\n", localThreadId, sum);
         }
 
         System.out.printf("sum = %.12f\n", sum);

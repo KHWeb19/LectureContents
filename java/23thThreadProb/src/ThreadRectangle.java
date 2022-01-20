@@ -2,7 +2,7 @@ public class ThreadRectangle extends Thread {
     final int Y = 2;
     final static int X = 2;
     // 사각형은 덜 쪼갤수록 정밀도가 올라가는 현상이 발생함 (float이나 double의 오차 때문에 그럼)
-    final static float dx = 0.0001f;
+    final static float dx = 0.001f;
     private int xStart, xEnd;
     static int threadCnt = 0;
     private int localThreadId;
@@ -51,12 +51,21 @@ public class ThreadRectangle extends Thread {
          */
         float curX = xStart;
         float tmp = 0;
+        float cnt = 1;
 
         for (int i = xStart; i <= xEnd; i++) {
             tmp = dx * Y;
             //System.out.printf("tmp = %.12f\n", tmp);
             sum += tmp;
-            //System.out.printf("sum = %.12f\n", sum);
+            System.out.printf("Thread ID = %d, sum = %.12f\n", localThreadId, sum);
+
+            /*
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+             */
         }
 
         //System.out.printf("tmp * 500 = %.12f\n", tmp * 500);
