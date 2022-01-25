@@ -15,12 +15,13 @@ public class ThreadWorker extends Thread {
         lock = new ReentrantLock();
     }
 
+    // 값을 갱신(write)하는 구조가 아니므로 Lock이 필요 없음
     public static int getSyncLockTest () {
         int tmp;
 
-        lock.lock();
+        //lock.lock();
         tmp = ThreadWorker.test;
-        lock.unlock();
+        //lock.unlock();
 
         return tmp;
     }
