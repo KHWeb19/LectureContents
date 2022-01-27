@@ -1,6 +1,7 @@
 package com.example.demo.controller;
 
 import com.example.demo.utility.Dice;
+import com.example.demo.utility.school.SchoolClass;
 import com.example.demo.utility.series.KindsOfSequence;
 import com.example.demo.utility.series.MySequence;
 import com.example.demo.utility.thread.ThreadWorker;
@@ -40,7 +41,20 @@ public class Bank8Dash28thController {
     public String bank8Homework4 (Model model) {
         logger.info("homework4");
 
-        model.addAttribute("threadNum", ThreadWorker.getSyncLockTest());
+        /*
+        반 학생이 30명이 있다.
+        이들은 모두 시험을 치뤘고 모든 학생들은 60점 미만이 없다고 한다.
+        이 상태에서 학생들의 영어 점수를 임의로 배치하고
+        학급의 평균값을 구해보도록 한다.
+
+        학급 <-> 학생 <-> 영어 점수
+         */
+
+        SchoolClass sc = new SchoolClass(30, 60);
+        sc.doEnglishExam();
+        sc.calcClassMean();
+
+        model.addAttribute("classMean", sc.getClassMean());
 
         return "28th/homework4";
     }
