@@ -17,7 +17,11 @@
     <input type="submit" value="register(POST)">
   </form>
 
+  <!-- th:action은 Spring의 Controller URL과
+       input type="submit"에 대한 부분을 연결시킨다.
+       즉 버튼 누르면 해당 URL로 연결시킴을 의미한다. -->
   <form th:action="@{/29th/board/modifyGet}">
+    <!-- 버튼의 내용물은 value에 배치됨 -->
     <input type="submit" value="modify(GET)">
   </form>
 
