@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h3>Main</h3>
+
+  <!-- 기본적으로 form 이라는 녀석은 GET 요청을 함 -->
+  <form th:action="@{/29th/board/registerGet}">
+    <input type="submit" value="register(GET)">
+  </form>
+
+  <!-- 그러므로 아래와 같이 POST는 별도 요청을 해야 한다. -->
+  <form th:action="@{/29th/board/registerPost}" method="post">
+    <input type="submit" value="register(POST)">
+  </form>
+
+  <form th:action="@{/29th/board/modifyGet}">
+    <input type="submit" value="modify(GET)">
+  </form>
+
+  <form th:action="@{/29th/board/modifyPost}" method="post">
+    <input type="submit" value="modify(POST)">
+  </form>
+
+  <form th:action="@{/29th/board/removePost}" method="post">
+    <input type="submit" value="remove(POST)">
+  </form>
+</body>
+</html>

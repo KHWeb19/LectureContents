@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Slf4j
 @Controller
 @RequestMapping("/29th/board")
-public class Second29thBoardController {
+public class Second29thPathVariableBoardController {
 
     @RequestMapping("/register")
     public String register () {
