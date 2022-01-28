@@ -1,4 +1,4 @@
-package com.example.demo.controller;
+package com.example.demo.controller.order26;
 
 import com.example.demo.utility.Dice;
 import com.example.demo.utility.thread.ThreadWorker;
