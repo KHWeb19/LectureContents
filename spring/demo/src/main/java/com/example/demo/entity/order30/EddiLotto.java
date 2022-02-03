@@ -71,7 +71,7 @@ public class EddiLotto {
 
     public void printPeopleArr () {
         for (int i = 1; i <= totalNum; i++) {
-            System.out.printf("%4d", peopleArr[i - 1]);
+            //System.out.printf("%4d", peopleArr[i - 1]);
 
             if (i % 10 == 0) {
                 System.out.println();
@@ -83,7 +83,7 @@ public class EddiLotto {
         for (int i = 0; i < selectNum; i++) {
             for (int j = 0; j < totalNum; j++) {
                 if (selectArr[i] == peopleArr[j]) {
-                    System.out.printf("위치 %d 당첨!!!\n", j);
+                    //System.out.printf("위치 %d 당첨!!!\n", j);
                     break;
                 }
             }
