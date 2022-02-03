@@ -1,4 +1,4 @@
-package com.example.demo.entity.order30;
+package com.example.demo.entity.order30.probBank;
 
 import lombok.Getter;
 
