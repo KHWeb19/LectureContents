@@ -1,6 +1,6 @@
-package com.example.demo.entity.order30.response;
+package com.example.demo.entity.order30.probBank.response;
 
-import com.example.demo.entity.order30.EddiLotto;
+import com.example.demo.entity.order30.probBank.EddiLotto;
 import lombok.Data;
 
 import java.util.HashMap;
