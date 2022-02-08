@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>게시물 보기</h2>
+  <!-- 링크 걸기 a 태그 -> 대상: 32th/board/register -->
+  <a th:href="@{/32th/board/register}">글쓰기</a>
+  <!-- table은 표 만들기, border는 두께 -->
+  <table border="1">
+    <!-- tr -> row로 가로 -->
+    <tr>
+      <!-- th 혹은 td는 세로 형태라고 보면됨 -->
+      <th align="center" width="80">번호</th>
+      <th align="center" width="320">제목</th>
+      <th align="center" width="100">작성자</th>
+      <th align="center" width="100">등록일자</th>
+    </tr>
+    <!-- addAttribute에서 전달한 list가 비었는지 체크하는 부분임 -->
+    <tr th:if="${#lists.isEmpty(list)}">
+      <!-- colspan 은 위쪽의 세로 4개를 하나로 병합함 -->
+      <td colspan="4">
+        현재 게시물이 없습니다!
+      </td>
+    </tr>
+    <!-- list에 있는 여러 목록들을 한개씩 가져와서 board에 설정
+         HTML 상에서 활용할 수 있는 foreach 구문이라고 보면됨 -->
+    <tr th:each="board : ${list}">
+      <td align="center" th:text="${board.boardNo}">
+        ${board.boardNo}
+      </td>
+      <td align="left" th:text="${board.title}">
+        <!-- <a th:href="@{/32th/board/read}" th:text="${board.title}"> -->
+        ${board.boardNo}
+      </td>
+      <td align="right" th:text="${board.writer}">
+        ${board.writer}
+      </td>
+      <!-- dates.format(A, B)는 A를 B형식에 맞춰 날자 표기함 -->
+      <td align="center"
+          th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}">
+        ${board.regDate}
+      </td>
+    </tr>
+  </table>
+</body>
+</html>
