@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.order32;
 
 import com.example.demo.entity.order32.Board;
 
