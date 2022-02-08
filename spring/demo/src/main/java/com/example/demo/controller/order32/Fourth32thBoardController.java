@@ -1,10 +1,9 @@
 package com.example.demo.controller.order32;
 
 import com.example.demo.entity.order32.Board;
-import com.example.demo.service.BoardService;
+import com.example.demo.service.order32.BoardService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.Banner;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/32th/board")
 public class Fourth32thBoardController {
 
-    //@Autowired
-    //private BoardService boardService;
+    @Autowired
+    private BoardService boardService;
 
     @GetMapping("/register")
     public String registerForm (Board board, Model model) {
@@ -29,7 +28,7 @@ public class Fourth32thBoardController {
     public String list (Model model) {
         log.info("list");
 
-        //model.addAttribute("list", boardService.list());
+        model.addAttribute("list", boardService.list());
 
         return "/32th/board/list";
     }
