@@ -23,6 +23,8 @@ public class BoardRepository {
     public void create (Board board) {
         String query = "insert into board (title, content, writer) values (?, ?, ?)";
 
+        // 위의 DB 쿼리에 대응하는 녀석들이
+        // 각각 board.getTitle(), board.getContent(), board.getWriter()에 해당함
         jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
     }
 
@@ -63,5 +65,37 @@ public class BoardRepository {
         );
 
         return results;
+    }
+
+    public Board read(Integer boardNo) {
+        List<Board> results = jdbcTemplate.query(
+                "select * from board " +
+                        "where board_no = ?",
+
+                new RowMapper<Board>() {
+                    @SneakyThrows
+                    @Override
+                    public Board mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Board board = new Board();
+
+                        board.setBoardNo(rs.getInt("board_no"));
+                        board.setTitle(rs.getString("title"));
+                        board.setContent(rs.getString("content"));
+                        board.setWriter(rs.getString("writer"));
+
+                        SimpleDateFormat printDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        // getDate()를 통해 DB상의 날자
+                        // getTime()을 통해 DB상의 시간
+                        String dbDate = rs.getDate("reg_date") + " " + rs.getTime("reg_date");
+                        // 이 문자열 형식을 위의 패턴 형태로 만들어서 객체에 저장
+                        board.setRegDate(printDate.parse(dbDate));
+
+                        return board;
+                    }
+                }, boardNo
+        );
+
+        // 정보를 찾지 못했다면 null 있다면 해당 내용 리턴 (0번 인덱스 - 결국 한개)
+        return results.isEmpty() ? null : results.get(0);
     }
 }

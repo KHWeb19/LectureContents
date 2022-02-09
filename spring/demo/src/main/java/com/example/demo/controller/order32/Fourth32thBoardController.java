@@ -52,7 +52,11 @@ public class Fourth32thBoardController {
     public String read (int boardNo, Model model) {
         log.info("read");
 
-        //model.addAttribute(boardService.read(boardNo));
+        // 이렇게 적어놓지 않았을 경우엔
+        // 리턴타입의 헝가리안 표기법으로 들어간다.
+        // 즉 Board -> board
+        // MemberAuth 라면 -> memberAuth 형태가되니 매우 주의해야함
+        model.addAttribute(boardService.read(boardNo));
 
         return "/32th/board/read";
     }
