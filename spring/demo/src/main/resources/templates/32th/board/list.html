@@ -31,17 +31,16 @@
       <td align="center" th:text="${board.boardNo}">
         ${board.boardNo}
       </td>
-      <td align="left" th:text="${board.title}">
-        <!-- <a th:href="@{/32th/board/read}" th:text="${board.title}"> -->
-        ${board.boardNo}
+      <td align="left">
+        <!-- Spring 에서 PathVariable의 역할을 수행함 boardNo는 가변적이니까 -->
+        <a th:href="@{|/32th/board/read?boardNo=${board.boardNo}|}" th:text="${board.title}">
+        </a>
       </td>
       <td align="right" th:text="${board.writer}">
-        ${board.writer}
       </td>
       <!-- dates.format(A, B)는 A를 B형식에 맞춰 날자 표기함 -->
       <td align="center"
           th:text="${#dates.format(board.regDate, 'yyyy-MM-dd HH:mm:ss')}">
-        ${board.regDate}
       </td>
     </tr>
   </table>

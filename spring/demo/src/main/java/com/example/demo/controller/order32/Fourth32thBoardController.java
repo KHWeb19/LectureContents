@@ -18,6 +18,7 @@ public class Fourth32thBoardController {
     @Autowired
     private BoardService boardService;
 
+    // 33th
     @GetMapping("/register")
     //public String registerForm (Board board, Model model) {
     public String registerForm (Board board) {
@@ -27,6 +28,7 @@ public class Fourth32thBoardController {
         return "/32th/board/register";
     }
 
+    // 33th
     @PostMapping("/register")
     public String register (Board board, Model model) {
         log.info("DB register");
@@ -43,5 +45,15 @@ public class Fourth32thBoardController {
         model.addAttribute("list", boardService.list());
 
         return "/32th/board/list";
+    }
+
+    // 33th
+    @GetMapping("/read")
+    public String read (int boardNo, Model model) {
+        log.info("read");
+
+        //model.addAttribute(boardService.read(boardNo));
+
+        return "/32th/board/read";
     }
 }
