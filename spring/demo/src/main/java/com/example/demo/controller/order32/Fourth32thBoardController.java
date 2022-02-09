@@ -60,4 +60,31 @@ public class Fourth32thBoardController {
 
         return "/32th/board/read";
     }
+
+    @GetMapping("/modify")
+    public String modifyForm (int boardNo, Model model) {
+        log.info("modifyForm");
+
+        model.addAttribute(boardService.read(boardNo));
+
+        return "/32th/board/modify";
+    }
+
+    @PostMapping("/modify")
+    public String modify (Board board, Model model) {
+        log.info("modify");
+
+        boardService.modify(board);
+
+        return "/32th/board/success";
+    }
+
+    @PostMapping("/remove")
+    public String remove (int boardNo, Model model) {
+        log.info("remove");
+
+        boardService.remove(boardNo);
+
+        return "/32th/board/success";
+    }
 }

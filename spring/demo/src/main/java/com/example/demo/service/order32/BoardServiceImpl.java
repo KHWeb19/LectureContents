@@ -27,4 +27,14 @@ public class BoardServiceImpl implements BoardService {
     public Board read(Integer boardNo) {
         return repository.read(boardNo);
     }
+
+    @Override
+    public void modify(Board board) {
+        repository.update(board);
+    }
+
+    @Override
+    public void remove(Integer boardNo) {
+        repository.delete(boardNo);
+    }
 }
