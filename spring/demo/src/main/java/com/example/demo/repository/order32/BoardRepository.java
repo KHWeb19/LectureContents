@@ -98,4 +98,16 @@ public class BoardRepository {
         // 정보를 찾지 못했다면 null 있다면 해당 내용 리턴 (0번 인덱스 - 결국 한개)
         return results.isEmpty() ? null : results.get(0);
     }
+
+    public void delete(Integer boardNo) {
+        String query = "delete from board where board_no = ?";
+
+        jdbcTemplate.update(query, boardNo);
+    }
+
+    public void update(Board board) {
+        String query = "update board set title = ?, content = ? where board_no = ?";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getBoardNo());
+    }
 }
