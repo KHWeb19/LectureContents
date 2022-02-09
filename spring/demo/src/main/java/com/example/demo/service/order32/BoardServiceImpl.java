@@ -15,7 +15,7 @@ public class BoardServiceImpl implements BoardService {
 
     @Override
     public void register(Board board) {
-
+        repository.create(board);
     }
 
     @Override

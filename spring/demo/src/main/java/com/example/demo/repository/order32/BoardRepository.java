@@ -16,6 +16,12 @@ public class BoardRepository {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public void create (Board board) {
+        String query = "insert into board (title, content, writer) values (?, ?, ?)";
+
+        jdbcTemplate.update(query, board.getTitle(), board.getContent(), board.getWriter());
+    }
+
     public List<Board> list() {
         // jdbcTemplate.query(A, B)
         // A에 해당하는 DB Query를 실행함
