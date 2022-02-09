@@ -4,7 +4,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:mysql://localhost:3306/non_jpa_db?serverTimezone=UTC&useSSL=false
+    url: jdbc:mysql://localhost:3306/non_jpa_db?allowpublickeyretrieval=true&usessl=false&serverTimezone=UTC
     username: eddi
     password: eddi@123
     driver-class-name: com.mysql.cj.jdbc.Driver
