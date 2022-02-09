@@ -48,8 +48,13 @@ public class BoardRepository {
                         board.setContent(rs.getString("content"));
                         board.setWriter(rs.getString("writer"));
 
+                        // pattern 형태의 시간 포맷을 가지게 만듬
+                        // 연도-월-일 시:분:초
                         SimpleDateFormat printDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        // getDate()를 통해 DB상의 날자
+                        // getTime()을 통해 DB상의 시간
                         String dbDate = rs.getDate("reg_date") + " " + rs.getTime("reg_date");
+                        // 이 문자열 형식을 위의 패턴 형태로 만들어서 객체에 저장
                         board.setRegDate(printDate.parse(dbDate));
 
                         return board;
