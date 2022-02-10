@@ -43,7 +43,12 @@
     <!-- th:action="@{/32th/board/register}" -->
     <!-- 낱개로 동작시킬 경우엔 별 상관이 없으나
          현재는 두 가지 동작이 함께 동작하므로 배제 -->
-    <form id="board" th:object="${board}" method="post">
+    <!-- 추가적으로 form은 th:object에 의해
+         실제 Board 객체에 우리가 기입한 내용들이 알아서 객체화되어 기록되고 있는중임
+         그래서 PostMapping에서 받을때 Board board가 있는 것임
+         거기에 여기에 적은 내용이 들어있음 -->
+    <!-- <form id="board" th:object="${board}" method="post"> -->
+    <form id="board" th:object="${board}">
         <table>
             <tr>
                 <td>제목</td>
