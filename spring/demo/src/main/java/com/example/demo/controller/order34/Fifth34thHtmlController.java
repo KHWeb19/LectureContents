@@ -51,4 +51,11 @@ public class Fifth34thHtmlController {
 
         return "/34th/html/tableExample";
     }
+
+    @GetMapping("/checkBoxExample")
+    public String checkBoxExample () {
+        log.info("checkBoxExample");
+
+        return "/34th/html/checkBoxExample";
+    }
 }
