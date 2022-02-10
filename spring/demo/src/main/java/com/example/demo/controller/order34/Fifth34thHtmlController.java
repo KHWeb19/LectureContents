@@ -16,4 +16,18 @@ public class Fifth34thHtmlController {
 
         return "/34th/html/liTag";
     }
+
+    @GetMapping("/imgTag")
+    public String imgTag () {
+        log.info("imgTag");
+
+        return "/34th/html/imgTag";
+    }
+
+    @GetMapping("/hpbrTag")
+    public String hTag () {
+        log.info("hTag");
+
+        return "/34th/html/h_p_br_Tag";
+    }
 }
