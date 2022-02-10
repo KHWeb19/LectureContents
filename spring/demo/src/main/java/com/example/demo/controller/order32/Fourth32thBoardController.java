@@ -19,35 +19,47 @@ public class Fourth32thBoardController {
     private BoardService boardService;
 
     // 33th
+    // 사용자 URL 요청을 받음
+    // list 페이지에서 글쓰기를 눌러도 연동됨
     @GetMapping("/register")
     //public String registerForm (Board board, Model model) {
     public String registerForm (Board board) {
     //public String registerForm () {
         log.info("registerForm");
 
+        // HTML 페이지 띄움
         return "/32th/board/register";
     }
 
     // 33th
+    // HTML 페이지에서 버튼 클릭에 의한 이벤트로 PostMapping 연동
     @PostMapping("/register")
     public String register (Board board, Model model) {
-        log.info("DB register");
+        log.info("DB register - board 정보: " + board);
 
+        // DB 처리
         boardService.register(board);
 
+        // 성공 메시지 보여줌
         return "/32th/board/success";
     }
 
+    // 32th
+    // URL 요청해서 들어가면 나오는 페이지
     @GetMapping("/list")
     public String list (Model model) {
         log.info("list");
 
+        // DB에 저장된 데이터를 읽어서 list 속성에 설정
         model.addAttribute("list", boardService.list());
 
+        // HTML에서 전달된 list 속성을 배치하여 화면상에 보여줌
+        // HTML 내부에는 글쓰기, 제목 눌렀을때 read 연동
         return "/32th/board/list";
     }
 
     // 33th
+    // list에서 제목을 눌렀을 경우 연동됨
     @GetMapping("/read")
     public String read (int boardNo, Model model) {
         log.info("read");
@@ -61,30 +73,42 @@ public class Fourth32thBoardController {
         return "/32th/board/read";
     }
 
+    // 33th
+    // read에서 수정하기 눌렀을 경우 연동
     @GetMapping("/modify")
     public String modifyForm (int boardNo, Model model) {
         log.info("modifyForm");
 
+        // 현재 작성된 내용 연동 (데이터)
         model.addAttribute(boardService.read(boardNo));
 
+        // 수정 페이지 HTML (화면)
         return "/32th/board/modify";
     }
 
+    // 33th
+    // modify HTML 페이지에서 수정하기 눌렀을 경우
     @PostMapping("/modify")
     public String modify (Board board, Model model) {
         log.info("modify");
 
+        // DB에 내용 갱신
         boardService.modify(board);
 
+        // 성공 메시지 출력
         return "/32th/board/success";
     }
 
+    // 33th
+    // 삭제 눌렀을 경우
     @PostMapping("/remove")
     public String remove (int boardNo, Model model) {
         log.info("remove");
 
+        // DB에서 내용 삭제
         boardService.remove(boardNo);
 
+        // 성공 메시지 출력
         return "/32th/board/success";
     }
 }
