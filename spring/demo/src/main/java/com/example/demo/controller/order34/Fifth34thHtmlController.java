@@ -58,4 +58,11 @@ public class Fifth34thHtmlController {
 
         return "/34th/html/checkBoxExample";
     }
+
+    @GetMapping("/radioBoxExample")
+    public String radioBoxExample () {
+        log.info("radioBoxExample");
+
+        return "/34th/html/radioBoxExample";
+    }
 }
