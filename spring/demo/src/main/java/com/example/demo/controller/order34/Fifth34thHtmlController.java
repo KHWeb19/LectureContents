@@ -30,4 +30,11 @@ public class Fifth34thHtmlController {
 
         return "/34th/html/h_p_br_Tag";
     }
+
+    @GetMapping("/fontExample")
+    public String fontExample () {
+        log.info("fontExample");
+
+        return "/34th/html/fontExample";
+    }
 }
