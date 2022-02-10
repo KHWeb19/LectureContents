@@ -44,4 +44,11 @@ public class Fifth34thHtmlController {
 
         return "/34th/html/markAndColorExample";
     }
+
+    @GetMapping("/tableExample")
+    public String tableExample () {
+        log.info("tableExample");
+
+        return "/34th/html/tableExample";
+    }
 }
