@@ -30,4 +30,11 @@ public class Sixth36thCss3Controller {
 
         return "/36th/css3/cssFileManageTest";
     }
+
+    @GetMapping("/cssFontTest")
+    public String cssFontTest () {
+        log.info("cssFontTest()");
+
+        return "/36th/css3/cssFontTest";
+    }
 }
