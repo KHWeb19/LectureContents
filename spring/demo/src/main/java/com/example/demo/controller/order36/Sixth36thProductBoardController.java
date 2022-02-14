@@ -1,7 +1,6 @@
 package com.example.demo.controller.order36;
 
-import com.example.demo.entity.order32.Board;
-import com.example.demo.service.order32.BoardService;
+import com.example.demo.entity.order36.ProductBoard;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
