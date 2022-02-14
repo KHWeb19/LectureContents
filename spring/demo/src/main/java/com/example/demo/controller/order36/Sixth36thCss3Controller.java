@@ -16,4 +16,11 @@ public class Sixth36thCss3Controller {
 
         return "/36th/css3/fontColorTest";
     }
+
+    @GetMapping("/sectionTagTest")
+    public String sectionTagTest () {
+        log.info("sectionTagTest()");
+
+        return "/36th/css3/sectionTagTest";
+    }
 }
