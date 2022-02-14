@@ -44,4 +44,11 @@ public class Sixth36thCss3Controller {
 
         return "/36th/css3/cssIdSelector";
     }
+
+    @GetMapping("/cssMouseHoverTest")
+    public String cssMouseHoverTest () {
+        log.info("cssMouseHoverTest()");
+
+        return "/36th/css3/cssMouseHoverTest";
+    }
 }

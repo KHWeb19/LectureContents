@@ -1,0 +1,21 @@
+/* #은 id, .은 class 처리를 함 */
+.box {
+    position: absolute;
+    left: 50px;
+    top: 70px;
+    width: 100px;
+    height: 60px;
+    background: #fff;
+    border: 2px solid cyan;
+    text-align: center;
+    line-height: 60px;
+}
+/* 띄어쓰기 조심합시다 */
+.box:hover {
+    /* 15deg 는 각도 15도를 의미함 */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
