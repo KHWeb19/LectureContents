@@ -18,7 +18,6 @@ public class Sixth36thProductBoardController {
     @Autowired
     private ProductBoardService productBoardService;
 
-    /*
     @GetMapping("/register")
     public String registerForm (ProductBoard productBoard) {
         log.info("registerForm");
@@ -35,8 +34,6 @@ public class Sixth36thProductBoardController {
         return "/36th/product/success";
     }
 
-     */
-
     @GetMapping("/list")
     public String list (Model model) {
         log.info("list");
@@ -46,7 +43,6 @@ public class Sixth36thProductBoardController {
         return "/36th/product/list";
     }
 
-    /*
     @GetMapping("/read")
     public String read (int productNo, Model model) {
         log.info("read");
@@ -82,6 +78,4 @@ public class Sixth36thProductBoardController {
 
         return "/36th/product/success";
     }
-
-     */
 }

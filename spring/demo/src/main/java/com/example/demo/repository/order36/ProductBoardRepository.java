@@ -68,7 +68,7 @@ public class ProductBoardRepository {
                     public ProductBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
                         ProductBoard productBoard = new ProductBoard();
 
-                        productBoard.setProductNo(rs.getInt("board_no"));
+                        productBoard.setProductNo(rs.getInt("product_no"));
                         productBoard.setTitle(rs.getString("title"));
                         productBoard.setDescription(rs.getString("description"));
                         productBoard.setPrice(rs.getInt("price"));
