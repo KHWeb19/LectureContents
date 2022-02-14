@@ -1,0 +1,5 @@
+section {
+    width: 500px;             /* 너비 값 */
+    padding: 15px;            /* 테두리와 내용물 사이의 여백 */
+    border: 5px solid gray;   /* 테두리 회색 실선 두께 - 5픽셀 */
+}

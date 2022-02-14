@@ -23,4 +23,11 @@ public class Sixth36thCss3Controller {
 
         return "/36th/css3/sectionTagTest";
     }
+
+    @GetMapping("/cssFileManageTest")
+    public String cssFileManageTest () {
+        log.info("cssFileManageTest()");
+
+        return "/36th/css3/cssFileManageTest";
+    }
 }
