@@ -37,4 +37,11 @@ public class Sixth36thCss3Controller {
 
         return "/36th/css3/cssFontTest";
     }
+
+    @GetMapping("/cssIdSelector")
+    public String cssIdSelector () {
+        log.info("cssIdSelector()");
+
+        return "/36th/css3/cssIdSelector";
+    }
 }

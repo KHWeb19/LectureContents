@@ -1,0 +1,15 @@
+* {
+    margin: 20px auto;      /* 내용을 화면 중앙에 배치 */
+}
+body {
+    color: blue;            /* 문서 전체의 글자 색상 */
+}
+#container {
+    /* id 값에 css 스타일 적용하기 */
+    width: 600px;
+    padding: 15px;      /* 테두리와 내용 사이의 여백 */
+    border: 1px dotted gray;
+}
+h2 {
+    color: brown !important;
+}
