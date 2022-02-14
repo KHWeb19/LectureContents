@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    // 실제로 우리는 프로젝트를 Vue를 이용해서 진행하므로 별로 중요하지 않은 사항임
+    // 그러나 이 코드의 동작을 파악하는데 있어서 알 필요가 있음
+    // $(document).ready는 현재 HTML 페이지에서 사용 정의들을 배치한다고 보면됨
+    // 아래쪽에 <button 태그를 통해 등록하기를 btnRegister 라는 id로 등록함
+    // 해당 id 값을 $("#btnRegister") 형식으로 가져왔음 (객체임 <<<--- 컴퓨터의 모든것은 메모리 상기)
+    // .on("click, function() ~~~ ) 형식은 클릭했을때 뭐 해라라는 의미
+    // formObj = $("#board") <<<--- HTML상 form id="board"에 해당하는 객체
+    // formObj.attr("action", URL)로 이동하라는 뜻
+    // "method", "post"는 POST 형식으로 보내라는 뜻
+    // submit()을 통해 실제 URL 요청이 날아감
+
+    // btnList는 btnRegister와 유사 형식이고
+    // self.location을 통해
+    // Controller 상 /32th/board/list 로 요청을 보내게 됨
+
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "/32th/board/register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "/32th/board/list";
+        });
+    });
+</script>
+
+<body>
+    <h2>글쓰기 페이지</h2>
+
+    <!-- th:action="@{/32th/board/register}" -->
+    <!-- 낱개로 동작시킬 경우엔 별 상관이 없으나
+         현재는 두 가지 동작이 함께 동작하므로 배제 -->
+    <!-- 추가적으로 form은 th:object에 의해
+         실제 Board 객체에 우리가 기입한 내용들이 알아서 객체화되어 기록되고 있는중임
+         그래서 PostMapping에서 받을때 Board board가 있는 것임
+         거기에 여기에 적은 내용이 들어있음 -->
+    <!-- <form id="board" th:object="${board}" method="post"> -->
+    <form id="board" th:object="${board}">
+        <table>
+            <tr>
+                <td>제목</td>
+                <td>
+                    <input type="text" name="title" th:field="*{title}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" name="writer" th:field="*{writer}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>본문</td>
+                <td>
+                    <input type="text" name="content" th:field="*{content}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <!-- 일종의 특정 영역을 만든다고 보면됨 -->
+    <div>
+        <button type="submit" id="btnRegister">등록</button>
+        <button type="submit" id="btnList">돌아가기</button>
+    </div>
+</body>
+</html>
