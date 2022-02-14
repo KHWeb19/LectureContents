@@ -1,8 +1,7 @@
 package com.example.demo.service.order36;
 
-import com.example.demo.entity.order32.Board;
 import com.example.demo.entity.order36.ProductBoard;
-import com.example.demo.repository.order32.BoardRepository;
+import com.example.demo.repository.order36.ProductBoardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,26 +15,26 @@ public class ProductBoardServiceImpl implements ProductBoardService {
 
     @Override
     public void register(ProductBoard productBoard) {
-
+        repository.create(productBoard);
     }
 
     @Override
     public List<ProductBoard> list() {
-        return null;
+        return repository.list();
     }
 
     @Override
     public ProductBoard read(Integer productNo) {
-        return null;
+        return repository.read(productNo);
     }
 
     @Override
-    public void modify(ProductBoard board) {
-
+    public void modify(ProductBoard productBoard) {
+        repository.update(productBoard);
     }
 
     @Override
     public void remove(Integer productNo) {
-
+        repository.delete(productNo);
     }
 }
