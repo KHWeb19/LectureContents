@@ -30,4 +30,11 @@ public class Seventh37thCssLayoutController {
 
         return "/37th/css3/boxPositioningTest2";
     }
+
+    @GetMapping("/boxLayoutTest")
+    public String boxLayoutTest () {
+        log.info("boxLayoutTest()");
+
+        return "/37th/css3/boxLayoutTest";
+    }
 }

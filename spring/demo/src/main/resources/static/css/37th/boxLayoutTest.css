@@ -1,0 +1,29 @@
+div {
+    border: 1px solid #ccc;     /* 모든 영역의 테두리르 표시하자 */
+}
+#container {
+    width: 960px;
+    padding: 20px;
+    margin: 0 auto; /* 화면 중앙 배치 */
+}
+#header {
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#contents {
+    width: 500px;
+    padding: 20px;
+    float: left;
+    margin-bottom: 20px;
+}
+#sidebar {
+    width: 360px;
+    padding: 20px;
+    float: right;
+    margin-bottom: 20px;
+    background: #eee;
+}
+#footer {
+    clear: both;
+    padding: 20px;
+}
