@@ -1,10 +1,10 @@
 div {
-    width: 250px;
-    height: 300px;
+    width: 125px;
+    height: 150px;
     margin: 20px;
     display: inline-block;
     border: 2px solid #ccc;
-    border-radius: 70px/40px;
+    border-radius: 75px/62.5px;
 }
 #mario {
     background:url(../../img/mario.png) no-repeat;

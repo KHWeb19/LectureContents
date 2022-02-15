@@ -58,4 +58,11 @@ public class Seventh37thCssLayoutController {
 
         return "/37th/css3/boxBorderEllipseTest";
     }
+
+    @GetMapping("/cssElementSelectorTest")
+    public String cssElementSelectorTest () {
+        log.info("cssElementSelectorTest()");
+
+        return "/37th/css3/cssElementSelectorTest";
+    }
 }
