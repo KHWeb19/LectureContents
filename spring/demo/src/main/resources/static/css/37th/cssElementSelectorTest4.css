@@ -1,0 +1,8 @@
+#container > ul {
+    border: 1px dotted blue;    /* #container 요소의 직계 자식에게만 적용됨 */
+}
+h1~p {
+    /* h1 이후로 나타나는 모든 p */
+    color: blue;
+    font-weight: bold;
+}
