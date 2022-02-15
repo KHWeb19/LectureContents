@@ -1,0 +1,19 @@
+div {
+    padding: 20px;
+    margin: 10px;
+}
+.box1 {
+    background: #ffd800;
+    float: left;
+}
+.box2 {
+    background: #0094ff;
+    float: left;
+}
+.box3 {
+    background: #00ff21;
+}
+.box4 {
+    background: #a874ff;
+    clear: both
+}
