@@ -37,4 +37,11 @@ public class Seventh37thCssLayoutController {
 
         return "/37th/css3/boxLayoutTest";
     }
+
+    @GetMapping("/boxBorderTest")
+    public String boxBorderTest () {
+        log.info("boxBorderTest()");
+
+        return "/37th/css3/boxBorderTest";
+    }
 }
