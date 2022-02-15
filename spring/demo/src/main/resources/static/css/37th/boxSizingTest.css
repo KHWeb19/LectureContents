@@ -1,0 +1,20 @@
+div {
+    float: left;        /* 배치를 왼쪽으로 붙임 */
+    margin-right: 20px;
+}
+.box1 {
+    box-sizing: content-box;        /* 콘텐츠 영역 기준 */
+    width: 300px;                   /* 콘텐츠 영역 너비 300 */
+    height: 150px;                  /* 높이 */
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid red;
+}
+.box2 {
+    box-sizing: border-box;         /* 테두리까지(박스 전체) 기준 */
+    width: 300px;                   /* 콘텐츠 영역 너비 300 */
+    height: 150px;                  /* 높이 */
+    margin: 10px;
+    padding: 30px;
+    border: 2px solid red;
+}
