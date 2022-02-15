@@ -1,0 +1,4 @@
+#container ul {
+    border: 1px dotted blue;    /* #container 요소의 모든 하위 ul 요소에 파란 1px 실선 설정 */
+    /* 즉 ul이 들어간 녀석들은 적용됨을 의미함 */
+}
