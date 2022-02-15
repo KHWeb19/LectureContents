@@ -1,0 +1,16 @@
+div {
+    width: 250px;
+    height: 300px;
+    margin: 20px;
+    display: inline-block;
+    border: 2px solid #ccc;
+    border-radius: 70px/40px;
+}
+#mario {
+    background:url(../../img/mario.png) no-repeat;
+    background-size: cover;
+}
+#rs {
+    background:url(../../img/dark_ice.jpg) no-repeat;
+    background-size: cover;
+}
