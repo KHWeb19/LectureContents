@@ -79,4 +79,11 @@ public class Seventh37thCssLayoutController {
 
         return "/37th/css3/cssElementSelectorTest3";
     }
+
+    @GetMapping("/cssElementSelectorTest4")
+    public String cssElementSelectorTest4 () {
+        log.info("cssElementSelectorTest4()");
+
+        return "/37th/css3/cssElementSelectorTest4";
+    }
 }
