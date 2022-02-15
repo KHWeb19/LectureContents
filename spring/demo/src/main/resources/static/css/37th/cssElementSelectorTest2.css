@@ -1,0 +1,3 @@
+#container > ul {
+    border: 1px dotted blue;    /* #container 요소의 직계 자식에게만 적용됨 */
+}
