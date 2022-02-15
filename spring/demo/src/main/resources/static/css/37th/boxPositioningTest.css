@@ -1,0 +1,24 @@
+.box1 {
+    padding: 20px;
+    margin-right: 10px;
+    background: #ffd800;
+    float: left;
+}
+.box2 {
+    padding: 20px;
+    margin-right: 10px;
+    background: #0094ff;
+    float: left;
+}
+.box3 {
+    padding: 20px;
+    margin-right: 10px;
+    background: #00ff21;
+    float: left;
+}
+.box4 {
+    padding: 20px;
+    background: #ffffff;
+    float: right;
+    border: 1px solid black;
+}
