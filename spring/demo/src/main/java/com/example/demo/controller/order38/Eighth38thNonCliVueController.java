@@ -23,4 +23,11 @@ public class Eighth38thNonCliVueController {
 
         return "/38th/ncvue/dataTypeCheck";
     }
+
+    @GetMapping("/jsDataTypeCheck")
+    public String jsDataTypeCheck () {
+        log.info("jsDataTypeCheck()");
+
+        return "/38th/ncvue/jsDataTypeCheck";
+    }
 }
