@@ -30,4 +30,11 @@ public class Eighth38thNonCliVueController {
 
         return "/38th/ncvue/jsDataTypeCheck";
     }
+
+    @GetMapping("/doNotUseVar")
+    public String doNotUseVar () {
+        log.info("doNotUseVar()");
+
+        return "/38th/ncvue/doNotUseVar";
+    }
 }
