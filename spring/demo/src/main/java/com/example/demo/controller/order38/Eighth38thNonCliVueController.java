@@ -37,4 +37,11 @@ public class Eighth38thNonCliVueController {
 
         return "/38th/ncvue/doNotUseVar";
     }
+
+    @GetMapping("/jsArrowStyle")
+    public String jsArrowStyle () {
+        log.info("jsArrowStyle()");
+
+        return "/38th/ncvue/jsArrowStyle";
+    }
 }
