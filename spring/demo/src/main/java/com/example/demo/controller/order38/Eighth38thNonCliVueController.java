@@ -16,4 +16,11 @@ public class Eighth38thNonCliVueController {
 
         return "/38th/ncvue/index";
     }
+
+    @GetMapping("/dataTypeCheck")
+    public String dataTypeCheck () {
+        log.info("dataTypeCheck()");
+
+        return "/38th/ncvue/dataTypeCheck";
+    }
 }

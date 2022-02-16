@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div id="dataType">
+    <p>
+      {{ length }}, {{ lastName }}.
+    </p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+
+  <script>
+    var app = new Vue({
+      el: '#dataType',
+      data: {
+        length: 7,
+        lastName: "Gogosing",
+        //x = { firstName: "Rust", lastName: "Golang" }
+      }
+    })
+  </script>
+</body>
+</html>
