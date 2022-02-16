@@ -7,12 +7,17 @@
 <body>
   <div id="app">
     <h1>{{ message }}</h1>
+    <h1>{ message }</h1>
   </div>
 
+  <!-- 어떤 라이브러리를 사용하려고 하는지 웹상에서 땡겨옴 -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
 
+  <!-- Vue 객체를 생성함
+       id가 app인 녀석과 연결됨
+       그러므로 h1 쪽의 message는 이 녀석이 가지고 있는 message 가 됨 -->
   <script>
-    var app = new Vue({
+    var test = new Vue({
       el: '#app',
       data: {
         message: 'Hello Vue.js - 흐접한 jsp는 끄지라!'
