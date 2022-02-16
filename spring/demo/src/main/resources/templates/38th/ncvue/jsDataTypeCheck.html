@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <script src="../../../static/js/DataType.js"></script> -->
+    <script src="/js/DataType.js"></script>
+</head>
+<body>
+    <div className="DataType">
+        <p>
+            {length}, {lastName}, {x.toString()}
+        </p>
+    </div>
+
+    <div id="divMsg">
+    </div>
+
+    <input type="button" onclick="DataType()" value="Display">
+
+    <script>
+        var name = "이런식으로 매번 귀찮은 작업량이 오지게 많아요"
+        document.getElementById("divMsg").innerHTML = name
+    </script>
+</body>
+</html>
