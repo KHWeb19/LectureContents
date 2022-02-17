@@ -21,4 +21,11 @@ public class Nineth39thJsController {
 
         return "/39th/js/jsBoolTest";
     }
+
+    @GetMapping("/equalTest")
+    public String equalTest () {
+        log.info("equalTest()");
+
+        return "/39th/js/equalTest";
+    }
 }
