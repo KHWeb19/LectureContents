@@ -39,4 +39,13 @@ function SpreadTest () {
 
     console.log(arrStr)
     arrPrint(...arrStr)
+
+    let testArr = ["a", "b", "c"]
+    testArr.push(...["d", "e"])
+
+    console.log(testArr)
+
+    arr = [10, 20, 60, 90, 30]
+
+    console.log(Math.max(...arr))
 }
