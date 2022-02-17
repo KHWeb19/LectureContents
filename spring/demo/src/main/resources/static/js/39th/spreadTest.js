@@ -34,4 +34,9 @@ function SpreadTest () {
     console.log(arrSpread)
     arrPrint(...arrSpread)
     arrSpreadingPrint(...arrSpread)
+
+    let arrStr = [..."xyz"]
+
+    console.log(arrStr)
+    arrPrint(...arrStr)
 }
