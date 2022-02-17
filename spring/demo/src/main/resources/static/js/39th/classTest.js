@@ -15,6 +15,7 @@ function ClassTest () {
         constructor () {
             this.name = "test"
             this.major = "electronics"
+            GetSetObj.number++
         }
 
         getName () {
@@ -33,7 +34,13 @@ function ClassTest () {
             console.log(this.name)
             console.log(this.major)
         }
+
+        static getStaticNumber () {
+            return GetSetObj.number
+        }
     }
+
+    GetSetObj.number = 0
 
     console.log("GetSetObj")
 
@@ -42,5 +49,10 @@ function ClassTest () {
     console.log(gsObj.getName())
     console.log(gsObj.getMajor())
 
+    console.log(GetSetObj.getStaticNumber())
+
     gsObj.display()
+
+    let gsObj2 = new GetSetObj()
+    console.log(GetSetObj.getStaticNumber())
 }
