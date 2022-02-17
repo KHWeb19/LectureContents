@@ -28,4 +28,11 @@ public class Nineth39thJsController {
 
         return "/39th/js/equalTest";
     }
+
+    @GetMapping("/equalTest2")
+    public String equalTest2 () {
+        log.info("equalTest2()");
+
+        return "/39th/js/equalTest2";
+    }
 }
