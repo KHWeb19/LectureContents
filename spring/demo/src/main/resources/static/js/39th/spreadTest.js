@@ -10,4 +10,15 @@ function SpreadTest () {
 
     console.log("arrNum: " + arrNum)
     console.log("newArrNum: " + newArrNum)
+
+    function arrPrint (a, b, c) {
+        console.log(a)
+        console.log(b)
+        console.log(c)
+    }
+
+    let arr = [1, 2, 3]
+
+    console.log(arr)
+    arrPrint(...arr)
 }
