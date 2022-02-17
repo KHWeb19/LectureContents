@@ -55,4 +55,17 @@ function ClassTest () {
 
     let gsObj2 = new GetSetObj()
     console.log(GetSetObj.getStaticNumber())
+
+    class ExtendObj extends GetSetObj {
+        constructor () {
+            super()
+        }
+    }
+
+    let extObj = new ExtendObj()
+
+    extObj.setName("상속이 되는구나")
+    extObj.display()
+
+    console.log("자바랑 똑같이 상위 클래스 내용 가져다 쓸 수 있음(display)")
 }
