@@ -40,4 +40,7 @@ function BoolTest () {
     } else {
         console.log("false")
     }
+
+    console.log("vehicle prototype getVendor: " + vehicle.getVendor())
+    console.log("vehicle.toString: " + vehicle.toString())
 }
