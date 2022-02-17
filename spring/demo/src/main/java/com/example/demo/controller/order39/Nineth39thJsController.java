@@ -42,4 +42,11 @@ public class Nineth39thJsController {
 
         return "/39th/js/spreadTest";
     }
+
+    @GetMapping("/classTest")
+    public String classTest () {
+        log.info("classTest()");
+
+        return "/39th/js/classTest";
+    }
 }
