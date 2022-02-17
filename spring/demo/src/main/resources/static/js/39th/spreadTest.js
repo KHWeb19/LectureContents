@@ -33,4 +33,5 @@ function SpreadTest () {
 
     console.log(arrSpread)
     arrPrint(...arrSpread)
+    arrSpreadingPrint(...arrSpread)
 }
