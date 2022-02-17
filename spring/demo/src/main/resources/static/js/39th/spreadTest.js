@@ -21,4 +21,16 @@ function SpreadTest () {
 
     console.log(arr)
     arrPrint(...arr)
+
+    function arrSpreadingPrint (a, b, c, ...remain) {
+        console.log(a)
+        console.log(b)
+        console.log(c)
+        console.log(remain)
+    }
+
+    let arrSpread = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    console.log(arrSpread)
+    arrPrint(...arrSpread)
 }
