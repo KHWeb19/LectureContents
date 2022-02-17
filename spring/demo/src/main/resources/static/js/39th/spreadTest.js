@@ -48,4 +48,20 @@ function SpreadTest () {
     arr = [10, 20, 60, 90, 30]
 
     console.log(Math.max(...arr))
+
+    let newObj = {
+        name: "newObj",
+        number: 3
+    }
+
+    let newObj2 = {
+        nick: "Tick"
+    }
+
+    let newObj3 = { ...newObj, ...newObj2 }
+
+    console.log(newObj3)
+    console.log(newObj3.name)
+    console.log(newObj3.number)
+    console.log(newObj3.nick)
 }
