@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "/40th/prob11/register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnMain").on("click", function() {
+            self.location = "/40th/prob11/main";
+        });
+    });
+</script>
+
+<body>
+    <h2>상품 등록 페이지</h2>
+
+    <form id="board" th:object="${member}">
+        <table>
+            <tr>
+                <td>아 이 디</td>
+                <td>
+                    <input type="text" name="id" th:field="*{id}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>비밀번호</td>
+                <td>
+                    <input type="password" name="pw" th:field="*{pw}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>자기 소개</td>
+                <td>
+                    <input type="text" name="intro" th:field="*{intro}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnRegister">등록</button>
+        <button type="submit" id="btnMain">돌아가기</button>
+    </div>
+</body>
+</html>

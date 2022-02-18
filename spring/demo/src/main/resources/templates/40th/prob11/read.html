@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnModify").on("click", function() {
+            var productNo = $("#productNo");
+            var productNoVal = productNo.val();
+
+            self.location = "/36th/product/modify?productNo=" + productNoVal;
+        });
+
+        $("#btnRemove").on("click", function() {
+            formObj.attr("action", "/36th/product/remove");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "/36th/product/list";
+        });
+    });
+</script>
+
+<body>
+    <h2>게시물 읽기</h2>
+
+    <form id="board" th:object="${productBoard}" method="post">
+        <input type="hidden" name="productNo" th:field="*{productNo}">
+
+        <table>
+            <tr>
+                <td>상품명</td>
+                <td>
+                    <input type="text" name="title" th:field="*{title}" readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>작성자</td>
+                <td>
+                    <input type="text" name="writer" th:field="*{writer}" readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>가격</td>
+                <td>
+                    <input type="text" name="price" th:field="*{price}" readonly="readonly"/>
+                </td>
+            </tr>
+            <tr>
+                <td>제품 상세 설명</td>
+                <td>
+                    <input type="text" name="description" th:field="*{description}" readonly="readonly"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnModify">수정</button>
+        <button type="submit" id="btnRemove">삭제</button>
+        <button type="submit" id="btnList">돌아가기</button>
+    </div>
+</body>
+</html>
