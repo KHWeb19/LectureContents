@@ -20,40 +20,34 @@ public class MemberRepository {
     private JdbcTemplate jdbcTemplate;
 
     public void create (Member member) {
-        String query = "insert into product_board (title, description, price, writer) " +
-                "values (?, ?, ?, ?)";
+        String query = "insert into member (id, pw, intro) values (?, ?, ?)";
 
-        /*
-        jdbcTemplate.update(query, productBoard.getTitle(), productBoard.getDescription(),
-                productBoard.getPrice(), productBoard.getWriter());
-
-         */
+        jdbcTemplate.update(query, member.getId(), member.getPw(), member.getIntro());
     }
 
-    public List<ProductBoard> list() {
-        List<ProductBoard> results = jdbcTemplate.query(
-                "select * from product_board " +
-                        "where product_no > 0 order by product_no desc",
+    public List<Member> list() {
+        List<Member> results = jdbcTemplate.query(
+                "select * from member " +
+                        "where member_no > 0 order by member_no desc",
 
-                new RowMapper<ProductBoard>() {
+                new RowMapper<Member>() {
                     @SneakyThrows
                     @Override
-                    public ProductBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        ProductBoard productBoard = new ProductBoard();
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member();
 
-                        productBoard.setProductNo(rs.getInt("product_no"));
-                        productBoard.setTitle(rs.getString("title"));
-                        productBoard.setDescription(rs.getString("description"));
-                        productBoard.setPrice(rs.getInt("price"));
-                        productBoard.setWriter(rs.getString("writer"));
+                        member.setMemberNo(rs.getInt("member_no"));
+                        member.setId(rs.getString("id"));
+                        member.setPw(rs.getString("pw"));
+                        member.setIntro(rs.getString("intro"));
 
                         SimpleDateFormat printDate =
                                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                         String dbDate = rs.getDate("reg_date") + " " + rs.getTime("reg_date");
-                        productBoard.setRegDate(printDate.parse(dbDate));
+                        member.setRegDate(printDate.parse(dbDate));
 
-                        return productBoard;
+                        return member;
                     }
                 }
         );
@@ -61,51 +55,46 @@ public class MemberRepository {
         return results;
     }
 
-    public ProductBoard read(Integer productNo) {
-        List<ProductBoard> results = jdbcTemplate.query(
-                "select * from product_board " +
-                        "where product_no = ?",
+    public Member read(Integer memberNo) {
+        List<Member> results = jdbcTemplate.query(
+                "select * from member where member_no = ?",
 
-                new RowMapper<ProductBoard>() {
+                new RowMapper<Member>() {
                     @SneakyThrows
                     @Override
-                    public ProductBoard mapRow(ResultSet rs, int rowNum) throws SQLException {
-                        ProductBoard productBoard = new ProductBoard();
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member();
 
-                        productBoard.setProductNo(rs.getInt("product_no"));
-                        productBoard.setTitle(rs.getString("title"));
-                        productBoard.setDescription(rs.getString("description"));
-                        productBoard.setPrice(rs.getInt("price"));
-                        productBoard.setWriter(rs.getString("writer"));
+                        member.setMemberNo(rs.getInt("member_no"));
+                        member.setId(rs.getString("id"));
+                        member.setPw(rs.getString("pw"));
+                        member.setIntro(rs.getString("intro"));
 
                         SimpleDateFormat printDate =
                                 new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
                         String dbDate = rs.getDate("reg_date") + " " + rs.getTime("reg_date");
-                        productBoard.setRegDate(printDate.parse(dbDate));
+                        member.setRegDate(printDate.parse(dbDate));
 
-                        return productBoard;
+                        return member;
                     }
-                }, productNo
+                }, memberNo
         );
 
         return results.isEmpty() ? null : results.get(0);
     }
 
-    /*
-    public void delete(Integer productNo) {
-        String query = "delete from product_board where product_no = ?";
+    public void delete(Integer memberNo) {
+        String query = "delete from member where member_no = ?";
 
-        jdbcTemplate.update(query, productNo);
+        jdbcTemplate.update(query, memberNo);
     }
 
-    public void update(ProductBoard productBoard) {
-        String query = "update product_board set title = ?, description = ?, " +
-                "price = ? where product_no = ?";
+    public void update(Member member) {
+        String query = "update member set id = ?, pw = ?, " +
+                "intro = ? where member_no = ?";
 
-        jdbcTemplate.update(query, productBoard.getTitle(), productBoard.getDescription(),
-                productBoard.getPrice(), productBoard.getProductNo());
+        jdbcTemplate.update(query, member.getId(), member.getPw(),
+                member.getIntro(), member.getMemberNo());
     }
-
-     */
 }
