@@ -43,33 +43,14 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public Boolean login(Member member) {
-        return null;
-    }
+        // 특정 id 값을 가지고 있는지 검사
+        // 해당 id 값의 pw가 일치하는지 확인
+        // 모두 OK라면 true 리턴
+        // 도중에 하나라도 문제가 발생한다면 false 리턴
+        Member findMember = repository.findMemberById(member);
 
-    /*
-    @Override
-    public void register(ProductBoard productBoard) {
-        repository.create(productBoard);
-    }
+        Boolean loginSuccess = findMember.getPw().equals(member.getPw());
 
-    @Override
-    public List<ProductBoard> list() {
-        return repository.list();
+        return loginSuccess;
     }
-
-    @Override
-    public ProductBoard read(Integer productNo) {
-        return repository.read(productNo);
-    }
-
-    @Override
-    public void modify(ProductBoard productBoard) {
-        repository.update(productBoard);
-    }
-
-    @Override
-    public void remove(Integer productNo) {
-        repository.delete(productNo);
-    }
-     */
 }

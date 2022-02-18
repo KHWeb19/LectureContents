@@ -99,9 +99,9 @@ public class TenthBank11ProbController {
 
     @PostMapping("/login")
     public String login (Member member, Model model) {
-        log.info("login");
+        log.info("login: " + member);
 
-        memberService.login(member);
+        System.out.println("Login res: " + memberService.login(member));
 
         return "/40th/prob11/success";
     }
