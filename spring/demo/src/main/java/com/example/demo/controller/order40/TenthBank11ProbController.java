@@ -76,7 +76,7 @@ public class TenthBank11ProbController {
     }
 
     @GetMapping("/login")
-    public String loginForm () {
+    public String loginForm (Member member) {
         log.info("loginForm()");
 
         return "/40th/prob11/login";
