@@ -8,7 +8,7 @@ import java.util.List;
 public interface MemberService {
     public void register (Member member);
     public List<Member> list ();
-    public ProductBoard read (Integer memberNo);
+    public Member read (Integer memberNo);
     public void modify (Member member);
     public void remove (Integer memberNo);
     public Boolean login (Member member);

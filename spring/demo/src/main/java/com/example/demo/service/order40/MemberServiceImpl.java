@@ -18,27 +18,27 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void register(Member member) {
-
+        repository.create(member);
     }
 
     @Override
     public List<Member> list() {
-        return null;
+        return repository.list();
     }
 
     @Override
-    public ProductBoard read(Integer memberNo) {
-        return null;
+    public Member read(Integer memberNo) {
+        return repository.read(memberNo);
     }
 
     @Override
     public void modify(Member member) {
-
+        repository.update(member);
     }
 
     @Override
     public void remove(Integer memberNo) {
-
+        repository.delete(memberNo);
     }
 
     @Override
