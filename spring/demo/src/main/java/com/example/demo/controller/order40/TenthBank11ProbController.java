@@ -1,7 +1,9 @@
 package com.example.demo.controller.order40;
 
 import com.example.demo.entity.order40.Member;
+import com.example.demo.service.order40.MemberService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,6 +21,9 @@ public class TenthBank11ProbController {
        4. 회원 탈퇴
        5. 회원 상세 정보 보기(중국은 되야 할 수 있는 것) <<<--- 개인 정보 보호법을 주의해야합니다
        6. 로그인 기능 */
+    @Autowired
+    private MemberService memberService;
+
     @GetMapping("/main")
     public String mainPage () {
         log.info("mainPage()");
@@ -37,12 +42,16 @@ public class TenthBank11ProbController {
     public String memberRegister (Member member, Model model) {
         log.info("memberRegister()");
 
+        memberService.register(member);
+
         return "/40th/prob11/success";
     }
 
     @GetMapping("/list")
-    public String memberList () {
+    public String memberList (Model model) {
         log.info("memberList()");
+
+        model.addAttribute("list", memberService.list());
 
         return "/40th/prob11/list";
     }
@@ -55,22 +64,28 @@ public class TenthBank11ProbController {
     }
 
     @PostMapping("/modify")
-    public String memberModify () {
+    public String memberModify (Member member) {
         log.info("memberModify()");
+
+        memberService.modify(member);
 
         return "/40th/prob11/success";
     }
 
     @PostMapping("/delete")
-    public String memberDelete () {
+    public String memberDelete (int memberNo) {
         log.info("memberDelete()");
+
+        memberService.remove(memberNo);
 
         return "/40th/prob11/success";
     }
 
     @GetMapping("/read")
-    public String memberRead () {
+    public String memberRead (int memberNo, Model model) {
         log.info("memberRead()");
+
+        model.addAttribute(memberService.read(memberNo));
 
         return "/40th/prob11/read";
     }
@@ -83,8 +98,10 @@ public class TenthBank11ProbController {
     }
 
     @PostMapping("/login")
-    public String login () {
+    public String login (Member member, Model model) {
         log.info("login");
+
+        memberService.login(member);
 
         return "/40th/prob11/success";
     }
