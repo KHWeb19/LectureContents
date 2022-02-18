@@ -97,4 +97,25 @@ public class MemberRepository {
         jdbcTemplate.update(query, member.getId(), member.getPw(),
                 member.getIntro(), member.getMemberNo());
     }
+
+
+    public Member findMemberById(Member member) {
+        List<Member> results = jdbcTemplate.query(
+                "select * from member where id = ?",
+
+                new RowMapper<Member>() {
+                    @SneakyThrows
+                    @Override
+                    public Member mapRow(ResultSet rs, int rowNum) throws SQLException {
+                        Member member = new Member();
+
+                        member.setPw(rs.getString("pw"));
+
+                        return member;
+                    }
+                }, member.getId()
+        );
+
+        return results.isEmpty() ? null : results.get(0);
+    }
 }
