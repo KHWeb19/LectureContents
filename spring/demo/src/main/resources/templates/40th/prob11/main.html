@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+  <h3>문제은행 [ 11 ] 풀이</h3>
+
+  <form th:action="@{/40th/prob11/register}">
+    <input type="submit" value="회원가입">
+  </form>
+
+  <form th:action="@{/40th/prob11/list}">
+    <input type="submit" value="전체 회원 정보 열람">
+  </form>
+
+  <form th:action="@{/40th/prob11/modify}">
+    <input type="submit" value="개인 정보 수정">
+  </form>
+
+  <form th:action="@{/40th/prob11/delete}" method="post">
+    <input type="submit" value="회원 탈퇴">
+  </form>
+
+  <form th:action="@{/40th/prob11/read}">
+    <input type="submit" value="개인 신상 정보 조회(중국 가정했음)">
+  </form>
+
+  <form th:action="@{/40th/prob11/login}">
+    <input type="submit" value="로그인">
+  </form>
+</body>
+</html>
