@@ -1,0 +1,8 @@
+create table member(
+    member_no int not null auto_increment,
+    id varchar(50) not null,
+    pw varchar(50) not null,
+    intro text null,
+    reg_date timestamp not null default now(),
+    primary key(member_no)
+);
