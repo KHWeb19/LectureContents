@@ -1,0 +1,11 @@
+.round {
+    border: 2px solid red;
+    border-radius: 20px;        /* 모서리 20px 라운딩 (모깍기) */
+}
+#pooh {
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    background:url(../../img/pooh.jpg) no-repeat;     /* 배경 이미지 */
+    background-size: cover;                         /* 이미지 영역을 모두 채움 */
+}

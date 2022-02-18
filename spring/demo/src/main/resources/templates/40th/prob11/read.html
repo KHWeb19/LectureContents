@@ -10,62 +10,56 @@
     $(document).ready(function() {
         var formObj = $("#board");
 
-        $("#btnModify").on("click", function() {
-            var productNo = $("#productNo");
-            var productNoVal = productNo.val();
-
-            self.location = "/36th/product/modify?productNo=" + productNoVal;
+        $("#btnMain").on("click", function() {
+            self.location = "/40th/prob11/main";
         });
 
-        $("#btnRemove").on("click", function() {
-            formObj.attr("action", "/36th/product/remove");
+        $("#btnModify").on("click", function() {
+            formObj.attr("action", "/40th/prob11/modify");
+            formObj.attr("method", "post");
             formObj.submit();
         });
 
-        $("#btnList").on("click", function() {
-            self.location = "/36th/product/list";
+        $("#btnDelete").on("click", function() {
+            formObj.attr("action", "/40th/prob11/delete");
+            formObj.attr("method", "post");
+            formObj.submit();
         });
     });
 </script>
 
 <body>
-    <h2>게시물 읽기</h2>
+    <h2>중국인민 상세 정보 조회</h2>
 
-    <form id="board" th:object="${productBoard}" method="post">
-        <input type="hidden" name="productNo" th:field="*{productNo}">
+    <form id="board" th:object="${member}">
+        <input type="hidden" name="memberNo" th:field="*{memberNo}">
 
         <table>
             <tr>
-                <td>상품명</td>
+                <td>아 이 디</td>
                 <td>
-                    <input type="text" name="title" th:field="*{title}" readonly="readonly"/>
+                    <input type="text" name="id" th:field="*{id}"/>
                 </td>
             </tr>
             <tr>
-                <td>작성자</td>
+                <td>비밀번호</td>
                 <td>
-                    <input type="text" name="writer" th:field="*{writer}" readonly="readonly"/>
+                    <input type="text" name="pw" th:field="*{pw}"/>
                 </td>
             </tr>
             <tr>
-                <td>가격</td>
+                <td>자기 소개</td>
                 <td>
-                    <input type="text" name="price" th:field="*{price}" readonly="readonly"/>
-                </td>
-            </tr>
-            <tr>
-                <td>제품 상세 설명</td>
-                <td>
-                    <input type="text" name="description" th:field="*{description}" readonly="readonly"/>
+                    <input type="text" name="intro" th:field="*{intro}"/>
                 </td>
             </tr>
         </table>
     </form>
 
     <div>
-        <button type="submit" id="btnModify">수정</button>
-        <button type="submit" id="btnRemove">삭제</button>
-        <button type="submit" id="btnList">돌아가기</button>
+        <button type="submit" id="btnMain">돌아가기</button>
+        <button type="submit" id="btnModify">중국인민 정보수정</button>
+        <button type="submit" id="btnDelete">좋은곳으로 보내드림</button>
     </div>
 </body>
 </html>

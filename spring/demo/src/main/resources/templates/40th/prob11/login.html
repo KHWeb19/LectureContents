@@ -10,8 +10,8 @@
     $(document).ready(function() {
         var formObj = $("#board");
 
-        $("#btnModify").on("click", function() {
-            formObj.attr("action", "/40th/prob11/modify");
+        $("#btnLogin").on("click", function() {
+            formObj.attr("action", "/40th/prob11/login");
             formObj.attr("method", "post");
             formObj.submit();
         });
@@ -23,11 +23,9 @@
 </script>
 
 <body>
-    <h2>중국인민 정보 수정</h2>
+    <h2>중국인민 로그인</h2>
 
     <form id="board" th:object="${member}">
-        <input type="hidden" name="memberNo" th:field="*{memberNo}">
-
         <table>
             <tr>
                 <td>아 이 디</td>
@@ -41,17 +39,11 @@
                     <input type="password" name="pw" th:field="*{pw}"/>
                 </td>
             </tr>
-            <tr>
-                <td>자기 소개</td>
-                <td>
-                    <input type="text" name="intro" th:field="*{intro}"/>
-                </td>
-            </tr>
         </table>
     </form>
 
     <div>
-        <button type="submit" id="btnModify">수정완료</button>
+        <button type="submit" id="btnLogin">로그인</button>
         <button type="submit" id="btnMain">돌아가기</button>
     </div>
 </body>
