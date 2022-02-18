@@ -49,6 +49,12 @@ public class MemberServiceImpl implements MemberService {
         // 도중에 하나라도 문제가 발생한다면 false 리턴
         Member findMember = repository.findMemberById(member);
 
+        if (findMember == null) {
+            System.out.printf("There are no %s id\n", member.getId());
+            return false;
+        }
+
+        System.out.println("Check Password Only: " + findMember);
         Boolean loginSuccess = findMember.getPw().equals(member.getPw());
 
         return loginSuccess;
