@@ -57,7 +57,7 @@ public class TenthBank11ProbController {
     }
 
     @GetMapping("/modify")
-    public String memberModifyForm () {
+    public String memberModifyForm (Member member) {
         log.info("memberModifyForm()");
 
         return "/40th/prob11/modify";
