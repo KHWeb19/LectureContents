@@ -8,4 +8,18 @@ function ArrayApiTest () {
 
     // 각 원소와 원소 사이에 join() 에 있는 정보를 붙이는 역할을 함
     console.log(arr.join(", "))
+
+    console.log("pop(요소 빼기) 이전: " + arr)
+    let elem = arr.pop()
+
+    // 실제로 pop 방식으로 빼내는 것은
+    // 물건을 쌓아 올리고 하나씩 빼는 구조를 생각하면 됨
+    console.log("pop(요소 빼기) 이후: " + arr)
+    console.log("빼낸 요소: " + elem)
+
+    console.log("push(집어 넣기) 이전: " + arr)
+    let len = arr.push("seven")
+
+    console.log("push(집어 넣기) 이후: " + arr)
+    console.log("java의 array.length 역할: " + len)
 }
