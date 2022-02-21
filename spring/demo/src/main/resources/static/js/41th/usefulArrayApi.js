@@ -47,4 +47,9 @@ function ArrayApiTest () {
 
     arr.splice(1, 2)
     console.log("splice 이후: " + arr)
+
+    let test = ["four", "five", "six"]
+
+    arr = arr.concat(test)
+    console.log("concat 이후: " + arr)
 }
