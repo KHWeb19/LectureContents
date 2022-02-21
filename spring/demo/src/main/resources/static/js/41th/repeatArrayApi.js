@@ -41,4 +41,20 @@ function RepeatArrayApiTest () {
 
     let reduceTest = sequence.reduce(reduceFunc, 777)
     console.log(reduceTest)
+
+    let andTest = sequence.every(andTestFunc)
+
+    function andTestFunc (value) {
+        return value > 3
+    }
+
+    console.log("andTest: " + andTest)
+
+    let orTest = sequence.some(orTestFunc)
+
+    function orTestFunc (value) {
+        return value > 3
+    }
+
+    console.log("orTest: " + orTest)
 }
