@@ -62,5 +62,15 @@ function ArrayApiTest () {
     arr = arr.concat(testArr1, testArr2)
     console.log("concat 이후: " + arr)
 
-    
+    arr = [1, 2, 3, 4, 5, 6, 7]
+    let slicedArr = arr.slice(1)
+
+    console.log("slice 이후: " + arr)
+    console.log("slice의 결과: " + slicedArr)
+
+    arr = [1, 2, 3, 4, 5, 6, 7]
+    slicedArr = arr.slice(3)
+
+    console.log("slice 이후: " + arr)
+    console.log("slice의 결과: " + slicedArr)
 }
