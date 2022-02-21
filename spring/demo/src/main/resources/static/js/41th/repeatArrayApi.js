@@ -11,4 +11,14 @@ function RepeatArrayApiTest () {
     }
 
     console.log(txt)
+
+    let sequence = [1, 2, 3, 4, 5]
+    let squareSeq = sequence.map(squareFunc)
+
+    function squareFunc (value) {
+        return value * value
+    }
+
+    console.log("sequence: " + sequence)
+    console.log("squareSeq: " + squareSeq)
 }
