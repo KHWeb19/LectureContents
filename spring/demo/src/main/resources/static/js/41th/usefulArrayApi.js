@@ -22,4 +22,14 @@ function ArrayApiTest () {
 
     console.log("push(집어 넣기) 이후: " + arr)
     console.log("java의 array.length 역할: " + len)
+
+    for (let i = 0; i < 3; i++) {
+        console.log("arr[" + i + "] = " + arr[i])
+    }
+
+    // 위의 pop 케이스는 나중에 들어온 놈이 먼저 나간다: Stack
+    // 먼저 들어온 놈이 먼저 나간다: Queue
+    elem = arr.shift()
+    console.log("shift() 이후: " + arr)
+    console.log("shift 값(elem): " + elem)
 }
