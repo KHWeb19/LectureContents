@@ -36,4 +36,10 @@ function ArrayApiTest () {
     len = arr.unshift("333")
     console.log("unshift() 이후: " + arr)
     console.log("len 값: " + len)
+
+    arr.splice(2, 0, "elem1", "elem2")
+    console.log("splice 이후: " + arr)
+
+    arr.splice(2, 2, "elem3", "elem4")
+    console.log("splice 이후: " + arr)
 }
