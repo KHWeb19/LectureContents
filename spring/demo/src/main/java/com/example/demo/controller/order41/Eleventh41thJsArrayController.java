@@ -16,4 +16,11 @@ public class Eleventh41thJsArrayController {
 
         return "/41th/jsArray/usefulArrayApi";
     }
+
+    @GetMapping("/repeatAPI")
+    public String getRepeatAPI () {
+        log.info("getRepeatAPI()");
+
+        return "/41th/jsArray/repeatArrayApi";
+    }
 }
