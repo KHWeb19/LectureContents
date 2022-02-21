@@ -57,4 +57,27 @@ function RepeatArrayApiTest () {
     }
 
     console.log("orTest: " + orTest)
+
+    let vendors = ["bmw", "audi", "benz", "tesla", "porsche", "benz"]
+    let idx = vendors.lastIndexOf("benz")
+
+    console.log(vendors)
+    console.log(idx)
+
+    let firstFind = sequence.find(firstFindFunc)
+
+    function firstFindFunc (value) {
+        return value > 3
+    }
+
+    console.log("firstFind: " + firstFind)
+
+    let firstFindIdx = squareSeq.findIndex(firstFindIdxFunc)
+
+    function firstFindIdxFunc (value) {
+        return value > 5
+    }
+
+    console.log("squareSeq: " + squareSeq)
+    console.log("firstFindIdx: " + firstFindIdx)
 }
