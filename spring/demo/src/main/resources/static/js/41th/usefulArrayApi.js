@@ -32,4 +32,8 @@ function ArrayApiTest () {
     elem = arr.shift()
     console.log("shift() 이후: " + arr)
     console.log("shift 값(elem): " + elem)
+
+    len = arr.unshift("333")
+    console.log("unshift() 이후: " + arr)
+    console.log("len 값: " + len)
 }
