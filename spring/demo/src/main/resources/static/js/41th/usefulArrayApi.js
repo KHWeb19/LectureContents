@@ -52,4 +52,15 @@ function ArrayApiTest () {
 
     arr = arr.concat(test)
     console.log("concat 이후: " + arr)
+
+    arr = arr.concat("I can add string")
+    console.log("concat 이후: " + arr)
+
+    let testArr1 = [1, 3]
+    let testArr2 = [3, 7]
+
+    arr = arr.concat(testArr1, testArr2)
+    console.log("concat 이후: " + arr)
+
+    
 }
