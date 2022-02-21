@@ -37,9 +37,14 @@ function ArrayApiTest () {
     console.log("unshift() 이후: " + arr)
     console.log("len 값: " + len)
 
+    // 2번째 인덱스에서 0개를 지우고 해당 위치에 정보를 입력
     arr.splice(2, 0, "elem1", "elem2")
     console.log("splice 이후: " + arr)
 
+    // 2번째 인덱스에서 2개를 지우고 해당 위치에 정보 입력
     arr.splice(2, 2, "elem3", "elem4")
+    console.log("splice 이후: " + arr)
+
+    arr.splice(1, 2)
     console.log("splice 이후: " + arr)
 }
