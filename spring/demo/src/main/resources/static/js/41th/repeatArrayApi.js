@@ -29,4 +29,16 @@ function RepeatArrayApiTest () {
     }
 
     console.log("3 보다 큰 것: " + over3)
+
+    let reduceNum = sequence.reduce(reduceFunc)
+
+    function reduceFunc (total, value) {
+        console.log("total: " + total + ", value: " + value)
+        return total + value
+    }
+
+    console.log("reduceNum: " + reduceNum)
+
+    let reduceTest = sequence.reduce(reduceFunc, 777)
+    console.log(reduceTest)
 }
