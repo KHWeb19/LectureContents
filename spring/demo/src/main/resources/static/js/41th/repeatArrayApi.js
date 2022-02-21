@@ -21,4 +21,12 @@ function RepeatArrayApiTest () {
 
     console.log("sequence: " + sequence)
     console.log("squareSeq: " + squareSeq)
+
+    let over3 = sequence.filter(filterFunc)
+
+    function filterFunc (value) {
+        return value > 3
+    }
+
+    console.log("3 보다 큰 것: " + over3)
 }
