@@ -15,4 +15,12 @@ function ArrowAPITest () {
     const arrow100 = (val) => { return 100 + val }
 
     console.log("arrow100(3): " + arrow100(3))
+
+    const addTwoParam = function (a, b) { return a + b }
+
+    console.log("addTwoParam(3, 7): " + addTwoParam(3, 7))
+
+    const arrowTwoParam = (a, b) => { return a + b }
+
+    console.log("arrowTwoParam(3, 7): " + arrowTwoParam(3, 7))
 }
