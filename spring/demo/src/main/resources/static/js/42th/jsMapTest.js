@@ -14,4 +14,10 @@ function JsMapTest () {
     console.log("map2.get('Banana'): " + map2.get("Banana"))
     console.log("map2.has('test2'): " + map2.has("test2"))
     console.log("map2.has('Apple'): " + map2.has("Apple"))
+
+    map2.delete("Apple")
+    console.log("map2.has('Apple'): " + map2.has("Apple"))
+
+    map2.clear()
+    console.log("map2.has('Banana'): " + map2.has("Banana"))
 }
