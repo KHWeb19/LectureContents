@@ -42,4 +42,20 @@ function ArrowAPITest () {
     }
 
     calc.print()
+
+    const add = (first, second, ... args) => {
+        console.log(first, second, args)
+
+        let sum = first + second
+
+        for (let i = 0; i < args.length; i++) {
+            sum += args[i]
+        }
+
+        return sum
+    }
+
+    let sum = add(1, 2, 3, 4, 5)
+
+    console.log("sum = " + sum)
 }
