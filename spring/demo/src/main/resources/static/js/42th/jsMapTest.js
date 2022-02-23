@@ -40,4 +40,8 @@ function JsMapTest () {
     for (let entry of entryIter) {
         console.log("entry: " + entry)
     }
+
+    map3.forEach(function(value, key) {
+        console.log(key + " : " + value)
+    })
 }
