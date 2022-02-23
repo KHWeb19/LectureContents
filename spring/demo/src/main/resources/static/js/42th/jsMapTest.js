@@ -20,4 +20,12 @@ function JsMapTest () {
 
     map2.clear()
     console.log("map2.has('Banana'): " + map2.has("Banana"))
+
+    let map3 = new Map([["Apple", "green"], ["Banana", "yellow"]])
+
+    let keyIter = map3.keys()
+
+    for (let key of keyIter) {
+        console.log("key: " + key)
+    }
 }
