@@ -28,4 +28,10 @@ function JsMapTest () {
     for (let key of keyIter) {
         console.log("key: " + key)
     }
+
+    let valueIter = map3.values()
+
+    for (let value of valueIter) {
+        console.log("value: " + value)
+    }
 }
