@@ -16,4 +16,11 @@ public class Twelveth42thJsCollectionController {
 
         return "/42th/collection/mapTest";
     }
+
+    @GetMapping("/setTest")
+    public String getSetTest () {
+        log.info("getSetTest()");
+
+        return "/42th/collection/setTest";
+    }
 }
