@@ -34,4 +34,10 @@ function JsMapTest () {
     for (let value of valueIter) {
         console.log("value: " + value)
     }
+
+    let entryIter = map3.entries()
+
+    for (let entry of entryIter) {
+        console.log("entry: " + entry)
+    }
 }
