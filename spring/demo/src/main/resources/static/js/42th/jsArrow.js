@@ -32,8 +32,10 @@ function ArrowAPITest () {
         // 현재 케이스처럼 this.first는 calc의 내부 정보가되는데
         // 케이스 바이 케이스 형태로 다뤄 보는 것이 가장 좋다.
         print: function () {
+            console.log(this)
+
             const add = () => {
-                console.log(this)
+
                 return this.first + this.second
             }
 
