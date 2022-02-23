@@ -23,4 +23,23 @@ function ArrowAPITest () {
     const arrowTwoParam = (a, b) => { return a + b }
 
     console.log("arrowTwoParam(3, 7): " + arrowTwoParam(3, 7))
+
+    const calc = {
+        // 클래스 멤버 변수 만드는 작업 같은것이라고 생각하면됨
+        first: 33,
+        second: 777,
+
+        // 현재 케이스처럼 this.first는 calc의 내부 정보가되는데
+        // 케이스 바이 케이스 형태로 다뤄 보는 것이 가장 좋다.
+        print: function () {
+            const add = () => {
+                console.log(this)
+                return this.first + this.second
+            }
+
+            console.log(this.first + " + " + this.second + " = " + add())
+        }
+    }
+
+    calc.print()
 }
