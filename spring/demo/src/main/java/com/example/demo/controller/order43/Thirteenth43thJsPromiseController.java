@@ -86,4 +86,11 @@ public class Thirteenth43thJsPromiseController {
 
         return "/43th/promise/parallel/five";
     }
+
+    @GetMapping("/parallelSix")
+    public String getPromiseParallelSix () {
+        log.info("getPromiseParallelSix()");
+
+        return "/43th/promise/parallel/six";
+    }
 }
