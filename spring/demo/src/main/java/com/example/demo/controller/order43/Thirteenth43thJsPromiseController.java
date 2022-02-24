@@ -23,4 +23,11 @@ public class Thirteenth43thJsPromiseController {
 
         return "/43th/promise/two";
     }
+
+    @GetMapping("/three")
+    public String getPromiseThree () {
+        log.info("getPromiseThree()");
+
+        return "/43th/promise/three";
+    }
 }
