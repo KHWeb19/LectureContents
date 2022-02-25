@@ -23,6 +23,19 @@ let app = new Vue({
         },
         removeMonster: function (index) {
             this.list.splice(index, 1)
+        },
+        attackMonster: function (index) {
+            this.list[index].hp -= 10
+        }
+    },
+    beforeUpdate () {
+        console.log('VDOM의 변화를 감지하는 루틴')
+
+        let i
+        for (i = 0; i < this.list.length; i++) {
+            if (this.list[i].hp <= 0) {
+                this.list.splice(i, 1)
+            }
         }
     }
 })
