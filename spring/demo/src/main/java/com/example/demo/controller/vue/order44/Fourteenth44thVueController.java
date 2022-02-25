@@ -37,4 +37,11 @@ public class Fourteenth44thVueController {
 
         return "/vue/44th/clickEvent";
     }
+
+    @GetMapping("rolePlayGame")
+    public String getRolePlayGame () {
+        log.info("getRolePlayGame()");
+
+        return "/vue/44th/rolePlayGame";
+    }
 }
