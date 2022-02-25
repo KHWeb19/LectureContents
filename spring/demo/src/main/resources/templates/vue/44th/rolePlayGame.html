@@ -10,9 +10,12 @@
         <button v-on:click="addMonster">몬스터 추가</button>
 
         <ul>
-            <li v-for="item in list"
+            <li v-for="(item, index) in list"
                     v-bind:key="item.id">
                 ID: {{ item.id }} {{ item.name }} HP: {{ item.hp }}
+                <button v-on:click="removeMonster(index)">
+                    몬스터 삭제
+                </button>
             </li>
         </ul>
     </div>
