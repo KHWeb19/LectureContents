@@ -23,4 +23,11 @@ public class Fourteenth44thVueController {
 
         return "/vue/44th/sepFileDataBind";
     }
+
+    @GetMapping("/varDataBind")
+    public String getVarDataBind () {
+        log.info("getVarDataBind()");
+
+        return "/vue/44th/varDataBind";
+    }
 }
