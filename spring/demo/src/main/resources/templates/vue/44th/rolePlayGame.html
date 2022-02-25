@@ -6,6 +6,9 @@
 </head>
 <body>
     <div id="app">
+        이름: <input v-model="name">
+        <button v-on:click="addMonster">몬스터 추가</button>
+
         <ul>
             <li v-for="item in list"
                     v-bind:key="item.id">
