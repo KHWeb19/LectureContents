@@ -39,7 +39,7 @@ function multiply (num1, num2) {
 }
 
 async function asyncProcess () {
-    const res = await Promise.race([
+    const res = Promise.race([
         plus(100, 200),
         minus(100, 200),
         multiply(100, 200),
