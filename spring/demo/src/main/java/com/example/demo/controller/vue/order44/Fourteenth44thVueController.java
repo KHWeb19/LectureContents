@@ -30,4 +30,11 @@ public class Fourteenth44thVueController {
 
         return "/vue/44th/varDataBind";
     }
+
+    @GetMapping("/clickEvent")
+    public String getClickEvent () {
+        log.info("getClickEvent()");
+
+        return "/vue/44th/clickEvent";
+    }
 }
