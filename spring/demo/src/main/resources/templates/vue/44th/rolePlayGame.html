@@ -13,9 +13,12 @@
             <li v-for="(item, index) in list"
                     v-bind:key="item.id">
                 ID: {{ item.id }} {{ item.name }} HP: {{ item.hp }}
+                <button v-on:click="attackMonster(index)">공격</button>
+                <!--
                 <button v-on:click="removeMonster(index)">
                     몬스터 삭제
                 </button>
+                -->
             </li>
         </ul>
     </div>
