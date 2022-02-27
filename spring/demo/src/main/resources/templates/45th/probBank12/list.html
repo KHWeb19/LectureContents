@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>게시물 보기</h2>
+  <a th:href="@{/45th/probBank12/register}">학생 점수 등록하기</a>
+  <table border="1">
+    <tr>
+      <th align="center" width="85">학생번호</th>
+      <th align="center" width="105">이름</th>
+      <th align="center" width="60">반번호</th>
+      <th align="center" width="100">평균</th>
+      <th align="center" width="80">국어</th>
+      <th align="center" width="80">영어</th>
+      <th align="center" width="80">수학</th>
+      <th align="center" width="80">과학</th>
+      <th align="center" width="160">등록일자</th>
+    </tr>
+
+    <tr th:if="${#lists.isEmpty(list)}">
+      <td colspan="9">
+        현재 게시물이 없습니다!
+      </td>
+    </tr>
+
+    <tr th:each="student : ${list}">
+      <td align="center" th:text="${student.studentNo}">
+      </td>
+      <td align="center" th:text="${student.name}">
+      </td>
+      <td align="center" th:text="${student.classnum}">
+      </td>
+      <td align="center" th:text="${student.mean}">
+      </td>
+      <td align="center" th:text="${student.korean}">
+      </td>
+      <td align="center" th:text="${student.english}">
+      </td>
+      <td align="center" th:text="${student.math}">
+      </td>
+      <td align="center" th:text="${student.science}">
+      </td>
+      <td align="center"
+          th:text="${#dates.format(student.regDate, 'yyyy-MM-dd HH:mm:ss')}">
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

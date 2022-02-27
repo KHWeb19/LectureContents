@@ -1,0 +1,18 @@
+// 학생 이름
+// 학생 반(1반, 2반, 3반 ...)
+// 수학
+// 영어
+// 국어
+// 과학
+
+create table student(
+    student_no int not null auto_increment,
+    name varchar(50) not null,
+    classnum int not null,
+    math int null,
+    english int null,
+    korean int null,
+    science int null,
+    reg_date timestamp not null default now(),
+    primary key(student_no)
+);
