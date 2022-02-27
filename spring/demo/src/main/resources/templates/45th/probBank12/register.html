@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script>
+
+    $(document).ready(function() {
+        var formObj = $("#board");
+
+        $("#btnRegister").on("click", function() {
+            formObj.attr("action", "/45th/probBank12/register");
+            formObj.attr("method", "post");
+            formObj.submit();
+        });
+
+        $("#btnList").on("click", function() {
+            self.location = "/45th/probBank12/list";
+        });
+    });
+</script>
+
+<body>
+    <h2>학생 점수 등록 페이지</h2>
+
+    <form id="board" th:object="${student}">
+        <table>
+            <tr>
+                <td>이름</td>
+                <td>
+                    <input type="text" name="name" th:field="*{name}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>반번호</td>
+                <td>
+                    <input type="number" name="classnum" th:field="*{classnum}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>국어</td>
+                <td>
+                    <input type="number" name="korean" th:field="*{korean}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>영어</td>
+                <td>
+                    <input type="number" name="english" th:field="*{english}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>수학</td>
+                <td>
+                    <input type="number" name="math" th:field="*{math}"/>
+                </td>
+            </tr>
+            <tr>
+                <td>과학</td>
+                <td>
+                    <input type="number" name="science" th:field="*{science}"/>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <div>
+        <button type="submit" id="btnRegister">등록</button>
+        <button type="submit" id="btnList">돌아가기</button>
+    </div>
+</body>
+</html>
