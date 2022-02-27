@@ -23,6 +23,17 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public List<Student> list() {
-        return repository.list();
+        List<Student> list = repository.list();
+        int mean;
+
+        for (int i = 0; i < list.size(); i++) {
+            //System.out.println(list.get(i));
+            Student studentElem = list.get(i);
+            mean = (studentElem.getKorean() + studentElem.getEnglish() + studentElem.getMath() + studentElem.getScience()) / 4;
+            studentElem.setMean(mean);
+            list.set(i, studentElem);
+        }
+
+        return list;
     }
 }
