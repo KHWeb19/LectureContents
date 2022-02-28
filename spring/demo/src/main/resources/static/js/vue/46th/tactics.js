@@ -35,12 +35,13 @@ let app = new Vue({
             { monsterId: 1007, name: '스텔스 드래곤', hp: 150, exp: 15, dropMoney: 25 },
         ],
         list: [
-            { id: 1, name: '슬라임', hp: 100 },
-            { id: 2, name: '고블린', hp: 200 },
-            { id: 3, name: '사슴', hp: 150 },
-            { id: 4, name: '리본돼지', hp: 250}
+            { id: 1, monsterId: 1, name: '슬라임', hp: 50 },
+            { id: 2, monsterId: 2, name: '고블린', hp: 80 },
+            { id: 3, monsterId: 3, name: '사슴', hp: 100 },
+            { id: 4, monsterId: 4, name: '리본돼지', hp: 100},
+            { id: 5, monsterId: 1, name: '슬라임', hp: 50 },
         ],
-        name: '일단은 고정값: 키메라다!!!',
+        name: '알아서 생성됨',
         randomNumber: 0
     },
     methods: {
@@ -52,10 +53,13 @@ let app = new Vue({
                 return a > b.id ? a : b.id
             }, 0)
 
+            let randNum = Math.floor(Math.random() * this.monsterBook.length) + 1
+
             this.list.push({
                 id: max + 1,
-                name: this.name,
-                hp: 500
+                monsterId: randNum,
+                name: this.monsterBook[randNum].name,
+                hp: this.monsterBook[randNum].hp
             })
         },
         removeMonster: function (index) {
