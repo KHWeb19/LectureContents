@@ -67,6 +67,14 @@ let app = new Vue({
         },
         attackMonster: function (index) {
             this.list[index].hp -= 10
+        },
+        myStealthDarkFlameDragonFear: function () {
+            console.log("내안의 보이지 않는 어둠의 흑염룡이 울부짖었다!!! " +
+                        "스텔스 다크 플레임 드래곤 피어!!!!!")
+
+            for (let i = 0; i < this.list.length; i++) {
+                this.list[i].hp = parseInt(this.list[i].hp - 1000)
+            }
         }
     },
     beforeUpdate () {

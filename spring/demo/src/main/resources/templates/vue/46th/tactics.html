@@ -11,18 +11,20 @@
 
         몬스터 도감</br>
         <ul>
-            <li v-for="monster in monsterBook" v-bind:key="monster.monsterId">
+            <li v-for="(monster, index) in monsterBook" v-bind:key="index">
                 ID: {{ monster.monsterId }} name: {{ monster.name }} hp: {{ monster.hp }}
                 exp: {{ monster.exp }} drop money: {{ monster.dropMoney }}
             </li>
         </ul>
 
         이름: <input v-model="name">
-        <button v-on:click="addMonster">몬스터 추가</button>
+        <button v-on:click="addMonster">몬스터 추가</button><br><br>
+
+        <button v-on:click="myStealthDarkFlameDragonFear">스텔스 다크 플레임 드래곤 피어</button>
 
         <ul>
             <li v-for="(item, index) in list"
-                    v-bind:key="item.id">
+                    v-bind:key="index">
                 ID: {{ item.id }} {{ item.name }} HP: {{ item.hp }}
                 <button v-on:click="attackMonster(index)">공격</button>
             </li>
