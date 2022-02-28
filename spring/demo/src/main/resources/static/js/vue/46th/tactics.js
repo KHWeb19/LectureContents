@@ -64,7 +64,20 @@ let app = new Vue({
             })
         },
         addManyMonsters: function () {
+            for (let i = 0; i < 100; i++) {
+                let max = this.list.reduce(function(a, b) {
+                    return a > b.id ? a : b.id
+                }, 0)
 
+                let idx = Math.floor(Math.random() * this.monsterBook.length)
+
+                this.list.push({
+                    id: max + 1,
+                    monsterId: idx,
+                    name: this.monsterBook[idx].name,
+                    hp: this.monsterBook[idx].hp
+                })
+            }
         },
         removeMonster: function (index) {
             this.list.splice(index, 1)
