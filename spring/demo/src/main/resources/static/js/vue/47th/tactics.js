@@ -74,9 +74,35 @@ let app = new Vue({
             { name: '발라리아 강철 검', price: 150000000, effect: { desc: '무기 공격력 500', atk: 500 }},
             { name: '화열검', price: 1500000000, effect: { desc: '무기 공격력 700', atk: 700 }},
             { name: '칠지도', price: 150000000000, effect: { desc: '무기 공격력 1000', atk: 1000 }},
-        ]
+        ],
+        inventoryView: false,
+        myInventory: [],
+        myInventoryValue: []
     },
     methods: {
+        equipItem () {
+            let tmpSum = 0
+
+            console.log('equipItem(): ' + this.myInventoryValue.length)
+            console.log('myInventory Length: ' + this.myInventory.length)
+
+            for (let i = 0; i < this.myInventoryValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.myInventoryValue[i])
+
+                for (let j = 0; j < this.myInventory.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.myInventoryValue[i] === j) {
+                        console.log('매칭 완료')
+                        tmpSum += this.myInventory[j].effect.atk
+                        break
+                    }
+                }
+            }
+
+            this.characterStatus.itemAtk = tmpSum
+            this.characterStatus.atk = this.characterStatus.defaultAtk + tmpSum
+        },
         shuffleShopList: function () {
             if (!this.shopView) {
                 this.shopListValue = []
@@ -109,6 +135,13 @@ let app = new Vue({
 
             if (this.characterStatus.money - tmpSum >= 0) {
                 this.characterStatus.money -= tmpSum
+
+                for (let i = 0; i < this.shopListValue.length; i++) {
+                    this.myInventory.push({
+                        name: this.shopList[this.shopListValue[i]].name,
+                        effect: this.shopList[this.shopListValue[i]].effect,
+                    })
+                }
             } else {
                 alert('돈읎다 돈벌어와!')
             }
