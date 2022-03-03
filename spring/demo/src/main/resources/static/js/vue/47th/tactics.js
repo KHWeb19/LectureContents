@@ -105,7 +105,7 @@ let app = new Vue({
             // 이와 같은 사항 때문에 강타입을
             // 강제적으로 지정할 수 있는 TypeScript가 부각된 것임
             //this.list[index].hp -= 10
-            this.list[index].hp -= BigInt(10)
+            this.list[index].hp = BigInt(this.list[index].hp) - BigInt(this.characterStatus.atk)
         },
         myStealthDarkFlameDragonFear: function () {
             console.log("내안의 보이지 않는 어둠의 흑염룡이 울부짖었다!!! " +
@@ -113,7 +113,7 @@ let app = new Vue({
 
             for (let i = 0; i < this.list.length; i++) {
                 //this.list[i].hp = parseInt(this.list[i].hp - 1000)
-                this.list[i].hp = BigInt(this.list[i].hp) - BigInt(1000)
+                this.list[i].hp = BigInt(this.list[i].hp) - BigInt(100 * this.characterStatus.atk)
             }
         }
     },
@@ -130,6 +130,46 @@ let app = new Vue({
                     }
                 }
                 this.list.splice(i, 1)
+            }
+        }
+
+        var criteria = this.characterStatus.currentLevelBar
+
+        for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
+            this.characterStatus.currentLevelBar = 
+            parseInt(this.characterStatus.currentLevelBar - this.characterStatus.totalLevelBar)
+
+            this.characterStatus.level += 1
+            this.characterStatus.hp *= 1.2
+            this.characterStatus.mp *= 1.2
+            this.characterStatus.defaultAtk += 3
+            this.characterStatus.atk += 3
+            this.characterStatus.def += 1
+            this.characterStatus.str *= 1.2
+            this.characterStatus.intelligence *= 1.2
+            this.characterStatus.dex *= 1.2
+            this.characterStatus.vit *= 1.2
+            this.characterStatus.def *= 1.2
+            this.characterStatus.men *= 1.2
+
+            if (this.characterStatus.level < 10) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.1)
+            } else if (this.characterStatus.level < 30) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.2)
+            } else if (this.characterStatus.level < 50) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.3)
+            } else if (this.characterStatus.level < 70) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.4)
+            } else if (this.characterStatus.level < 80) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.5)
+            } else if (this.characterStatus.level < 100) {
+                this.characterStatus.totalLevelBar =
+                    parseInt(this.characterStatus.totalLevelBar * 1.8)
             }
         }
     }
