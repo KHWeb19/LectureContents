@@ -87,6 +87,32 @@ let app = new Vue({
                 this.shopList[i] = this.itemBook[randIdx]
             }
         },
+        calcBuy: function () {
+            let tmpSum = 0
+
+            console.log('calcBuy(): ' + this.shopListValue.length)
+            console.log('shopList Length: ' + this.shopList.length)
+
+            for (let i = 0; i < this.shopListValue.length; i++) {
+                console.log('외곽 루프 - 선택된 값: ' + this.shopListValue[i])
+
+                for (let j = 0; j < this.shopList.length; j++) {
+                    console.log('내부 루프')
+
+                    if (this.shopListValue[i] === j) {
+                        console.log('매칭 완료')
+                        tmpSum += this.shopList[j].price
+                        break
+                    }
+                }
+            }
+
+            if (this.characterStatus.money - tmpSum >= 0) {
+                this.characterStatus.money -= tmpSum
+            } else {
+                alert('돈읎다 돈벌어와!')
+            }
+        },
         generateRandom: function () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
