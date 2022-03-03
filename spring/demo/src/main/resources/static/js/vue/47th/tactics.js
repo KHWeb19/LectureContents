@@ -61,9 +61,32 @@ let app = new Vue({
             currentLevelBar: 0,
             money: 0,
             selectJob: '모험가'
-        }
+        },
+        shopView: false,
+        shopList: [],
+        shopListValue: [],
+        itemBook: [
+            { name: 'HP 포션 I', price: 50, effect: { desc: 'hp 200 회복', amount: 200 }},
+            { name: 'HP 포션 II', price: 200, effect: { desc: 'hp 700 회복', amount: 700 }},
+            { name: '낡은 검', price: 500000, effect: { desc: '무기 공격력 100', atk: 100 }},
+            { name: '검', price: 2500000, effect: { desc: '무기 공격력 200', atk: 200 }},
+            { name: '강철 검', price: 15000000, effect: { desc: '무기 공격력 350', atk: 350 }},
+            { name: '발라리아 강철 검', price: 150000000, effect: { desc: '무기 공격력 500', atk: 500 }},
+            { name: '화열검', price: 1500000000, effect: { desc: '무기 공격력 700', atk: 700 }},
+            { name: '칠지도', price: 150000000000, effect: { desc: '무기 공격력 1000', atk: 1000 }},
+        ]
     },
     methods: {
+        shuffleShopList: function () {
+            if (!this.shopView) {
+                this.shopListValue = []
+            }
+
+            for (let i = 0; i < 10; i++) {
+                let randIdx = Math.floor(Math.random() * this.itemBook.length)
+                this.shopList[i] = this.itemBook[randIdx]
+            }
+        },
         generateRandom: function () {
             this.randomNumber = Math.floor(Math.random() * 10) + 1;
         },
@@ -133,7 +156,7 @@ let app = new Vue({
             }
         }
 
-        var criteria = this.characterStatus.currentLevelBar
+        //let criteria = this.characterStatus.currentLevelBar
 
         for (; this.characterStatus.currentLevelBar >= this.characterStatus.totalLevelBar; ) {
             this.characterStatus.currentLevelBar = 

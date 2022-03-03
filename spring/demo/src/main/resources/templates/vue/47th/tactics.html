@@ -17,6 +17,36 @@
             </li>
         </ul></br></br>
 
+        <h3>상점</h3>
+        <label>
+            <input type="checkbox" v-model="shopView" v-on:click="shuffleShopList()">
+            판매 목록
+        </label>
+        <button>구매 확정!</button>
+        <table border="1" v-if="shopView">
+            <tr>
+                <th align="center" width="40">번호</th>
+                <th align="center" width="120">아이템명</th>
+                <th align="center" width="160">가격</th>
+                <th align="center" width="320">아이템 설명</th>
+                <th align="center" width="40">구매</th>
+            </tr>
+            <tr v-for="(slist, idx) in shopList" v-bind:key="slist.idx">
+                <th align="center" width="40">{{ idx + 1 }}</th>
+                <th align="center" width="120">{{ slist.name }}</th>
+                <th align="center" width="160">{{ slist.price }}</th>
+                <th align="center" width="320">{{ slist.effect.desc }}</th>
+                <th align="center" width="40">
+                    <label>
+                        <input type="checkbox"
+                                v-model="shopListValue"
+                                v-bind:value="idx">
+                    </label>
+                </th>
+            </tr>
+        </table>
+        </br></br>
+
         <p>캐릭터 상태 창</p>
         <p>HP: {{ Math.floor(characterStatus.hp) }} MP: {{ Math.floor(characterStatus.mp) }}
             ATK: {{ Math.floor(characterStatus.atk) }} Lv: {{ Math.floor(characterStatus.level) }}</p>
