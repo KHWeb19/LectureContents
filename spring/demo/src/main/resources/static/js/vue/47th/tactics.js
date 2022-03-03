@@ -183,11 +183,23 @@ let app = new Vue({
             this.list.splice(index, 1)
         },
         attackMonster: function (index) {
-            // 현재와 같은 문제가 시스템이 커지면 매우 복잡해짐
-            // 이와 같은 사항 때문에 강타입을
-            // 강제적으로 지정할 수 있는 TypeScript가 부각된 것임
-            //this.list[index].hp -= 10
             this.list[index].hp = BigInt(this.list[index].hp) - BigInt(this.characterStatus.atk)
+        },
+        myDarknessDeathDestinyTypoonBlade: function (index) {
+            console.log("어둠의 다크에서 죽음의 데스를 느끼며 " +
+                "서쪽에서 불어오는 태풍을 맞았으니 " +
+                "간닷! 다크니스 데스 데스티니 타이푼 블레이드!!!!!!!!!!!!")
+
+            this.list[index].hp = 
+                BigInt(this.list[index].hp) - 
+                BigInt(
+                    Math.floor(
+                        this.characterStatus.atk * 50 +
+                        this.characterStatus.str * 24 +
+                        this.characterStatus.dex * 33 +
+                        this.characterStatus.intelligence * 33
+                    )
+                )
         },
         myStealthDarkFlameDragonFear: function () {
             console.log("내안의 보이지 않는 어둠의 흑염룡이 울부짖었다!!! " +
