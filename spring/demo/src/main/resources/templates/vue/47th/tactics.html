@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v-on="http://www.w3.org/1999/xhtml" xmlns:v-bind="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        <p> 랜덤 숫자 테스트: {{ randomNumber }} </p>
+        <button v-on:click="generateRandom">랜덤 숫자 발생!</button><br>
+
+        몬스터 도감</br>
+        <ul>
+            <li v-for="(monster, index) in monsterBook" v-bind:key="index">
+                ID: {{ monster.monsterId }} name: {{ monster.name }} hp: {{ monster.hp }}
+                exp: {{ monster.exp }} drop money: {{ monster.dropMoney }}
+            </li>
+        </ul></br></br>
+
+        <p>캐릭터 상태 창</p>
+        <p>HP: {{ Math.floor(characterStatus.hp) }} MP: {{ Math.floor(characterStatus.mp) }}
+            ATK: {{ Math.floor(characterStatus.atk) }} Lv: {{ Math.floor(characterStatus.level) }}</p>
+        <p>STR: {{ Math.floor(characterStatus.str) }} INT: {{ Math.floor(characterStatus.intelligence) }}
+            DEX: {{ Math.floor(characterStatus.dex) }} VIT: {{ Math.floor(characterStatus.vit) }}
+            DEF: {{ Math.floor(characterStatus.def) }} MEN: {{ Math.floor(characterStatus.men) }}</p>
+        <p>현재 경험치 상태: {{ characterStatus.currentLevelBar }} / {{ characterStatus.totalLevelBar }}</p>
+        <p>소지금: {{ characterStatus.money }}</p>
+
+        <button v-on:click="addMonster">몬스터 추가</button>
+        <button v-on:click="addManyMonsters">몬스터 군단 추가</button><br><br>
+
+        <button v-on:click="myStealthDarkFlameDragonFear">스텔스 다크 플레임 드래곤 피어</button>
+
+        <ul>
+            <li v-for="(item, index) in list"
+                    v-bind:key="index">
+                ID: {{ item.id }} {{ item.name }} HP: {{ item.hp }}
+                <button v-on:click="attackMonster(index)">공격</button>
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="/js/vue/47th/tactics.js"></script>
+</body>
+</html>
