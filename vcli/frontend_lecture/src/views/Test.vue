@@ -17,15 +17,24 @@
 
         <div id="app">
             <p>{{ msg }}</p>
+
+            <global-component v-bind:initial-test="counter">
+            </global-component>
         </div>
     </div>
 </template>
 
 <script>
 
+import Vue from 'vue'
+import GlobalComponent from '@/components/test/GlobalComponent.vue'
+
+Vue.component(GlobalComponent.name, GlobalComponent)
+
 export default {
     data () {
         return {
+            counter: 0,
             msg: '이래서 Vue 가 생산성이 높음'
         }
     }
