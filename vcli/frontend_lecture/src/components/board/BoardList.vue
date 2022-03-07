@@ -39,7 +39,10 @@ export default {
         boards: {
             type: Array
         }
-    }    
+    },
+    beforeUpdate () {
+        console.log('check: ' + this.boards)
+    }
 }
 
 </script>
