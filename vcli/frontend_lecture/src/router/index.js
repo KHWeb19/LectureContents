@@ -4,6 +4,7 @@ import Home from '../views/Home.vue'
 import Test from '@/views/Test.vue'
 
 import BoardListPage from '@/views/board/BoardListPage.vue'
+import BoardRegisterPage from '@/views/board/BoardRegisterPage.vue'
 
 Vue.use(VueRouter)
 
@@ -22,6 +23,11 @@ const routes = [
     path: '/boardList',
     name: 'BoardListPage',
     component: BoardListPage
+  },
+  {
+    path: '/boardRegister',
+    name: 'BoardRegisterPage',
+    component: BoardRegisterPage
   }
 ]
 

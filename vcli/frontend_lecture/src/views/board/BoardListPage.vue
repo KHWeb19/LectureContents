@@ -1,7 +1,9 @@
 <template>
     <div id="board">
         <h2>Vue + Spring 게시판</h2>
-        <p>게시물 작성</p>
+        <router-link :to="{ name: 'BoardRegisterPage' }">
+            게시물 작성
+        </router-link>
         <!-- v-bind:board="boards"와 같으며 아래와 같이 생략 가능 -->
         <board-list :boards="boards"/>
     </div>
