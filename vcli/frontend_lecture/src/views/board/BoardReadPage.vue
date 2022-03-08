@@ -13,7 +13,7 @@
 
 <script>
 
-//import axios from 'axios'
+import axios from 'axios'
 import { mapActions, mapState } from 'vuex'
 import BoardRead from '@/components/board/BoardRead.vue'
 
@@ -42,7 +42,15 @@ export default {
         ...mapActions(['fetchBoard']),
         onDelete () {
             const { boardNo } = this.board
-            alert('지우는 게시물 번호: ' + boardNo)
+            //alert('지우는 게시물 번호: ' + boardNo)
+            axios.delete(`http://localhost:7777/49th/vueboard/${boardNo}`)
+                    .then(() => {
+                        alert('삭제 성공!')
+                        this.$router.push({ name: 'BoardListPage' })
+                    })
+                    .catch(() => {
+                        alert('삭제 실패! 문제 발생!')
+                    })
         }
     }
 }

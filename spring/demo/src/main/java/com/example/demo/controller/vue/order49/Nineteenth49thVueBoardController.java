@@ -27,4 +27,15 @@ public class Nineteenth49thVueBoardController {
 
         return new ResponseEntity<>(board, HttpStatus.OK);
     }
+
+    // 반드시 가변 인자 방식이어야함
+    @DeleteMapping("/{boardNo}")
+    public ResponseEntity<Void> vueBoardRemove(
+            @PathVariable("boardNo") Integer boardNo) {
+        log.info("vueBoardRemove()");
+
+        service.remove(boardNo);
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
