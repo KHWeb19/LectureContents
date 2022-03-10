@@ -18,7 +18,9 @@ import TrComponent from '@/components/game/concave/TrComponent.vue'
 
 export default {
     data () {
+        return {
 
+        }
     },
     components: {
         TrComponent
@@ -30,3 +32,11 @@ export default {
     }
 }
 </script>
+
+<style>
+
+div {
+    display: inline;
+}
+
+</style>

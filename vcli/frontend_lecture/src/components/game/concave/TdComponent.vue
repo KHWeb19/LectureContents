@@ -8,7 +8,9 @@
 
 export default {
     data () {
-
+        return {
+            
+        }
     },
     props: {
         cellData: String,
@@ -28,6 +30,10 @@ export default {
 </script>
 
 <style scoped>
+
+table {
+    border-collapse: collapse;
+}
 
 td {
     border: 1px solid black;
