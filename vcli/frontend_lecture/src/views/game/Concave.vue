@@ -4,7 +4,10 @@
         <!-- 판떼기 클릭 상황 고려 -->
         <table-component :table-data="tableData"
                         :turn="turn"
-                        :winner="winner">
+                        :winner="winner"
+                        v-on:updateTurn="updateTurn"
+                        v-on:updateTableData="updateTableData"
+                        v-on:updateWinner="updateWinner">
         </table-component>
         <div v-if="winner">{{ winner }} 님의 승리!</div>
     </div>
@@ -27,6 +30,21 @@ export default {
                 ['', '', ''],
                 ['', '', '']
             ]
+        }
+    },
+    methods: {
+        updateTurn (val) {
+            this.turn = val
+        },
+        updateTableData () {
+            this.tableData = [
+                ['', '', ''],
+                ['', '', ''],
+                ['', '', '']
+            ]
+        },
+        updateWinner (val) {
+            this.winner = val
         }
     }
 }

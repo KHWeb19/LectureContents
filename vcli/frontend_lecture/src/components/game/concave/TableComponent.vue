@@ -7,7 +7,10 @@
                 :row-index="index"
                 :table-data="tableData"
                 :turn="turn"
-                :winner="winner">
+                :winner="winner"
+                v-on:updateTurn="updateTurn"
+                v-on:updateTableData="updateTableData"
+                v-on:updateWinner="updateWinner">
         </tr-component>
     </table>
 </template>
@@ -19,7 +22,8 @@ import TrComponent from '@/components/game/concave/TrComponent.vue'
 export default {
     data () {
         return {
-
+            propTurn: this.turn,
+            propWin: this.winner
         }
     },
     components: {
@@ -29,6 +33,19 @@ export default {
         tableData: Array,
         turn: String,
         winner: String
+    },
+    methods: {
+        updateTurn (val) {
+            this.propTurn = val
+            this.$emit('updateTurn', this.propTurn)
+        },
+        updateTableData () {
+            this.$emit('updateTableData')
+        },
+        updateWinner (val) {
+            this.propWin = val
+            this.$emit('updateWinner', this.propWin)
+        }
     }
 }
 </script>
