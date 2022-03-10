@@ -30,6 +30,7 @@ export default {
             }
 
             this.$set(this.tableData[this.rowIndex], this.cellIndex, this.turn)
+            this.$emit('updateWinner', '')
 
             let win = false
 
@@ -59,8 +60,14 @@ export default {
                 win = true
             }
 
+            this.game.propTurn = this.turn === 'O' ? 'X' : 'O'
+
             if (win) {
                 this.game.propWin = this.turn
+
+                this.$emit('updateWinner', this.game.propWin)
+                this.$emit('updateTurn', this.game.propTurn)
+                this.$emit('updateTableData')
             } else {
                 let all = true
                 this.tableData.forEach(row => {
@@ -73,9 +80,9 @@ export default {
 
                 if (all) {
                     this.propWin = ''
+                    this.$emit('updateTurn', this.game.propTurn)
+                    this.$emit('updateTableData')
                 } else {
-                    this.game.propTurn = this.turn === 'O' ? 'X' : 'O'
-
                     this.$emit('updateTurn', this.game.propTurn)
                 }
             }
