@@ -19,7 +19,9 @@ import TdComponent from '@/components/game/concave/TdComponent.vue'
 
 export default {
     data () {
-
+        return {
+            
+        }
     },
     components: {
         TdComponent
