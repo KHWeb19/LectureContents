@@ -1,18 +1,16 @@
 <template>
   <div class="home">
         <div id="header">
-            <router-link :to="{ name: 'Home' }">
+            <router-link style="text-decoration: none;" :to="{ name: 'Home' }">
                 &nbsp;Home&nbsp;
             </router-link>
-            <router-link :to="{ name: 'Test' }">
+            <router-link style="text-decoration: none;" :to="{ name: 'Test' }">
                 &nbsp;Test&nbsp;
             </router-link>
-            <router-link :to="{ name: 'BoardListPage' }">
+            <router-link style="text-decoration: none;" :to="{ name: 'BoardListPage' }">
                 &nbsp;BoardListPage&nbsp;
             </router-link>
-            <router-link :to="{ name: 'Concave' }"
-                    class="nav-link"
-                    active-class="active">
+            <router-link style="text-decoration: none;" :to="{ name: 'Concave' }">
                 &nbsp;이것이 삼목이닷!&nbsp;
             </router-link>
         </div>

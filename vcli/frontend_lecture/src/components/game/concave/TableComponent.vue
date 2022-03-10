@@ -11,3 +11,22 @@
         </tr-component>
     </table>
 </template>
+
+<script>
+
+import TrComponent from '@/components/game/concave/TrComponent.vue'
+
+export default {
+    data () {
+
+    },
+    components: {
+        TrComponent
+    },
+    props: {
+        tableData: Array,
+        turn: String,
+        winner: String
+    }
+}
+</script>
