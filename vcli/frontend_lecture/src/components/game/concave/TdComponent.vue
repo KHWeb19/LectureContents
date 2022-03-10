@@ -19,10 +19,21 @@ export default {
         winner: String
     },
     methods: {
-        onclickTd () {
+        onClickTd () {
             alert('마우스 클릭 감지!')
         }
     }
 }
 
 </script>
+
+<style scoped>
+
+td {
+    border: 1px solid black;
+    width: 80px;
+    height: 80px;
+    text-align: center;
+}
+
+</style>
