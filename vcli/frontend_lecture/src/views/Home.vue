@@ -13,6 +13,9 @@
             <router-link style="text-decoration: none;" :to="{ name: 'Concave' }">
                 &nbsp;이것이 삼목이닷!&nbsp;
             </router-link>
+            <router-link style="text-decoration: none;" :to="{ name: 'EventBusTestPage' }">
+                &nbsp;이것이 eventbus닷!&nbsp;
+            </router-link>
         </div>
   </div>
 </template>
