@@ -8,10 +8,14 @@
 
 <script>
 
+import Product from '@/components/eventbus/Product.vue'
+import ProductDetail from '@/components/eventbus/ProductDetail.vue'
+
 export default {
     name: 'EventBusTestPage',
     components: {
-
+        Product,
+        ProductDetail
     }
 }
 
