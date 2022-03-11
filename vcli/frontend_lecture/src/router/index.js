@@ -10,6 +10,8 @@ import BoardModifyPage from '@/views/board/BoardModifyPage.vue'
 
 import Concave from '@/views/game/Concave.vue'
 
+import EventBusTestPage from '@/views/eventbus/EventBusTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -57,6 +59,11 @@ const routes = [
     path: '/game/concave',
     name: 'Concave',
     component: Concave
+  },
+  {
+    path: '/eventbusTest',
+    name: 'EventBusTestPage',
+    component: EventBusTestPage
   }
 ]
 
