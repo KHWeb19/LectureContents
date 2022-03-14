@@ -1,4 +1,6 @@
 export default {
     boards: [],
-    board: null
+    board: null,
+    productBoards: [],
+    productBoard: null
 }

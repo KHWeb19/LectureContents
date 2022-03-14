@@ -12,6 +12,11 @@ import Concave from '@/views/game/Concave.vue'
 
 import EventBusTestPage from '@/views/eventbus/EventBusTestPage.vue'
 
+import ProductBoardListPage from '@/views/productBoard/ProductBoardListPage.vue'
+import ProductBoardRegisterPage from '@/views/productBoard/ProductBoardRegisterPage.vue'
+import ProductBoardReadPage from '@/views/productBoard/ProductBoardReadPage.vue'
+import ProductBoardModifyPage from '@/views/productBoard/ProductBoardModifyPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -64,6 +69,36 @@ const routes = [
     path: '/eventbusTest',
     name: 'EventBusTestPage',
     component: EventBusTestPage
+  },
+  {
+    path: '/productBoardList',
+    name: 'ProductBoardListPage',
+    component: ProductBoardListPage
+  },
+  {
+    path: '/productBoardRegister',
+    name: 'ProductBoardRegisterPage',
+    component: ProductBoardRegisterPage
+  },
+  {
+    path: '/productBoardRead/:productNo',
+    name: 'ProductBoardReadPage',
+    components: {
+      default: ProductBoardReadPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/productBoardModify/:productNo',
+    name: 'ProductBoardModifyPage',
+    components: {
+      default: ProductBoardModifyPage
+    },
+    props: {
+      default: true
+    }
   }
 ]
 

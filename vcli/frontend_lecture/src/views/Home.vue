@@ -16,6 +16,9 @@
             <router-link style="text-decoration: none;" :to="{ name: 'EventBusTestPage' }">
                 &nbsp;이것이 eventbus닷!&nbsp;
             </router-link>
+            <router-link style="text-decoration: none;" :to="{ name: 'ProductBoardListPage' }">
+                &nbsp;상품게시판(문제은행13번)&nbsp;
+            </router-link>
         </div>
   </div>
 </template>
