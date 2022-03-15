@@ -169,6 +169,14 @@
                 </v-list>
             </v-menu>
         </div>
+
+        <v-container>
+            <v-data-table :headers="headerTitle"
+                        :items="contents"
+                        :items-per-page="10"
+                        class="elevation-1">
+            </v-data-table>
+        </v-container>
     </div>
 </template>
 
@@ -177,6 +185,29 @@
 export default {
     data () {
         return {
+            headerTitle: [
+                { text: '번호', value: 'boardNo', width: "70px" },
+                { text: '제목', value: 'title', width: "200px" },
+                { text: '작성자', value: 'writer', width: "100px" },
+                { text: '내용', value: 'content', width: "100px" },
+            ],
+            contents: [
+                { boardNo: 1, title: '야호', writer: '으마으마', content: '으아아아앜' },
+                { boardNo: 2, title: '호야', writer: '어마어마', content: '으어어어엌' },
+                { boardNo: 3, title: '호야호야', writer: '어이크후', content: '어이크후' },
+                { boardNo: 4, title: '야호', writer: '으마으마', content: '으아아아앜' },
+                { boardNo: 5, title: '호야', writer: '어마어마', content: '으어어어엌' },
+                { boardNo: 6, title: '호야호야', writer: '어이크후', content: '어이크후' },
+                { boardNo: 7, title: '야호', writer: '으마으마', content: '으아아아앜' },
+                { boardNo: 8, title: '호야', writer: '어마어마', content: '으어어어엌' },
+                { boardNo: 9, title: '호야호야', writer: '어이크후', content: '어이크후' },
+                { boardNo: 10, title: '야호', writer: '으마으마', content: '으아아아앜' },
+                { boardNo: 11, title: '호야', writer: '어마어마', content: '으어어어엌' },
+                { boardNo: 12, title: '호야호야', writer: '어이크후', content: '어이크후' },
+                { boardNo: 13, title: '야호', writer: '으마으마', content: '으아아아앜' },
+                { boardNo: 14, title: '호야', writer: '어마어마', content: '으어어어엌' },
+                { boardNo: 15, title: '호야호야', writer: '어이크후', content: '어이크후' },
+            ],
             nav_drawer: false,
             dialog: false,
             service: {
