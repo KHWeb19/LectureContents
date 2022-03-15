@@ -2,6 +2,7 @@ package com.example.demo.repository.order36;
 
 import com.example.demo.entity.order36.ProductBoard;
 import lombok.SneakyThrows;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
@@ -12,6 +13,7 @@ import java.sql.SQLException;
 import java.text.SimpleDateFormat;
 import java.util.List;
 
+@Slf4j
 @Repository
 public class ProductBoardRepository {
 
@@ -95,6 +97,8 @@ public class ProductBoardRepository {
     }
 
     public void update(ProductBoard productBoard) {
+        log.info("Repository update: " + productBoard);
+
         String query = "update product_board set title = ?, description = ?, " +
                 "price = ? where product_no = ?";
 
