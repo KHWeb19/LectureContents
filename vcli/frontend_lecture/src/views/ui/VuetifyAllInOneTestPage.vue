@@ -151,6 +151,24 @@
                 </v-list-item>
             </v-list>
         </v-navigation-drawer>
+
+        <div>
+            <v-menu offset-y>
+                <template v-slot:activator="{ on }">
+                    <v-btn color='teal darken-1' class="white--text ma-5" v-on="on">
+                        마! 이거시 Drop Down!
+                    </v-btn>
+                </template>
+
+                <v-list>
+                    <v-list-item v-for="(dropItem, index) in dropItems" :key="index" link>
+                        <v-list-item-title>
+                            {{ dropItem.title }}
+                        </v-list-item-title>
+                    </v-list-item>
+                </v-list>
+            </v-menu>
+        </div>
     </div>
 </template>
 
@@ -170,6 +188,12 @@ export default {
             },
             links: [
                 { icon: 'mdi-home', text: 'Home', name: 'home', route: '/' }
+            ],
+            dropItems: [
+                { title: 'Click Me 1' },
+                { title: 'Click Me 2' },
+                { title: 'Click Me 3' },
+                { title: 'Click Me 4' }
             ]
         }
     },
