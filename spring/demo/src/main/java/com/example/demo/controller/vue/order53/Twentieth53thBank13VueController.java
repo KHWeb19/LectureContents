@@ -51,7 +51,7 @@ public class Twentieth53thBank13VueController {
     public ResponseEntity<ProductBoard> modify (
             @PathVariable("productNo") Integer productNo,
             @RequestBody ProductBoard productBoard) {
-        log.info("modify");
+        log.info("modify: " + productBoard);
 
         productBoard.setProductNo(productNo);
         productBoardService.modify(productBoard);

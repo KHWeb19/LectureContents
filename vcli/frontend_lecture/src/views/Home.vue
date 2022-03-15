@@ -19,6 +19,9 @@
             <router-link style="text-decoration: none;" :to="{ name: 'ProductBoardListPage' }">
                 &nbsp;상품게시판(문제은행13번)&nbsp;
             </router-link>
+            <router-link style="text-decoration: none;" :to="{ name: 'VuetifyAllInOneTestPage' }">
+                &nbsp;Vuetify(뷰티파이) UI Test&nbsp;
+            </router-link>
         </div>
   </div>
 </template>
