@@ -19,6 +19,7 @@ import ProductBoardModifyPage from '@/views/productBoard/ProductBoardModifyPage.
 
 import VuetifyAllInOneTestPage from '@/views/ui/VuetifyAllInOneTestPage.vue'
 import VuetifyImageTestPage from '@/views/ui/VuetifyImageTestPage.vue'
+import CoverFlowTestPage from '@/views/ui/CoverFlowTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -112,6 +113,11 @@ const routes = [
     path: '/vuetifyImageTest',
     name: 'VuetifyImageTestPage',
     component: VuetifyImageTestPage
+  },
+  {
+    path: '/coverFlowTest',
+    name: 'CoverFlowTestPage',
+    component: CoverFlowTestPage
   }
 ]
 
