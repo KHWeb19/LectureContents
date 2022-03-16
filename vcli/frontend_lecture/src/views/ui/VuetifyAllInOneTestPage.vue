@@ -3,7 +3,7 @@
         <p class="blue lighten-4 red--text">Test</p>
         <p class="blue white--text">Test</p>
         <p class="blue darken-3">Test</p>
-        <p class="teal lighten-1 center-align">
+        <p class="teal lighten-1 text-center">
             병맛 넘치게! 이거시 뷰티파이닷!!!
         </p>
         <p class="purple darken-5 white--text">Test</p>
@@ -208,6 +208,7 @@ export default {
                 { boardNo: 14, title: '호야', writer: '어마어마', content: '으어어어엌' },
                 { boardNo: 15, title: '호야호야', writer: '어이크후', content: '어이크후' },
             ],
+            loginDialog: false,
             nav_drawer: false,
             dialog: false,
             service: {
