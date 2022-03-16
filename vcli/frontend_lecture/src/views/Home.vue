@@ -22,6 +22,9 @@
             <router-link style="text-decoration: none;" :to="{ name: 'VuetifyAllInOneTestPage' }">
                 &nbsp;Vuetify(뷰티파이) UI Test&nbsp;
             </router-link>
+            <router-link style="text-decoration: none;" :to="{ name: 'VuetifyImageTestPage' }">
+                &nbsp;Vuetify Image Test&nbsp;
+            </router-link>
         </div>
   </div>
 </template>

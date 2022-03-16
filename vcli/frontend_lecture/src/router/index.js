@@ -18,6 +18,7 @@ import ProductBoardReadPage from '@/views/productBoard/ProductBoardReadPage.vue'
 import ProductBoardModifyPage from '@/views/productBoard/ProductBoardModifyPage.vue'
 
 import VuetifyAllInOneTestPage from '@/views/ui/VuetifyAllInOneTestPage.vue'
+import VuetifyImageTestPage from '@/views/ui/VuetifyImageTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -106,6 +107,11 @@ const routes = [
     path: '/vuetifyTest',
     name: 'VuetifyAllInOneTestPage',
     component: VuetifyAllInOneTestPage
+  },
+  {
+    path: '/vuetifyImageTest',
+    name: 'VuetifyImageTestPage',
+    component: VuetifyImageTestPage
   }
 ]
 
