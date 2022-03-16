@@ -25,6 +25,9 @@
             <router-link style="text-decoration: none;" :to="{ name: 'VuetifyImageTestPage' }">
                 &nbsp;Vuetify Image Test&nbsp;
             </router-link>
+            <router-link style="text-decoration: none;" :to="{ name: 'CoverFlowTestPage' }">
+                &nbsp;Cover Flow Test&nbsp;
+            </router-link>
         </div>
   </div>
 </template>
