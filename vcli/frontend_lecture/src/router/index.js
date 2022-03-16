@@ -20,6 +20,7 @@ import ProductBoardModifyPage from '@/views/productBoard/ProductBoardModifyPage.
 import VuetifyAllInOneTestPage from '@/views/ui/VuetifyAllInOneTestPage.vue'
 import VuetifyImageTestPage from '@/views/ui/VuetifyImageTestPage.vue'
 import CoverFlowTestPage from '@/views/ui/CoverFlowTestPage.vue'
+import AwesomeSwiperTestPage from '@/views/ui/AwesomeSwiperTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -117,7 +118,16 @@ const routes = [
   {
     path: '/coverFlowTest',
     name: 'CoverFlowTestPage',
-    component: CoverFlowTestPage
+    components: {
+      default: CoverFlowTestPage
+    }
+  },
+  {
+    path: '/awesomeSwiperTest',
+    name: 'AwesomeSwiperTestPage',
+    components: {
+      default: AwesomeSwiperTestPage
+    }
   }
 ]
 

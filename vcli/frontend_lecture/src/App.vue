@@ -38,14 +38,14 @@
       </v-btn>
     </v-app-bar> -->
 
-    <!--
     <v-main>
       <router-view/>
     </v-main>
-    -->
+    <!--
     <div id="app">
       <router-view/>
     </div>
+    -->
   </v-app>
 </template>
 
