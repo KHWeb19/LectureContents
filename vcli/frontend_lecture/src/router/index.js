@@ -22,6 +22,8 @@ import VuetifyImageTestPage from '@/views/ui/VuetifyImageTestPage.vue'
 import CoverFlowTestPage from '@/views/ui/CoverFlowTestPage.vue'
 import AwesomeSwiperTestPage from '@/views/ui/AwesomeSwiperTestPage.vue'
 
+import ImageGalleryTestPage from '@/views/ui/ImageGalleryTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -127,6 +129,13 @@ const routes = [
     name: 'AwesomeSwiperTestPage',
     components: {
       default: AwesomeSwiperTestPage
+    }
+  },
+  {
+    path: '/imageGalleryTest',
+    name: 'ImageGalleryTestPage',
+    components: {
+      default: ImageGalleryTestPage
     }
   }
 ]

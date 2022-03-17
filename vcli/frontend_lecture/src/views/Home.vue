@@ -30,6 +30,9 @@
     <router-link style="text-decoration: none;" :to="{ name: 'AwesomeSwiperTestPage' }">
         &nbsp;Awesome Swiper Test&nbsp;
     </router-link>
+    <router-link style="text-decoration: none;" :to="{ name: 'ImageGalleryTestPage' }">
+        &nbsp;Image Gallery Test&nbsp;
+    </router-link>
   </div>
 </template>
 
