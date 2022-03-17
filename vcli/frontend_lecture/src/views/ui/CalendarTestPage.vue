@@ -48,9 +48,9 @@
                     </v-sheet>
                     <v-sheet height="400">
                         <v-calendar ref="calendar" v-model="focus" color="primary" 
-                                    :event="events" :event-color="getEventColor" :type="type"
+                                    :events="events" :event-color="getEventColor" :type="type"
                                     @click:more="viewDay" @click:date="viewDay"
-                                    @change="updateRange" @click="showEvent">
+                                    @change="updateRange" @click:event="showEvent">
                         </v-calendar>
                         <v-menu v-model="selectedOpen" :close-on-content-click="false"
                                 :activator="selectedElement" offset-x="offset-x">
@@ -132,6 +132,7 @@ export default {
             this.$refs.calendar.next()
         },
         showEvent ({ nativeEvent, event }) {
+            /* 이 부분은 건드릴 일 전혀 없음 */
             const open = () => {
                 this.selectedEvent = event
                 this.selectedElement = nativeEvent.target
@@ -150,6 +151,9 @@ export default {
             nativeEvent.stopPropagation();
         },
         updateRange ({ start, end }) {
+            /* 현재는 테스트를 위해 직접 events 배열을 랜덤하게 생성하였음
+               실제 프로젝트에서는 axios 를 통해서 DB 정보를 요청하고
+               해당 DB 정보를 events 에 배치하여 달력에 출력하도록 만들어야 한다. */
             const events = []
 
             const min = new Date(`${start.date}T00:00:00`)
@@ -173,7 +177,7 @@ export default {
                 })
             }
 
-            this.events.events
+            this.events = events
         },
         randDay (min, max) {
             return Math.floor((max - min + 1) * Math.random()) + min
