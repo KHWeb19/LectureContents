@@ -23,6 +23,7 @@ import CoverFlowTestPage from '@/views/ui/CoverFlowTestPage.vue'
 import AwesomeSwiperTestPage from '@/views/ui/AwesomeSwiperTestPage.vue'
 
 import ImageGalleryTestPage from '@/views/ui/ImageGalleryTestPage.vue'
+import CalendarTestPage from '@/views/ui/CalendarTestPage.vue'
 
 Vue.use(VueRouter)
 
@@ -137,7 +138,15 @@ const routes = [
     components: {
       default: ImageGalleryTestPage
     }
+  },
+  {
+    path: '/calendarTest',
+    name: 'CalendarTestPage',
+    components: {
+      default: CalendarTestPage
+    }
   }
+  
 ]
 
 const router = new VueRouter({
