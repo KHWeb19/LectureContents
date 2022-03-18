@@ -28,8 +28,13 @@ public class Twentyoneth57thVueFileUploadController {
                 // 필요하다면 생성 날자와 시간(date) 정보를 추가
                 // 좀 더 구별이 필요하다면 아이디까지 같이 결합시켜도 무방
                 // 아이디/날자/이미지
+                /*
                 FileOutputStream writer = new FileOutputStream(
                         "./images/" + multipartFile.getOriginalFilename());
+                 */
+                FileOutputStream writer = new FileOutputStream(
+                        "../../vcli/frontend_lecture/src/assets/uploadImg/" + multipartFile.getOriginalFilename());
+
 
                 log.info("디렉토리에 파일 배치 성공!");
 
