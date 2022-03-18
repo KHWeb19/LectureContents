@@ -35,7 +35,7 @@ export default {
                 formData.append('fileList', this.files[idx])
             }
 
-            axios.post('http://localhost:7777/file/uploadImg', formData, {
+            axios.post('http://localhost:7777/57th/file/uploadImg', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }
