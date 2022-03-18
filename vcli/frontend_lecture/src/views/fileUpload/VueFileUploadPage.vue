@@ -21,7 +21,8 @@ export default {
     name: 'VueFileUploadPage',
     data () {
         return {
-            files: ''
+            files: '',
+            response: ''
         }
     },
     methods: {
@@ -41,13 +42,11 @@ export default {
                 }
             })
             .then (res => {
-                this.response = res.data
+                alert('처리 결과: ' + res.data)
             })
             .catch (res => {
-                this.response = res.message
+                alert('처리 결과: ' + res.message)
             })
-
-            alert('처리 완료!')
         }
     }
 }
