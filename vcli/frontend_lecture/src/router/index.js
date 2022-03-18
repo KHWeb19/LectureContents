@@ -25,6 +25,8 @@ import AwesomeSwiperTestPage from '@/views/ui/AwesomeSwiperTestPage.vue'
 import ImageGalleryTestPage from '@/views/ui/ImageGalleryTestPage.vue'
 import CalendarTestPage from '@/views/ui/CalendarTestPage.vue'
 
+import VueFileUploadPage from '@/views/fileUpload/VueFileUploadPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -145,8 +147,14 @@ const routes = [
     components: {
       default: CalendarTestPage
     }
+  },
+  {
+    path: '/vueFileUploadTest',
+    name: 'VueFileUploadPage',
+    components: {
+      default: VueFileUploadPage
+    }
   }
-  
 ]
 
 const router = new VueRouter({
