@@ -15,11 +15,11 @@
       <table>
         <tr>
           <td>아이디</td>
-          <td><input type="text" v-model="id"></td>
+          <td><input style="border: 1px solid black;" type="text" v-model="id"></td>
         </tr>
         <tr>
           <td>비밀번호</td>
-          <td><input type="password" v-model="pw"></td>
+          <td><input style="border: 1px solid black;" type="password" v-model="pw"></td>
         </tr>
       </table>
 
@@ -60,5 +60,7 @@ export default {
 </script>
 
 <style scoped>
+
+
 
 </style>
