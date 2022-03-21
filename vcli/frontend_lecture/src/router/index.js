@@ -27,6 +27,8 @@ import CalendarTestPage from '@/views/ui/CalendarTestPage.vue'
 
 import VueFileUploadPage from '@/views/fileUpload/VueFileUploadPage.vue'
 
+import VuetifyMemberRegisterPage from '@/views/jpaMember/VuetifyMemberRegisterPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -154,7 +156,15 @@ const routes = [
     components: {
       default: VueFileUploadPage
     }
+  },
+  {
+    path: '/vuetifyMemberRegisterTest',
+    name: 'VuetifyMemberRegisterPage',
+    components: {
+      default: VuetifyMemberRegisterPage
+    }
   }
+
 ]
 
 const router = new VueRouter({

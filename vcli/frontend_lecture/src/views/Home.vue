@@ -39,6 +39,9 @@
     <router-link style="text-decoration: none;" :to="{ name: 'VueFileUploadPage' }">
         &nbsp;File Upload Test&nbsp;
     </router-link>
+    <router-link style="text-decoration: none;" :to="{ name: 'VuetifyMemberRegisterPage' }">
+      &nbsp;Vuetify Member Register Test&nbsp;
+    </router-link>
   </div>
 </template>
 
