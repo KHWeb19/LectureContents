@@ -9,8 +9,9 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "member_auth")
+@Table(name = "jpa_member_auth")
 public class VueJpaMemberAuth {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long memberAuthNo;
