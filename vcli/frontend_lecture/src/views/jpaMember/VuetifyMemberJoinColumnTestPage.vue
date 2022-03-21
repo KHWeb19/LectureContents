@@ -29,7 +29,7 @@ export default {
   methods: {
     onSubmit (payload) {
       const { id, pw, auth } = payload
-      axios.post('http://localhost:7777/vueJpaAuthMember/register', { id, pw, auth })
+      axios.post('http://localhost:7777/vueJpaMemberAuth/register', { id, pw, auth })
         .then(res => {
           alert('등록 성공! - ' + res)
         })
