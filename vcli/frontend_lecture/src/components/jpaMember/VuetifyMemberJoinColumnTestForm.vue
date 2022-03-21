@@ -39,7 +39,7 @@ export default {
   name: "VuetifyMemberRegisterForm.vue",
   data () {
     return {
-      radioGroup: 0,
+      radioGroup: 1,
       kindsOfMember: [
         '개인',
         '사업자'
@@ -51,7 +51,7 @@ export default {
   methods: {
     onSubmit () {
       const { id, pw, radioGroup } = this
-      const auth = radioGroup == 0 ? '개인' : '사업자'
+      const auth = (radioGroup == '개인' ? '개인' : '사업자')
       this.$emit('submit', { id, pw, auth })
     }
   }
