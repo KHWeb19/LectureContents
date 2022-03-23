@@ -24,4 +24,19 @@ public class VueJpaMemberAuthController {
 
         service.register(memberRequest);
     }
+
+    @PostMapping("/login")
+    public MemberRequest jpaMemberLogin (@RequestBody MemberRequest memberRequest) {
+        log.info("jpaMemberLogin(): " + memberRequest);
+
+        MemberRequest memberResponse = service.login(memberRequest);
+        
+        if (memberResponse != null) {
+            log.info("로그인 성공!");
+        } else {
+            log.info("로그인 실패!");
+        }
+
+        return memberResponse;
+    }
 }
