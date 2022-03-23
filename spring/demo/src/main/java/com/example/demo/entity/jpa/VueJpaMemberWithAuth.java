@@ -21,7 +21,7 @@ public class VueJpaMemberWithAuth {
     @Column(length = 32, nullable = false)
     private String userId;
 
-    @Column(length = 32, nullable = false)
+    @Column(length = 128, nullable = false)
     private String password;
 
     @CreationTimestamp
