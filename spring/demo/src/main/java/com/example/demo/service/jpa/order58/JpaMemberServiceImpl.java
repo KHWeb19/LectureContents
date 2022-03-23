@@ -3,13 +3,21 @@ package com.example.demo.service.jpa.order58;
 import com.example.demo.controller.jpa.order58.request.MemberRequest;
 import com.example.demo.entity.jpa.VueJpaMemberAuth;
 import com.example.demo.entity.jpa.VueJpaMemberWithAuth;
+import com.example.demo.repository.jpa.order58.VueJpaMemberAuthRepository;
 import com.example.demo.repository.jpa.order58.VueJpaMemberWithAuthRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
+@Slf4j
 @Service
 public class JpaMemberServiceImpl implements JpaMemberService {
+
+    @Autowired
+    private VueJpaMemberAuthRepository memberAuthRepository;
 
     @Autowired
     private VueJpaMemberWithAuthRepository memberRepository;
@@ -29,5 +37,38 @@ public class JpaMemberServiceImpl implements JpaMemberService {
         memberEntity.addAuth(authEntity);
 
         memberRepository.save(memberEntity);
+    }
+
+    @Override
+    public MemberRequest login(MemberRequest memberRequest) {
+        Optional<VueJpaMemberWithAuth> maybeMember = memberRepository.findByUserId(memberRequest.getId());
+
+        if (maybeMember == null) {
+            log.info("이런 사람 없다!");
+            return null;
+        }
+
+        VueJpaMemberWithAuth loginMember = maybeMember.get();
+
+        if (!passwordEncoder.matches(memberRequest.getPw(), loginMember.getPassword())) {
+            log.info("비밀번호를 잘못 입력했습니다!");
+            return null;
+        }
+
+        Optional<VueJpaMemberAuth> maybeMemberAuth =
+                memberAuthRepository.findByMemberNo(loginMember.getMemberNo());
+
+        if (maybeMemberAuth == null) {
+            log.info("auth 없음");
+            return null;
+        }
+
+        VueJpaMemberAuth memberAuth = maybeMemberAuth.get();
+        MemberRequest response = new MemberRequest(
+                memberRequest.getId(),
+                null,
+                memberAuth.getAuth());
+
+        return response;
     }
 }
