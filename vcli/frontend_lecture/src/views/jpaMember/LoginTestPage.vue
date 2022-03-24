@@ -31,6 +31,8 @@ export default {
 
     if (this.$store.state.userInfo != null) {
       this.isLogin = true
+    } else {
+      this.isLogin = false
     }
   },
   methods: {
@@ -42,7 +44,7 @@ export default {
               if (res.data) {
                 alert('로그인 성공!')
                 this.$store.state.userInfo = res.data
-                this.$cookies.set("user", res.data, '1m')
+                this.$cookies.set("user", res.data, 30)
                 this.isLogin = true
               }
             })
