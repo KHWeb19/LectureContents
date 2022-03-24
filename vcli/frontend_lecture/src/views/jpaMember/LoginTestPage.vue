@@ -10,25 +10,48 @@
 <script>
 
 import LoginForm from '@/components/jpaMember/LoginForm.vue'
+import Vue from 'vue'
 import axios from 'axios'
+import cookies from 'vue-cookies'
+
+Vue.use(cookies)
 
 export default {
   name: "LoginTestPage.vue",
   components: {
     LoginForm
   },
+  data () {
+    return {
+      isLogin: false
+    }
+  },
+  mounted() {
+    this.$store.state.userInfo = this.$cookies.get("user")
+
+    if (this.$store.state.userInfo != null) {
+      this.isLogin = true
+    }
+  },
   methods: {
     onSubmit (payload) {
-      const { id, pw } = payload
-      axios.post('http://localhost:7777/vueJpaMemberAuth/login', { id, pw })
-          .then(res => {
-            if (res.data) {
-              alert('로그인 성공!')
-            }
-          })
-          .catch(res => {
-            alert(res.response.data.message)
-          })
+      if (!this.isLogin) {
+        const {id, pw} = payload
+        axios.post('http://localhost:7777/vueJpaMemberAuth/login', {id, pw})
+            .then(res => {
+              if (res.data) {
+                alert('로그인 성공!')
+                this.$store.state.userInfo = res.data
+                this.$cookies.set("user", res.data, '1m')
+                this.isLogin = true
+              }
+            })
+            .catch(res => {
+              alert(res.response.data.message)
+            })
+      } else {
+        alert('이미 로그인이 되어 있습니다!')
+      }
     }
   }
 }

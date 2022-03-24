@@ -32,6 +32,7 @@
     "swiper": "^5.3.7",
     "vue-awesome-swiper": "^4.1.1",
     "vue-cli-plugin-vuetify": "~2.4.7",
+    "vue-cookies": "^1.7.4",
     "vue-coverflow": "^2.2.0",
     "vue-template-compiler": "^2.6.11",
     "vuetify-loader": "^1.7.0"
