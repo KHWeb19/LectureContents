@@ -4,6 +4,13 @@
       <h2>Login</h2>
     </div>
     <login-form @submit="onSubmit"/>
+    <v-spacer></v-spacer>
+    <v-btn tile color="teal lighten-4" @click="logout">
+      <v-icon left>
+        mdi-logout
+      </v-icon>
+      로그 아웃
+    </v-btn>
   </div>
 </template>
 
@@ -54,6 +61,13 @@ export default {
       } else {
         alert('이미 로그인이 되어 있습니다!')
       }
+    },
+    logout () {
+      this.$cookies.remove("user")
+      this.isLogin = false
+      this.$store.state.userInfo = null
+
+      alert('로그아웃 성공!')
     }
   }
 }
