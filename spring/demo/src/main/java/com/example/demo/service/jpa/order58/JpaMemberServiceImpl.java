@@ -44,14 +44,14 @@ public class JpaMemberServiceImpl implements JpaMemberService {
         Optional<VueJpaMemberWithAuth> maybeMember = memberRepository.findByUserId(memberRequest.getId());
 
         if (maybeMember == null) {
-            log.info("이런 사람 없다!");
+            log.info("There are no person who has this id!");
             return null;
         }
 
         VueJpaMemberWithAuth loginMember = maybeMember.get();
 
         if (!passwordEncoder.matches(memberRequest.getPw(), loginMember.getPassword())) {
-            log.info("비밀번호를 잘못 입력했습니다!");
+            log.info("Entered wrong password!");
             return null;
         }
 
@@ -59,7 +59,7 @@ public class JpaMemberServiceImpl implements JpaMemberService {
                 memberAuthRepository.findByMemberNo(loginMember.getMemberNo());
 
         if (maybeMemberAuth == null) {
-            log.info("auth 없음");
+            log.info("no auth");
             return null;
         }
 
