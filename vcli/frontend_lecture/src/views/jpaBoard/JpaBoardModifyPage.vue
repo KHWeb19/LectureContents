@@ -1,7 +1,7 @@
 <template>
     <div align="center">
         <h2>Vue + Spring 게시물 수정</h2>
-        <board-modify-form v-if="board" :board="board" @submit="onSubmit"/>
+        <jpa-board-modify-form v-if="jpaBoard" :jpaBoard="jpaBoard" @submit="onSubmit"/>
         <p v-else>로딩중 .......</p>
     </div>
 </template>
@@ -9,12 +9,12 @@
 <script>
 import axios from 'axios'
 import { mapActions, mapState } from 'vuex'
-import BoardModifyForm from '@/components/board/BoardModifyForm.vue'
+import JpaBoardModifyForm from '@/components/jpaBoard/JpaBoardModifyForm.vue'
 
 export default {
-    name: 'BoardModifyPage',
+    name: 'JpaBoardModifyPage',
     components: {
-        BoardModifyForm
+        JpaBoardModifyForm
     },
     props: {
         boardNo: {
@@ -23,18 +23,19 @@ export default {
         }
     },
     computed: {
-        ...mapState(['board'])
+        ...mapState(['jpaBoard'])
     },
     methods: {
-        ...mapActions(['fetchBoard']),
+        ...mapActions(['fetchJpaBoard']),
         onSubmit (payload) {
             const { title, content } = payload
 
-            axios.put(`http://localhost:7777/49th/vueboard/${this.boardNo}`, { title, content })
+            axios.put(`http://localhost:7777/62th/board/${this.boardNo}`,
+                { title, writer: this.jpaBoard.writer, content, regDate: this.jpaBoard.regDate })
                     .then(res => {
                         alert('게시물 수정 성공!')
                         this.$router.push({
-                            name: 'BoardReadPage',
+                            name: 'JpaBoardReadPage',
                             params: { boardNo: res.data.boardNo.toString() }
                         })
                     })
@@ -44,7 +45,7 @@ export default {
         }
     },
     created () {
-        this.fetchBoard(this.boardNo)
+        this.fetchJpaBoard(this.boardNo)
                 .catch(() => {
                     alert('게시물 DB 조회 실패!')
                     this.$router.back()
