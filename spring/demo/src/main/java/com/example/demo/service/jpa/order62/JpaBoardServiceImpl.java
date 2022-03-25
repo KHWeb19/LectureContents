@@ -5,12 +5,15 @@ import com.example.demo.entity.order32.Board;
 import com.example.demo.repository.jpa.order62.JpaBoardRepository;
 import com.example.demo.repository.order32.BoardRepository;
 import com.example.demo.service.order32.BoardService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
+@Slf4j
 @Service
 public class JpaBoardServiceImpl implements JpaBoardService {
 
@@ -29,7 +32,14 @@ public class JpaBoardServiceImpl implements JpaBoardService {
 
     @Override
     public JpaBoard read(Integer boardNo) {
-        return repository.getById(Long.valueOf(boardNo));
+        Optional<JpaBoard> maybeReadBoard = repository.findById(Long.valueOf(boardNo));
+
+        if (maybeReadBoard.equals(Optional.empty())) {
+            log.info("Can't read board!");
+            return null;
+        }
+
+        return maybeReadBoard.get();
     }
 
     @Override

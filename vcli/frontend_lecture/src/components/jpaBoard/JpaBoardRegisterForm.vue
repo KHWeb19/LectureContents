@@ -24,7 +24,7 @@
 
         <div>
             <button type="submit">등록</button>
-            <router-link :to="{ name: 'BoardListPage' }">
+            <router-link :to="{ name: 'JpaBoardListPage' }">
                 취소
             </router-link>
         </div>
@@ -34,7 +34,7 @@
 <script>
 
 export default {
-    name: 'BoardRegisterForm',
+    name: 'JpaBoardRegisterForm',
     data () {
         return {
             title: '제목을 작성하세요.',
