@@ -3,5 +3,7 @@ export default {
     board: null,
     productBoards: [],
     productBoard: null,
-    userInfo: null
+    userInfo: null,
+    jpaBoards: [],
+    jpaBoard: null,
 }

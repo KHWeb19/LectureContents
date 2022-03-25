@@ -48,6 +48,9 @@
     <router-link style="text-decoration: none;" :to="{ name: 'LoginTestPage' }">
       &nbsp;Login Test&nbsp;
     </router-link>
+    <router-link style="text-decoration: none;" :to="{ name: 'JpaBoardListPage' }">
+      &nbsp;Jpa Board List&nbsp;
+    </router-link>
   </div>
 </template>
 
