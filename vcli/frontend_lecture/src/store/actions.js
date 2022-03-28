@@ -5,6 +5,7 @@ import {
     FETCH_PRODUCT_BOARD,
     FETCH_JPA_BOARD_LIST,
     FETCH_JPA_BOARD,
+    FETCH_BUSINESS_MEMBER
 } from './mutation-types'
 
 import axios from 'axios'
@@ -45,6 +46,12 @@ export default {
         return axios.get(`http://localhost:7777/62th/board/${boardNo}`)
             .then((res) => {
                 commit(FETCH_JPA_BOARD, res.data)
+            })
+    },
+    fetchBusinessMember ({ commit }) {
+        return axios.get('http://localhost:7777/63th/jpaMember/checkBusiness')
+            .then((res) => {
+                commit(FETCH_BUSINESS_MEMBER, res.data)
             })
     }
 }

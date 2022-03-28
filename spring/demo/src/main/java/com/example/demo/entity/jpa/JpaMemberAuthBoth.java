@@ -1,8 +1,6 @@
 package com.example.demo.entity.jpa;
 
-import lombok.Data;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -10,7 +8,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Data
-@Getter
 @Entity
 @NoArgsConstructor
 @Table(name = "jpa_member_auth_both")

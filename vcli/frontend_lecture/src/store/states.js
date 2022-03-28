@@ -6,4 +6,5 @@ export default {
     userInfo: null,
     jpaBoards: [],
     jpaBoard: null,
+    businessMembers: []
 }
