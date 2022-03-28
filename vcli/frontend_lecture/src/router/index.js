@@ -36,6 +36,8 @@ import JpaBoardRegisterPage from '@/views/jpaBoard/JpaBoardRegisterPage.vue'
 import JpaBoardReadPage from '@/views/jpaBoard/JpaBoardReadPage.vue'
 import JpaBoardModifyPage from '@/views/jpaBoard/JpaBoardModifyPage.vue'
 
+import JpaMemberAuthTestPage from '@/views/jpaMember/JpaMemberAuthTestPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -214,7 +216,18 @@ const routes = [
     props: {
       default: true
     }
+  },
+  {
+    path: '/jpaMemberAuthTest',
+    name: 'JpaMemberAuthTestPage',
+    components: {
+      default: JpaMemberAuthTestPage
+    },
+    props: {
+      default: true
+    }
   }
+
 ]
 
 const router = new VueRouter({

@@ -51,6 +51,10 @@
     <router-link style="text-decoration: none;" :to="{ name: 'JpaBoardListPage' }">
       &nbsp;Jpa Board List&nbsp;
     </router-link>
+    <router-link style="text-decoration: none;" :to="{ name: 'JpaMemberAuthTestPage' }">
+      &nbsp;Business Member Check&nbsp;
+    </router-link>
+
   </div>
 </template>
 

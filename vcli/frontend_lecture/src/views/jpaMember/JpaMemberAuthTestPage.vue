@@ -18,7 +18,7 @@ import LookBusinessMemberForm from '@/components/jpaMember/LookBusinessMemberFor
 import axios from 'axios'
 
 export default {
-  name: "VuetifyMemberJoinColumnTestPage",
+  name: "JpaMemberAuthTestPage",
   components: {
     VuetifyMemberJoinColumnTestForm,
     LookBusinessMemberForm
@@ -26,7 +26,7 @@ export default {
   methods: {
     onSubmit (payload) {
       const { id, pw, auth } = payload
-      axios.post('http://localhost:7777/vueJpaMemberAuth/register', { id, pw, auth })
+      axios.post('http://localhost:7777/63th/jpaMember/register', { id, pw, auth })
         .then(res => {
           alert('등록 성공! - ' + res)
         })
