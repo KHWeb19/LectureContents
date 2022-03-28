@@ -5,6 +5,7 @@ import {
     FETCH_PRODUCT_BOARD,
     FETCH_JPA_BOARD_LIST,
     FETCH_JPA_BOARD,
+    FETCH_BUSINESS_MEMBER
 } from './mutation-types'
 
 export default {
@@ -25,5 +26,8 @@ export default {
     },
     [FETCH_JPA_BOARD] (state, board) {
         state.jpaBoard = board
+    },
+    [FETCH_BUSINESS_MEMBER] (state, businessMembers) {
+        state.businessMembers = businessMembers
     }
 }

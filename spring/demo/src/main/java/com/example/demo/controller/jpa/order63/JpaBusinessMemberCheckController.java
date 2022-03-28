@@ -1,6 +1,7 @@
 package com.example.demo.controller.jpa.order63;
 
 import com.example.demo.controller.jpa.order58.request.MemberRequest;
+import com.example.demo.controller.jpa.order63.response.JpaMemberBothResponse;
 import com.example.demo.entity.jpa.JpaMemberBoth;
 import com.example.demo.entity.jpa.VueJpaMemberWithAuth;
 import com.example.demo.service.jpa.order63.JpaBmService;
@@ -9,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
+import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 @Slf4j
@@ -30,11 +33,16 @@ public class JpaBusinessMemberCheckController {
     }
 
     @GetMapping("/checkBusiness")
-    public List<JpaMemberBoth> checkBusinessMember () {
+    public List<JpaMemberBothResponse> checkBusinessMember () {
         log.info("checkBusiness() ===> findBusinessMember!!!");
 
         List<JpaMemberBoth> businessMember = service.findBusiness();
+        List<JpaMemberBothResponse> responses = new ArrayList<>();
 
-        return null;
+        for (JpaMemberBoth member : businessMember) {
+            responses.add(new JpaMemberBothResponse(member.getUserId()));
+        }
+
+        return responses;
     }
 }
