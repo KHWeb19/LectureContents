@@ -38,6 +38,8 @@ import JpaBoardModifyPage from '@/views/jpaBoard/JpaBoardModifyPage.vue'
 
 import JpaMemberAuthTestPage from '@/views/jpaMember/JpaMemberAuthTestPage.vue'
 
+import DaumNewsCrawlerPage from '@/views/crawl/DaumNewsCrawlerPage.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -222,6 +224,16 @@ const routes = [
     name: 'JpaMemberAuthTestPage',
     components: {
       default: JpaMemberAuthTestPage
+    },
+    props: {
+      default: true
+    }
+  },
+  {
+    path: '/daumNewsCrawl',
+    name: 'DaumNewsCrawlerPage',
+    components: {
+      default: DaumNewsCrawlerPage
     },
     props: {
       default: true
