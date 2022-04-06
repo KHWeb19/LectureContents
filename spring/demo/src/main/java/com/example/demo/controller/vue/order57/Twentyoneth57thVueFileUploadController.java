@@ -1,6 +1,9 @@
 package com.example.demo.controller.vue.order57;
 
+import com.example.demo.controller.vue.order57.request.RequestFileInfo;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -10,8 +13,11 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/57th/file")
-@CrossOrigin(origins = "http://localhost:8080", allowedHeaders = "*")
+@CrossOrigin(origins = "http://localhost:8081", allowedHeaders = "*")
 public class Twentyoneth57thVueFileUploadController {
+
+    //@Autowired
+    //FileUploadService service;
 
     @ResponseBody
     @PostMapping("/uploadImg")
@@ -35,6 +41,41 @@ public class Twentyoneth57thVueFileUploadController {
                 FileOutputStream writer = new FileOutputStream(
                         "../../vcli/frontend_lecture/src/assets/uploadImg/" + multipartFile.getOriginalFilename());
 
+
+                log.info("디렉토리에 파일 배치 성공!");
+
+                writer.write(multipartFile.getBytes());
+
+                //service.recordFileInfo("vue_path/" + multipartFile.getOriginalFilename());
+
+                writer.close();
+            }
+        } catch (Exception e) {
+            return "Upload Fail!!!";
+        }
+
+        log.info("requestUploadFile(): Success!!!");
+
+        return "Upload Success!!!";
+    }
+
+    @ResponseBody
+    @PostMapping(value = "/uploadImgWithString", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE, MediaType.APPLICATION_JSON_VALUE})
+    public String requestUploadFileWithString (
+            @RequestPart(value="fileList") List<MultipartFile> fileList,
+            @RequestPart(value="info") RequestFileInfo info
+            ) {
+
+        log.info("requestUploadFile(): " + fileList);
+        log.info("info: " + info);
+
+        try {
+            for (MultipartFile multipartFile : fileList) {
+                log.info("requestUploadFile() - Make file: " +
+                        multipartFile.getOriginalFilename());
+
+                FileOutputStream writer = new FileOutputStream(
+                        "../../vcli/frontend_lecture/src/assets/uploadImg/" + multipartFile.getOriginalFilename());
 
                 log.info("디렉토리에 파일 배치 성공!");
 
