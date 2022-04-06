@@ -65,6 +65,11 @@
     <router-link style="text-decoration: none;" :to="{ name: 'VuetifyMemberJoinColumnTestPage' }">
       &nbsp;오늘 복습한 내용은 이런것입니다. 코드 작성하고 블라블라 쌸라쌸라 이런거 저런거 쿵쿵쾅쾅 했어요. 이슈도 쾅 터지네요.&nbsp;
     </router-link>
+    <br/>
+
+    <router-link style="text-decoration: none;" :to="{ name: 'VueFileUploadPage' }">
+      &nbsp;File Upload Test&nbsp;
+    </router-link>
   </div>
 </template>
 
