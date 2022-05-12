@@ -8,6 +8,7 @@
                             multiple v-on:change="handleFileUpload()"/>
                 </label>
                 <button v-on:click="submitFiles()">파일 업로드</button>
+                <button v-on:click="mapTest()">axios test</button>
             </div>
         </v-container>
     </div>
@@ -22,7 +23,8 @@ export default {
     data () {
         return {
             files: '',
-            response: ''
+            response: '',
+            address: new String('새말로 8길 26')
         }
     },
     methods: {
@@ -41,6 +43,16 @@ export default {
                     'Content-Type': 'multipart/form-data'
                 }
             })
+            .then (res => {
+                alert('처리 결과: ' + res.data)
+            })
+            .catch (res => {
+                alert('처리 결과: ' + res.message)
+            })
+        },
+        mapTest () {
+            //const { address } = this.address
+            axios.post('http://localhost:8080/kakaomapSupport/')
             .then (res => {
                 alert('처리 결과: ' + res.data)
             })
