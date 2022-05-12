@@ -2,7 +2,7 @@
     <ul>
         <li v-for="product in products" :key="product.pcode"
                 v-on:click="sendCode(product.pcode, $event)">
-            {{ product.pname }}
+          {{ product.pname }}
         </li>
     </ul>
 </template>

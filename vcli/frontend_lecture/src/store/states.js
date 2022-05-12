@@ -2,5 +2,10 @@ export default {
     boards: [],
     board: null,
     productBoards: [],
-    productBoard: null
+    productBoard: null,
+    userInfo: null,
+    jpaBoards: [],
+    jpaBoard: null,
+    businessMembers: [],
+    crawlLists: []
 }
