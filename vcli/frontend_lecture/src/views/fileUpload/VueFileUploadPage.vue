@@ -8,6 +8,7 @@
                             multiple v-on:change="handleFileUpload()"/>
                 </label>
                 <button v-on:click="submitFiles()">파일 업로드</button>
+                <button v-on:click="mapTest()">axios test</button>
             </div>
             <div>
                 <label>Files
@@ -29,6 +30,8 @@ export default {
     data () {
         return {
             files: '',
+            response: '',
+            address: new String('새말로 8길 26'),
             files2: '',
             response: ''
         }
@@ -58,6 +61,10 @@ export default {
             .catch (res => {
                 alert('처리 결과: ' + res.message)
             })
+        },
+        mapTest () {
+            //const { address } = this.address
+            axios.post('http://localhost:8080/kakaomapSupport/')
         },
         submitFiles2 () {
             let formData = new FormData()
