@@ -14,8 +14,6 @@ class DemoApplicationTests {
 
 	@Test
 	void 얘는한글로적어도돌아가요() {
-		Board board = new Board("test", "test", "test");
-
 
 	}
 
