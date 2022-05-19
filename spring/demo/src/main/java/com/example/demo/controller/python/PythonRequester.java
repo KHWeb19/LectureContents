@@ -46,4 +46,31 @@ public class PythonRequester {
 
         return modelAndView;
     }
+
+    @GetMapping("/spring2python-multi")
+    public ModelAndView spring2PythonMulti(Model model) {
+        log.info("spring2PythonMulti()");
+
+        List<HttpMessageConverter<?>> converters = new ArrayList<>();
+
+        converters.add(new FormHttpMessageConverter());
+        converters.add(new StringHttpMessageConverter());
+
+        RestTemplate restTemplate = new RestTemplate();
+        restTemplate.setMessageConverters(converters);
+
+        String result = restTemplate.getForObject(
+                "http://localhost:5000/python-request-multi",
+                String.class
+        );
+
+        log.info("result = " + result);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("python/pyResult");
+
+        model.addAttribute("resultMsg", result);
+
+        return modelAndView;
+    }
 }
