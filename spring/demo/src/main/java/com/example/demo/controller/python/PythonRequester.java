@@ -1,5 +1,6 @@
 package com.example.demo.controller.python;
 
+import com.example.demo.entity.python.PythonProduct;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.converter.FormHttpMessageConverter;
 import org.springframework.http.converter.HttpMessageConverter;
@@ -61,6 +62,30 @@ public class PythonRequester {
 
         String result = restTemplate.getForObject(
                 "http://localhost:5000/python-request-multi",
+                String.class
+        );
+
+        log.info("result = " + result);
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setViewName("python/pyResult");
+
+        model.addAttribute("resultMsg", result);
+
+        return modelAndView;
+    }
+
+    @GetMapping("/spring2python-realdata")
+    public ModelAndView spring2PythonRealData(Model model) {
+        log.info("spring2PythonRealData()");
+
+        RestTemplate restTemplate = new RestTemplate();
+
+        PythonProduct pythonProduct = new PythonProduct(35000L);
+
+        String result = restTemplate.postForObject(
+                "http://localhost:5000/python-request-realdata",
+                pythonProduct,
                 String.class
         );
 
