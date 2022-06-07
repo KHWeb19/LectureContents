@@ -11,9 +11,9 @@ class ThirdCustomAppMenu extends StatelessWidget {
       child: Row(
         children: [
           _buildMenuItem(Icons.electric_car_outlined, "EV 충전"),
-          SizedBox(width: 25),
+          SizedBox(width: 10),
           _buildMenuItem(Icons.highlight_outlined, "LED 디밍"),
-          SizedBox(width: 25),
+          SizedBox(width: 10),
           _buildMenuItem(Icons.camera_alt_outlined, "스트리밍")
         ],
       ),

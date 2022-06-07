@@ -15,12 +15,13 @@ class ThirdCustomPage extends StatelessWidget {
       appBar: _buildThirdCustomAppBar(),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+        child: ListView(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
           children: const [
             ThirdCustomAppTitle(),
             ThirdCustomAppMenu(),
-            ThirdCustomAppListItem("porsche918", "신규 포르쉐 업그레이드"),
+            ThirdCustomAppListItem("porsche918", "신규 포르쉐 업그레이드", "1,200,000,000 원"),
+            ThirdCustomAppListItem("rangerover", "레인지 로버 중고", "50,000,000 원"),
           ],
         )
       ),

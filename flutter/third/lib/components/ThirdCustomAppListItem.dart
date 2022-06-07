@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 class ThirdCustomAppListItem extends StatelessWidget {
   final String imageName;
   final String title;
+  final String price;
 
-  const ThirdCustomAppListItem(this.imageName, this.title);
+  const ThirdCustomAppListItem(this.imageName, this.title, this.price);
 
   @override
   Widget build(BuildContext context) {
@@ -14,10 +15,16 @@ class ThirdCustomAppListItem extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Image.asset("assets/$imageName.png", fit: BoxFit.cover),
+          AspectRatio(
+              aspectRatio: 2.5 / 1,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(20),
+                child: Image.asset("assets/$imageName.png", fit: BoxFit.cover),
+              ),
+          ),
           SizedBox(height: 10),
           Text(title, style: TextStyle(fontSize: 20)),
-          Text("1,200,000,000 원")
+          Text(price)
         ],
       ),
     );
