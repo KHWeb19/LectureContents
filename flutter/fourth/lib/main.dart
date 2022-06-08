@@ -14,13 +14,7 @@ class FourthCustomApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: theme(),
-      home: ProfilePage()
+      home: const ProfilePage()
     );
   }
-
-  /*
-  AppBar _buildProfileAppBar() {
-    return AppBar();
-  }
-   */
 }
