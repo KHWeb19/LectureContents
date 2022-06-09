@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../components/LoginForm.dart';
 import '../components/Logo.dart';
 import '../utility/size.dart';
 
@@ -14,7 +15,9 @@ class LoginPage extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(height: xl_gap),
-            Logo("로그인")
+            Logo("로그인"),
+            SizedBox(height: l_gap),
+            LoginForm()
           ],
         ),
       )
