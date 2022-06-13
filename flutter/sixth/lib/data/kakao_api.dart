@@ -9,7 +9,7 @@ import 'package:http/http.dart' as http;
 // https://pub.dev/packages/http
 class KakaoApi implements KakaoPhotoApiRepository {
 
-  static const String restApiKey = "f9bd9d5717e1dcf9cbffa361e322a5fd";
+  static const String restApiKey = "yourRestApiKey";
   static const baseUrl = 'https://dapi.kakao.com/v2/search/image';
 
   @override

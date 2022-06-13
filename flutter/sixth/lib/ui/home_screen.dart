@@ -56,6 +56,11 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
           ),
+          // 의존성을 분리시켰기 때문에
+          // UI를 변경하고자 하는 경우
+          // 단순히 UI 코드만 변경하면 된다.
+          // 내부의 API를 변경하고 싶은 경우에도
+          // 다른 UI들에 영향을 주는 것이 전혀 없다는 것!
           StreamBuilder<List<KakaoPhoto>>(
             stream: viewModel?.photoStream,
             builder: (context, snapshot) {

@@ -1,4 +1,4 @@
-name: sixth
+name: login_test
 description: A new Flutter project.
 
 # The following line prevents the package from being accidentally published to
@@ -34,7 +34,6 @@ dependencies:
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-  # vue의 axios와 같은 역할을 수행하므로 axios 대용으로 사용한다 봐도 무방함
   http: ^0.13.4
 
 dev_dependencies:
@@ -63,6 +62,8 @@ flutter:
   # assets:
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
+  assets:
+    - assets/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
