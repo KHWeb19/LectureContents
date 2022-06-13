@@ -9,6 +9,7 @@ class PhotoInheritedWidget extends InheritedWidget {
     {Key? key, required this.viewModel, required Widget child})
     : super(key: key, child: child);
 
+  // 자신과 연관된 컨텍스트 정보를 획득
   static PhotoInheritedWidget? of(BuildContext context) {
     final PhotoInheritedWidget? result =
         context.dependOnInheritedWidgetOfExactType<PhotoInheritedWidget>();
